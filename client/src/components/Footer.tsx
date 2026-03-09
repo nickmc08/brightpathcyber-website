@@ -32,8 +32,8 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm font-body" style={{ color: "oklch(0.72 0.03 255)" }}>
                 <Mail size={14} style={{ color: "oklch(0.58 0.12 185)" }} />
-                <a href="mailto:nick@mcmillonco.com" className="hover:text-white transition-colors">
-                  nick@mcmillonco.com
+                <a href="mailto:info@brightpathcyber.com" className="hover:text-white transition-colors">
+                  info@brightpathcyber.com
                 </a>
               </div>
             </div>
@@ -61,20 +61,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* ClearPath Cyber */}
+          {/* Bright Path Cyber */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield size={15} style={{ color: "oklch(0.58 0.12 185)" }} />
-              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">ClearPath Cyber</h4>
+              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Bright Path Cyber</h4>
             </div>
             <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Jargon-free cybersecurity guidance for seniors.
+              Warm, clear cybersecurity guidance for seniors.
             </p>
             <ul className="space-y-2.5">
               {[
-                { href: "/clearpath-cyber", label: "Overview" },
-                { href: "/clearpath-cyber#services", label: "Services" },
-                { href: "/clearpath-cyber#ebook", label: "Click with Confidence" },
+                { href: "/bright-path-cyber", label: "Overview" },
+                { href: "/bright-path-cyber#services", label: "Services" },
+                { href: "/bright-path-cyber#ebook", label: "Click with Confidence" },
                 { href: "/contact", label: "Book a Session" },
               ].map((link) => (
                 <li key={link.label}>
@@ -121,7 +121,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "oklch(0.32 0.05 255)" }}>
           <p className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
-            © {currentYear} McMillon Co. All rights reserved. | Kent, Washington
+            © {currentYear} McMillon Co. All rights reserved. | Bright Path Cyber is a McMillon Co. company. | Kent, Washington
           </p>
           <div className="flex items-center gap-4">
             <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>

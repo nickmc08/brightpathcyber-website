@@ -79,7 +79,7 @@ export default function About() {
                   The idea came from a frustration Nick saw up close: his own parents struggling to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
                 </p>
                 <p>
-                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>ClearPath Cyber</strong> — McMillon Co.'s primary division, focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
+                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — McMillon Co.'s primary division, focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
                 </p>
                 <p>
                   McMillon Co. is built to grow. A youth financial literacy division, <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, is currently in development — reflecting the same commitment to clear, practical guidance across generations.
@@ -204,8 +204,8 @@ export default function About() {
             {[
               {
                 name: "Nick McMillon",
-                title: "Co-Founder & Lead Consultant, ClearPath Cyber",
-                bio: "Nick brings years of experience in technology and community education to ClearPath Cyber. His passion for helping seniors navigate the digital world safely stems from watching his own family struggle with the same challenges — and knowing that the right guidance makes all the difference.",
+                title: "Co-Founder & Lead Consultant, Bright Path Cyber",
+                bio: "Nick brings years of experience in technology and community education to Bright Path Cyber. His passion for helping seniors navigate the digital world safely stems from watching his own family struggle with the same challenges — and knowing that the right guidance makes all the difference.",
                 initials: "NM",
                 accent: "oklch(0.94 0.04 185)",
                 accentText: "oklch(0.40 0.10 185)",
@@ -258,15 +258,15 @@ export default function About() {
               Ready to get started?
             </h2>
             <p className="font-body text-lg mb-8" style={{ color: "oklch(0.78 0.03 255)" }}>
-              Explore ClearPath Cyber or reach out to book a free consultation.
+              Explore Bright Path Cyber or reach out to book a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/clearpath-cyber">
+              <Link href="/bright-path-cyber">
                 <button
                   className="px-7 py-3.5 rounded-lg font-semibold font-body text-sm flex items-center gap-2 transition-all hover:opacity-90"
                   style={{ backgroundColor: "oklch(0.58 0.12 185)", color: "white" }}
                 >
-                  <Shield size={15} /> Explore ClearPath Cyber
+                  <Shield size={15} /> Explore Bright Path Cyber
                 </button>
               </Link>
               <Link href="/contact">

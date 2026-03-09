@@ -38,7 +38,7 @@ const posts = [
     id: "scams-targeting-seniors",
     title: "5 Scams Targeting Seniors Right Now (And How to Spot Them)",
     excerpt: "Scammers are sophisticated, organized, and ruthless — and they specifically target older adults. Here's what's circulating right now and exactly how to recognize it.",
-    division: "ClearPath Cyber",
+    division: "Bright Path Cyber",
     divisionColor: "cyber",
     date: "February 28, 2026",
     readTime: "7 min read",
@@ -94,16 +94,16 @@ You receive a letter, email, or call telling you that you've won a lottery, swee
 
 When in doubt, **slow down**. Scammers create artificial urgency because they know that if you have time to think — or talk to someone you trust — you'll see through the scheme. Hang up. Call someone. Look it up. You have every right to take your time.
 
-If you think you've been targeted by a scam, report it to the FTC at reportfraud.ftc.gov and to your local police department. And if you'd like personalized guidance on protecting yourself online, ClearPath Cyber is here to help.
+If you think you've been targeted by a scam, report it to the FTC at reportfraud.ftc.gov and to your local police department. And if you'd like personalized guidance on protecting yourself online, Bright Path Cyber is here to help.
     `.trim(),
   },
   {
     id: "password-front-door",
     title: "Why Your Password Is the Front Door to Your Digital Life",
     excerpt: "Most people use the same password for everything. Here's why that's a problem — and a simple system that actually works for real people.",
-    division: "ClearPath Cyber",
+    division: "Bright Path Cyber",
     divisionColor: "cyber",
-    date: "February 14, 2026",
+    date: "February 21, 2026",
     readTime: "6 min read",
     icon: Shield,
     content: `
@@ -156,7 +156,7 @@ You don't have to overhaul everything at once. Start here:
 3. Do the same for your bank account.
 4. Consider downloading a free password manager and adding accounts one at a time as you log in to them.
 
-Small steps, taken consistently, add up to real protection. And if you'd like to walk through any of this with someone who can explain it in plain English — that's exactly what ClearPath Cyber is here for.
+Small steps, taken consistently, add up to real protection. And if you'd like to walk through any of this with someone who can explain it in plain English — that's exactly what Bright Path Cyber is here for.
     `.trim(),
   },
   {
@@ -317,7 +317,7 @@ function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void 
             </h3>
             <p className="font-body text-sm mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
               {isCyber
-                ? "ClearPath Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace."
+                ? "Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace."
                 : "Launchpad Money offers coaching programs for teens, young adults, and families ready to build financial confidence."}
             </p>
             <Link href="/contact">
@@ -388,7 +388,7 @@ export default function Blog() {
                   <div className="lg:col-span-3 p-8 sm:p-10">
                     <div className="flex items-center gap-2 mb-4">
                       <span className="division-badge division-badge-cyber">
-                        <Shield size={11} /> ClearPath Cyber
+                        <Shield size={11} /> Bright Path Cyber
                       </span>
                       <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>Featured</span>
                     </div>
@@ -414,7 +414,7 @@ export default function Blog() {
             </button>
           </RevealSection>
 
-          {/* Other ClearPath Cyber Posts */}
+          {/* Other Bright Path Cyber Posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.slice(1).filter(p => p.divisionColor === "cyber").map((post, i) => (
               <RevealSection key={post.id} delay={i * 100}>

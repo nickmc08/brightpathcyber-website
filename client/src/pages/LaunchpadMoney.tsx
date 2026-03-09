@@ -125,9 +125,9 @@ export default function LaunchpadMoney() {
               </button>
             </Link>
             <span style={{ color: "oklch(0.75 0.01 255)" }}>·</span>
-            <Link href="/clearpath-cyber">
+            <Link href="/bright-path-cyber">
               <button className="font-body text-sm font-medium transition-opacity hover:opacity-70" style={{ color: "oklch(0.50 0.12 185)" }}>
-                Explore ClearPath Cyber →
+                Explore Bright Path Cyber →
               </button>
             </Link>
           </div>

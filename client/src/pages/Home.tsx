@@ -2,7 +2,7 @@
  * Home Page — McMillon Co.
  * Design: Pacific Northwest Professional
  * Left-anchored editorial layout, Fraunces display, DM Sans body
- * Sections: Hero (ClearPath Cyber focus), ClearPath feature, Value Proposition, Testimonials, Coming Soon teaser, CTA
+ * Sections: Hero (Bright Path Cyber focus), feature section, Value Proposition, Testimonials, Coming Soon teaser, CTA
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -15,7 +15,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
 const HERO_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/mcmillon-hero-FFYtHC82fSSjaDdabACeSY.webp";
-const CLEARPATH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/clearpath-hero-73twxQ26uz5nsRzHqpHNR6.webp";
+const BRIGHTPATH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/clearpath-hero-73twxQ26uz5nsRzHqpHNR6.webp";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -93,11 +93,11 @@ export default function Home() {
               McMillon Co. helps seniors 60+ navigate the digital world safely — with clear, jargon-free guidance from people who genuinely care.
             </p>
             <p className="text-base font-body leading-relaxed mb-8" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Through our <strong className="font-semibold text-white">ClearPath Cyber</strong> division, we offer cybersecurity coaching, scam prevention, and privacy education designed specifically for older adults.
+              Through our <strong className="font-semibold text-white">Bright Path Cyber</strong> division, we offer cybersecurity coaching, scam prevention, and privacy education designed specifically for older adults.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/clearpath-cyber">
+              <Link href="/bright-path-cyber">
                 <button
                   className="px-7 py-3.5 rounded-lg font-semibold font-body text-white transition-all duration-200 hover:opacity-90 hover:shadow-lg"
                   style={{ backgroundColor: "oklch(0.58 0.12 185)" }}
@@ -122,7 +122,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ClearPath Cyber Feature Section */}
+      {/* Bright Path Cyber Feature Section */}
       <section className="py-24" style={{ backgroundColor: "oklch(0.98 0.005 80)" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
@@ -130,7 +130,7 @@ export default function Home() {
               <div className="teal-bar mb-5" />
               <div className="flex items-center gap-2 mb-3">
                 <span className="division-badge division-badge-cyber">
-                  <Shield size={11} /> ClearPath Cyber
+                  <Shield size={11} /> Bright Path Cyber
                 </span>
               </div>
               <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-5 leading-tight" style={{ color: "oklch(0.22 0.06 255)" }}>
@@ -138,7 +138,7 @@ export default function Home() {
                 <em className="not-italic" style={{ color: "oklch(0.50 0.12 185)" }}>made clear.</em>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-                Scammers specifically target older adults — and the threats are more sophisticated than ever. ClearPath Cyber gives seniors the knowledge and confidence to protect themselves online, without needing to become a tech expert.
+                Scammers specifically target older adults — and the threats are more sophisticated than ever. Bright Path Cyber gives seniors the knowledge and confidence to protect themselves online, without needing to become a tech expert.
               </p>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: "oklch(0.50 0.03 255)" }}>
                 We work one-on-one and in small groups, always at your pace, always in plain English.
@@ -156,7 +156,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link href="/clearpath-cyber">
+              <Link href="/bright-path-cyber">
                 <button
                   className="flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold font-body text-sm text-white transition-all hover:opacity-90"
                   style={{ backgroundColor: "oklch(0.50 0.12 185)" }}
@@ -170,8 +170,8 @@ export default function Home() {
             <RevealSection delay={150}>
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src={CLEARPATH_IMG}
-                  alt="ClearPath Cyber — senior cybersecurity coaching"
+                  src={BRIGHTPATH_IMG}
+                  alt="Bright Path Cyber — senior cybersecurity coaching"
                   className="w-full h-80 lg:h-96 object-cover object-center"
                 />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.22 0.06 255 / 0.6) 0%, transparent 50%)" }} />
@@ -190,7 +190,7 @@ export default function Home() {
                           The senior's guide to staying safe online — $27
                         </div>
                       </div>
-                      <Link href="/clearpath-cyber">
+                      <Link href="/bright-path-cyber">
                         <button
                           className="flex-shrink-0 px-3 py-1.5 rounded-lg font-semibold font-body text-xs text-white transition-all hover:opacity-90"
                           style={{ backgroundColor: "oklch(0.58 0.12 185)" }}
@@ -260,26 +260,26 @@ export default function Home() {
               Real People. Real Results.
             </h2>
             <p className="font-body" style={{ color: "oklch(0.45 0.03 255)" }}>
-              What our community is saying about ClearPath Cyber.
+              What our community is saying about Bright Path Cyber.
             </p>
           </RevealSection>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                quote: "I finally feel like I understand what to look out for online. ClearPath Cyber explained everything in a way that actually made sense to me.",
+                quote: "I finally feel like I understand what to look out for online. Bright Path Cyber explained everything in a way that actually made sense to me.",
                 name: "Margaret T.",
-                role: "ClearPath Cyber client, age 74",
+                role: "Bright Path Cyber client, age 74",
               },
               {
                 quote: "After being targeted by a phone scam, I was scared to use my computer at all. Nick helped me get my confidence back — and now I know exactly what to watch for.",
                 name: "Robert K.",
-                role: "ClearPath Cyber client, age 71",
+                role: "Bright Path Cyber client, age 71",
               },
               {
                 quote: "Nick and Mandie are the real deal. They genuinely care about the people they work with, and it shows in everything they do.",
                 name: "Carol S.",
-                role: "ClearPath Cyber client, age 68",
+                role: "Bright Path Cyber client, age 68",
               },
             ].map((testimonial, i) => (
               <RevealSection key={i} delay={i * 120}>
@@ -353,15 +353,15 @@ export default function Home() {
                 Ready to feel safer online?
               </h2>
               <p className="font-body text-lg mb-8 max-w-xl mx-auto" style={{ color: "oklch(0.78 0.03 255)" }}>
-                Book a free consultation with ClearPath Cyber and take the first step toward digital confidence — on your terms, at your pace.
+                Book a free consultation with Bright Path Cyber and take the first step toward digital confidence — on your terms, at your pace.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/clearpath-cyber">
+                <Link href="/bright-path-cyber">
                   <button
                     className="px-7 py-3.5 rounded-lg font-semibold font-body text-sm transition-all hover:opacity-90"
                     style={{ backgroundColor: "oklch(0.58 0.12 185)", color: "white" }}
                   >
-                    <span className="flex items-center gap-2"><Shield size={15} /> Explore ClearPath Cyber</span>
+                    <span className="flex items-center gap-2"><Shield size={15} /> Explore Bright Path Cyber</span>
                   </button>
                 </Link>
                 <Link href="/contact">

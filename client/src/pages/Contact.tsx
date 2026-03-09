@@ -117,8 +117,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-body text-xs font-semibold uppercase tracking-wide mb-0.5" style={{ color: "oklch(0.55 0.03 255)" }}>Email</div>
-                        <a href="mailto:nick@mcmillonco.com" className="font-body text-sm transition-colors hover:opacity-70" style={{ color: "oklch(0.22 0.06 255)" }}>
-                          nick@mcmillonco.com
+                        <a href="mailto:info@brightpathcyber.com" className="font-body text-sm transition-colors hover:opacity-70" style={{ color: "oklch(0.22 0.06 255)" }}>
+                          info@brightpathcyber.com
                         </a>
                       </div>
                     </div>
@@ -155,7 +155,7 @@ export default function Contact() {
                     <div className="p-4 rounded-lg" style={{ backgroundColor: "oklch(0.94 0.04 185)" }}>
                       <div className="flex items-center gap-2 mb-1">
                         <Shield size={14} style={{ color: "oklch(0.45 0.12 185)" }} />
-                        <span className="font-body font-semibold text-sm" style={{ color: "oklch(0.30 0.10 185)" }}>ClearPath Cyber</span>
+                        <span className="font-body font-semibold text-sm" style={{ color: "oklch(0.30 0.10 185)" }}>Bright Path Cyber</span>
                       </div>
                       <p className="font-body text-xs" style={{ color: "oklch(0.45 0.08 185)" }}>
                         Senior cybersecurity & digital safety
@@ -265,7 +265,7 @@ export default function Contact() {
                               onBlur={e => (e.target.style.borderColor = "oklch(0.88 0.01 255)")}
                             >
                               <option value="">Select a division</option>
-                              <option value="clearpath">ClearPath Cyber</option>
+                              <option value="brightpath">Bright Path Cyber</option>
                               <option value="launchpad">Launchpad Money</option>
                               <option value="general">General / McMillon Co.</option>
                               <option value="partnership">Partnership Inquiry</option>
@@ -364,8 +364,8 @@ export default function Contact() {
               </h3>
               <p className="font-body text-sm max-w-md mx-auto mb-6" style={{ color: "oklch(0.45 0.03 255)" }}>
                 Our online booking system is coming soon. In the meantime, send us a message using the form above or email us directly at{" "}
-                <a href="mailto:nick@mcmillonco.com" className="font-semibold transition-colors hover:opacity-70" style={{ color: "oklch(0.50 0.12 185)" }}>
-                  nick@mcmillonco.com
+                <a href="mailto:info@brightpathcyber.com" className="font-semibold transition-colors hover:opacity-70" style={{ color: "oklch(0.50 0.12 185)" }}>
+                  info@brightpathcyber.com
                 </a>{" "}
                 and we'll find a time that works.
               </p>

@@ -1,6 +1,6 @@
 /*
- * ClearPath Cyber Page — McMillon Co.
- * Design: Pacific Northwest Professional — Cool blue-teal tones
+ * Bright Path Cyber Page — McMillon Co.
+ * Design: Pacific Northwest Professional — Warm teal tones
  * Services overview, value ladder, "Click with Confidence" e-book, consultation CTA
  */
 
@@ -13,7 +13,7 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
-const CLEARPATH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/clearpath-hero-73twxQ26uz5nsRzHqpHNR6.webp";
+const BRIGHTPATH_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/clearpath-hero-73twxQ26uz5nsRzHqpHNR6.webp";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -55,7 +55,7 @@ const valueLadder = [
   { step: "05", title: "B2B Partnerships", desc: "Custom workshops and ongoing education programs for senior centers, healthcare providers, and community organizations.", cta: "Contact Us", price: "Custom", highlight: false },
 ];
 
-export default function ClearPathCyber() {
+export default function BrightPathCyber() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "oklch(0.98 0.005 80)" }}>
       <Navigation />
@@ -63,7 +63,7 @@ export default function ClearPathCyber() {
       {/* Hero */}
       <section className="relative pt-16 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img src={CLEARPATH_IMG} alt="ClearPath Cyber" className="w-full h-full object-cover object-center" />
+          <img src={BRIGHTPATH_IMG} alt="Bright Path Cyber" className="w-full h-full object-cover object-center" />
           <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, oklch(0.30 0.10 200 / 0.92) 0%, oklch(0.30 0.10 200 / 0.75) 50%, oklch(0.30 0.10 200 / 0.35) 100%)" }} />
         </div>
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-24 lg:py-32">
@@ -74,11 +74,11 @@ export default function ClearPathCyber() {
               </span>
             </div>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-5">
-              ClearPath<br />
+              Bright Path<br />
               <em className="not-italic" style={{ color: "oklch(0.80 0.10 185)" }}>Cyber</em>
             </h1>
             <p className="font-body text-xl leading-relaxed mb-3" style={{ color: "oklch(0.90 0.03 200)" }}>
-              Jargon-free cybersecurity and privacy guidance for seniors.
+              Warm, clear cybersecurity and privacy guidance for seniors.
             </p>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: "oklch(0.80 0.03 200)" }}>
               We help older adults navigate the digital world safely — without the tech overwhelm, the confusing acronyms, or the condescending explanations.
@@ -108,7 +108,7 @@ export default function ClearPathCyber() {
               Who We Serve
             </h2>
             <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-              ClearPath Cyber was built for adults 60 and older who want to use technology confidently — without living in fear of doing something wrong.
+              Bright Path Cyber was built for adults 60 and older who want to use technology confidently — without living in fear of doing something wrong.
             </p>
             <p className="font-body text-base leading-relaxed" style={{ color: "oklch(0.45 0.03 255)" }}>
               Our clients are sharp, capable people who simply haven't had anyone take the time to explain digital safety in terms that make sense. That's exactly what we do. We also work with adult children and caregivers who want to help their loved ones, and with organizations that serve senior populations.

@@ -3,7 +3,7 @@
  * Design: Pacific Northwest Professional
  * Deep navy background, teal accent on active/hover, DM Sans labels
  * Sticky top nav with smooth scroll behavior
- * ClearPath Cyber is the primary division — direct nav link
+ * Bright Path Cyber is the primary division — direct nav link
  */
 
 import { useState, useEffect } from "react";
@@ -13,7 +13,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
-  { href: "/clearpath-cyber", label: "Cyber Safety" },
+  { href: "/bright-path-cyber", label: "Cyber Safety" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];

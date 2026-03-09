@@ -1,6 +1,6 @@
 /*
  * App.tsx — McMillon Co.
- * Routes: Home, About, ClearPath Cyber, Launchpad Money, Blog, Contact
+ * Routes: Home, About, Bright Path Cyber, Launchpad Money, Blog, Contact
  */
 
 import { Toaster } from "@/components/ui/sonner";
@@ -11,7 +11,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import ClearPathCyber from "./pages/ClearPathCyber";
+import BrightPathCyber from "./pages/ClearPathCyber";
 import LaunchpadMoney from "./pages/LaunchpadMoney";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -21,7 +21,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
-      <Route path="/clearpath-cyber" component={ClearPathCyber} />
+      <Route path="/bright-path-cyber" component={BrightPathCyber} />
       <Route path="/launchpad-money" component={LaunchpadMoney} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
