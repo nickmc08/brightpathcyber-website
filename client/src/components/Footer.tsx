@@ -6,7 +6,9 @@
  */
 
 import { Link } from "wouter";
-import { MapPin, Mail, Shield, ArrowRight } from "lucide-react";
+import { MapPin, Mail, ArrowRight } from "lucide-react";
+
+const LOGO_FULL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-logo-full_9bdb655a.png";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -17,11 +19,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.58 0.12 185)" }}>
-                <Shield size={16} style={{ color: "white" }} />
+            <div className="mb-4">
+              {/* Logo on dark background — use the full logo with a white/light background pill */}
+              <div className="inline-block bg-white rounded-xl px-3 py-2">
+                <img
+                  src={LOGO_FULL}
+                  alt="Bright Path Cyber"
+                  className="h-9 w-auto object-contain"
+                  style={{ maxWidth: "180px" }}
+                />
               </div>
-              <span className="font-display font-semibold text-lg text-white">Bright Path Cyber</span>
             </div>
             <p className="text-sm leading-relaxed font-body mb-5" style={{ color: "oklch(0.72 0.03 255)" }}>
               Warm, jargon-free cybersecurity and privacy guidance for individuals and families — based in Kent, Washington.
@@ -65,7 +72,11 @@ export default function Footer() {
           {/* Cyber Safety */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Shield size={15} style={{ color: "oklch(0.58 0.12 185)" }} />
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-favicon_e6d7ef2d.png"
+                alt=""
+                className="w-5 h-5 object-contain"
+              />
               <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Cyber Safety</h4>
             </div>
             <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>

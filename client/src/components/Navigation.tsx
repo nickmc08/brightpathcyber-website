@@ -8,7 +8,10 @@
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Shield } from "lucide-react";
+import { Menu, X } from "lucide-react";
+
+const LOGO_FULL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-logo-full_9bdb655a.png";
+const LOGO_ICON = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-favicon_e6d7ef2d.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -47,24 +50,19 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center gap-2.5 group">
-              <div
-                className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                style={{ backgroundColor: "oklch(0.22 0.06 255)" }}
-              >
-                <Shield size={16} style={{ color: "oklch(0.72 0.10 185)" }} />
-              </div>
-              <div className="flex flex-col leading-none">
-                <span
-                  className="font-display font-semibold text-base tracking-tight"
-                  style={{ color: "oklch(0.22 0.06 255)" }}
-                >
-                  Bright Path Cyber
-                </span>
-                <span className="text-xs font-body" style={{ color: "oklch(0.50 0.03 255)" }}>
-                  Personal Cybersecurity Guidance
-                </span>
-              </div>
+            <div className="flex items-center group">
+              {/* Full logo on desktop, icon-only on mobile */}
+              <img
+                src={LOGO_FULL}
+                alt="Bright Path Cyber"
+                className="hidden sm:block h-10 w-auto object-contain"
+                style={{ maxWidth: "200px" }}
+              />
+              <img
+                src={LOGO_ICON}
+                alt="Bright Path Cyber"
+                className="block sm:hidden h-9 w-9 object-contain"
+              />
             </div>
           </Link>
 
