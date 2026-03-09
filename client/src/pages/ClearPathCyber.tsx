@@ -43,7 +43,7 @@ const services = [
   { icon: Lock, title: "Password & Account Security", desc: "Set up strong passwords, understand two-factor authentication, and learn how to manage your accounts safely — without the tech headache.", color: "oklch(0.94 0.04 185)" },
   { icon: Eye, title: "Privacy Settings Review", desc: "We walk through your devices and accounts to adjust privacy settings in plain English, so you're sharing only what you want to share.", color: "oklch(0.94 0.04 185)" },
   { icon: Smartphone, title: "Device Safety Basics", desc: "From smartphones to tablets to computers — we help you understand your devices, keep them updated, and use them with confidence.", color: "oklch(0.94 0.04 185)" },
-  { icon: Users, title: "Family & Caregiver Sessions", desc: "We offer sessions designed for adult children and caregivers who want to help their loved ones stay safe online.", color: "oklch(0.94 0.04 185)" },
+  { icon: Users, title: "Family & Group Sessions", desc: "We offer sessions designed for families, caregivers, and small groups who want to learn digital safety together.", color: "oklch(0.94 0.04 185)" },
   { icon: Video, title: "B2B & Community Workshops", desc: "We partner with libraries, healthcare providers, employers, and community organizations to deliver group cybersecurity education.", color: "oklch(0.94 0.04 185)" },
 ];
 

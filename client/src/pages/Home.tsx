@@ -8,8 +8,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import {
-  Shield, CheckCircle, ArrowRight, Star, Users, BookOpen, Award,
-  Lock, Eye, AlertTriangle, Rocket
+  Shield, CheckCircle, ArrowRight, Users, BookOpen, Award,
+  Lock, Eye, AlertTriangle, Rocket, User, Home as HomeIcon, Building2, HeartHandshake
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -249,59 +249,99 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20" style={{ backgroundColor: "oklch(0.95 0.008 80)" }}>
+      {/* Who We Help */}
+      <section className="py-24" style={{ backgroundColor: "oklch(0.95 0.008 80)" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <RevealSection className="text-center mb-12">
-            <h2 className="font-display text-3xl font-semibold mb-3" style={{ color: "oklch(0.22 0.06 255)" }}>
-              Real People. Real Results.
+          <RevealSection className="mb-14">
+            <div className="teal-bar mb-5" style={{ backgroundColor: "oklch(0.58 0.12 185)" }} />
+            <h2 className="font-display text-4xl sm:text-5xl font-semibold mb-4 leading-tight" style={{ color: "oklch(0.22 0.06 255)" }}>
+              Who We Help
             </h2>
-            <p className="font-body" style={{ color: "oklch(0.45 0.03 255)" }}>
-              What our community is saying about Bright Path Cyber.
+            <p className="font-body text-lg max-w-2xl" style={{ color: "oklch(0.45 0.03 255)" }}>
+              Bright Path Cyber serves anyone who wants to feel safer and more confident online — no matter your background, age, or tech experience.
             </p>
           </RevealSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                quote: "I finally feel like I understand what to look out for online. Bright Path Cyber explained everything in a way that actually made sense to me.",
-                name: "Margaret T.",
-                role: "Bright Path Cyber client",
+                icon: User,
+                label: "Individuals",
+                desc: "Anyone who wants to understand and manage their own digital safety — at their own pace, without the tech overwhelm.",
+                highlights: ["1-on-1 coaching sessions", "Device & account reviews", "Scam awareness training"],
+                accent: "oklch(0.94 0.04 185)",
+                accentStrong: "oklch(0.50 0.12 185)",
+                accentText: "oklch(0.35 0.10 185)",
               },
               {
-                quote: "After being targeted by a phone scam, I was scared to use my computer at all. Nick helped me get my confidence back — and now I know exactly what to watch for.",
-                name: "Robert K.",
-                role: "Bright Path Cyber client",
+                icon: HomeIcon,
+                label: "Families",
+                desc: "Protect everyone under your roof — from kids learning to navigate social media to parents managing online accounts.",
+                highlights: ["Family group sessions", "Parental guidance tools", "Shared safety practices"],
+                accent: "oklch(0.93 0.04 220)",
+                accentStrong: "oklch(0.48 0.12 220)",
+                accentText: "oklch(0.32 0.10 220)",
               },
               {
-                quote: "Nick and Mandie are the real deal. They genuinely care about the people they work with, and it shows in everything they do.",
-                name: "Carol S.",
-                role: "Bright Path Cyber client",
+                icon: Building2,
+                label: "Small Businesses",
+                desc: "Protect your business, your customers, and your reputation with practical cybersecurity guidance built for small teams.",
+                highlights: ["Team security training", "Email & account safety", "Data protection basics"],
+                accent: "oklch(0.94 0.03 260)",
+                accentStrong: "oklch(0.45 0.10 260)",
+                accentText: "oklch(0.30 0.08 260)",
               },
-            ].map((testimonial, i) => (
-              <RevealSection key={i} delay={i * 120}>
-                <div className="p-7 rounded-2xl h-full flex flex-col" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}>
-                  <div className="flex gap-0.5 mb-4">
-                    {Array.from({ length: 5 }).map((_, j) => (
-                      <Star key={j} size={14} fill="oklch(0.75 0.16 75)" style={{ color: "oklch(0.75 0.16 75)" }} />
-                    ))}
+              {
+                icon: HeartHandshake,
+                label: "Community Groups",
+                desc: "Libraries, faith communities, nonprofits, and civic organizations — we bring cybersecurity education to the people who need it most.",
+                highlights: ["Group workshops", "Custom presentations", "Ongoing partnerships"],
+                accent: "oklch(0.95 0.04 145)",
+                accentStrong: "oklch(0.45 0.12 145)",
+                accentText: "oklch(0.30 0.10 145)",
+              },
+            ].map((persona, i) => (
+              <RevealSection key={persona.label} delay={i * 100}>
+                <div
+                  className="rounded-2xl p-7 h-full flex flex-col"
+                  style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)", boxShadow: "0 2px 12px oklch(0 0 0 / 0.04)" }}
+                >
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center mb-5 flex-shrink-0"
+                    style={{ backgroundColor: persona.accent }}
+                  >
+                    <persona.icon size={22} style={{ color: persona.accentStrong }} />
                   </div>
-                  <p className="font-body text-sm leading-relaxed flex-1 mb-5 italic" style={{ color: "oklch(0.40 0.03 255)" }}>
-                    "{testimonial.quote}"
+                  <h3 className="font-display text-xl font-semibold mb-2" style={{ color: "oklch(0.22 0.06 255)" }}>
+                    {persona.label}
+                  </h3>
+                  <p className="font-body text-sm leading-relaxed mb-5 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
+                    {persona.desc}
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-semibold font-body" style={{ backgroundColor: "oklch(0.94 0.04 185)", color: "oklch(0.35 0.08 185)" }}>
-                      {testimonial.name[0]}
-                    </div>
-                    <div>
-                      <div className="font-semibold font-body text-sm" style={{ color: "oklch(0.22 0.06 255)" }}>{testimonial.name}</div>
-                      <div className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>{testimonial.role}</div>
-                    </div>
-                  </div>
+                  <ul className="space-y-2">
+                    {persona.highlights.map((h) => (
+                      <li key={h} className="flex items-center gap-2">
+                        <CheckCircle size={13} style={{ color: persona.accentStrong }} className="flex-shrink-0" />
+                        <span className="font-body text-xs" style={{ color: "oklch(0.40 0.03 255)" }}>{h}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </RevealSection>
             ))}
           </div>
+
+          <RevealSection className="mt-10 text-center">
+            <Link href="/contact">
+              <button
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-lg font-semibold font-body text-sm text-white transition-all hover:opacity-90"
+                style={{ backgroundColor: "oklch(0.50 0.12 185)" }}
+              >
+                Find the right fit for you
+                <ArrowRight size={15} />
+              </button>
+            </Link>
+          </RevealSection>
         </div>
       </section>
 

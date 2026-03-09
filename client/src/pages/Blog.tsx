@@ -98,6 +98,82 @@ If you think you've been targeted by a scam, report it to the FTC at reportfraud
     `.trim(),
   },
   {
+    id: "is-this-website-safe",
+    title: "How to Tell If a Website Is Safe Before You Enter Your Information",
+    excerpt: "Before you type your name, email, or credit card number into any website, there are a few quick checks that can tell you a lot about whether it's trustworthy — or not.",
+    division: "Bright Path Cyber",
+    divisionColor: "cyber",
+    date: "March 7, 2026",
+    readTime: "6 min read",
+    icon: Shield,
+    content: `
+Every day, people enter personal information into websites without thinking twice. Your name, your address, your credit card number, your Social Security number. And most of the time, that's fine — the site is legitimate, the connection is secure, and nothing bad happens.
+
+But sometimes it's not fine. Fake websites, phishing pages, and lookalike sites are designed specifically to trick you into handing over your information. The good news is that a few simple checks can tell you a lot about whether a site is trustworthy — before you type a single character.
+
+## Check for HTTPS — But Don't Stop There
+
+You've probably heard that you should look for the padlock icon in your browser's address bar. That padlock means the connection between your browser and the website is encrypted — which is a good thing. It means your information can't be intercepted in transit.
+
+But here's what a lot of people don't realize: the padlock does not mean the website itself is legitimate. Scammers can — and do — set up fake websites with valid HTTPS certificates. The padlock just means the connection is secure. It says nothing about whether the people running the site are trustworthy.
+
+So yes, check for HTTPS. But don't stop there.
+
+## Look Carefully at the Web Address
+
+The web address (also called the URL) is one of the most reliable ways to spot a fake site — if you know what to look for.
+
+Legitimate websites have clean, recognizable addresses. A scam site might look almost identical but with a small change: an extra letter, a hyphen, or a different ending. For example:
+
+**Real:** www.paypal.com
+**Fake:** www.paypa1.com or www.paypal-secure-login.com
+
+Always look at the part of the address just before the first single slash. That's the actual domain. Everything before it is just a subdomain and can say anything. A site at "paypal.fake-login.com" is not a PayPal site — it belongs to fake-login.com.
+
+When in doubt, don't click a link. Instead, type the address directly into your browser, or search for the company and navigate from the official search result.
+
+## Look Up the Company Before You Buy
+
+If you've landed on an unfamiliar shopping site or a business you've never heard of, take two minutes to look them up before entering any payment information.
+
+Search for the company name along with words like "reviews," "scam," or "complaints." Check sites like the Better Business Bureau (bbb.org) or Trustpilot. Look for a physical address and a real phone number on their contact page — and consider calling it.
+
+A legitimate business will have a traceable presence. A scam site often has none.
+
+## Watch for Pressure Tactics and Urgency
+
+Legitimate websites don't pressure you. If a site is flashing countdown timers, warning you that your account will be suspended if you don't act immediately, or offering a deal that expires in the next 10 minutes — slow down.
+
+Urgency is a manipulation tactic. It's designed to short-circuit your judgment and get you to act before you think. Whenever you feel rushed online, that's exactly the moment to pause.
+
+## Check the Privacy Policy and Contact Information
+
+This sounds boring, but it's genuinely useful. A real company will have a privacy policy that explains how they handle your data. They'll have a real contact page with an address, a phone number, or at minimum a working email.
+
+If a site has no contact information, no privacy policy, or only a generic contact form with no other details — that's a red flag.
+
+## When Something Feels Off, Trust That Feeling
+
+This is perhaps the most underrated piece of advice: if something about a website feels wrong, pay attention to that feeling. Maybe the design looks slightly off. Maybe the writing has unusual grammar. Maybe the deal seems too good to be true.
+
+Your instincts are often picking up on real signals, even when you can't articulate exactly what they are. You don't need to be able to explain why something feels suspicious to decide not to enter your information.
+
+The cost of being cautious is low. The cost of ignoring a warning sign can be significant.
+
+---
+
+## A Quick Checklist Before You Enter Your Information
+
+1. Does the address bar show HTTPS and a padlock?
+2. Does the web address look exactly right — no extra letters, hyphens, or unfamiliar domains?
+3. Have you verified the company through a quick search?
+4. Is there real contact information on the site?
+5. Does anything feel off?
+
+If you answered no to any of these, take a step back before proceeding. And if you'd like to walk through how to spot unsafe sites on your own devices — that's exactly the kind of thing Bright Path Cyber is here to help with.
+    `.trim(),
+  },
+  {
     id: "password-front-door",
     title: "Why Your Password Is the Front Door to Your Digital Life",
     excerpt: "Most people use the same password for everything. Here's why that's a problem — and a simple system that actually works for real people.",
