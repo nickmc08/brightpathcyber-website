@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Clock, Shield, Rocket, Send, CheckCircle, Calendar } from "lucide-react";
+import { Mail, MapPin, Clock, Shield, Send, CheckCircle, Calendar } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -161,15 +161,6 @@ export default function Contact() {
                         Personal cybersecurity & digital safety
                       </p>
                     </div>
-                    <div className="p-4 rounded-lg" style={{ backgroundColor: "oklch(0.96 0.05 75)" }}>
-                      <div className="flex items-center gap-2 mb-1">
-                        <Rocket size={14} style={{ color: "oklch(0.50 0.14 75)" }} />
-                        <span className="font-body font-semibold text-sm" style={{ color: "oklch(0.35 0.12 75)" }}>Launchpad Money</span>
-                      </div>
-                      <p className="font-body text-xs" style={{ color: "oklch(0.50 0.08 75)" }}>
-                        Youth financial education & coaching
-                      </p>
-                    </div>
                   </div>
                 </div>
               </RevealSection>
@@ -266,7 +257,6 @@ export default function Contact() {
                             >
                               <option value="">Select a division</option>
                               <option value="brightpath">Bright Path Cyber</option>
-                              <option value="launchpad">Launchpad Money</option>
                               <option value="general">General Inquiry</option>
                               <option value="partnership">Partnership Inquiry</option>
                             </select>
@@ -363,7 +353,7 @@ export default function Contact() {
                 Online Scheduling
               </h3>
               <p className="font-body text-sm max-w-md mx-auto mb-6" style={{ color: "oklch(0.45 0.03 255)" }}>
-                Our online booking system is coming soon. In the meantime, send us a message using the form above or email us directly at{" "}
+                Our online booking system is being set up. In the meantime, send us a message using the form above or email us directly at{" "}
                 <a href="mailto:info@brightpathcyber.com" className="font-semibold transition-colors hover:opacity-70" style={{ color: "oklch(0.50 0.12 185)" }}>
                   info@brightpathcyber.com
                 </a>{" "}
@@ -371,7 +361,7 @@ export default function Contact() {
               </p>
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold font-body" style={{ backgroundColor: "oklch(0.94 0.04 185)", color: "oklch(0.40 0.10 185)" }}>
                 <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "oklch(0.50 0.12 185)" }} />
-                Online booking coming soon
+                Online booking — available soon
               </div>
             </div>
           </RevealSection>
@@ -392,7 +382,7 @@ export default function Contact() {
               { q: "Do you offer virtual sessions?", a: "Yes — all of our coaching and consulting sessions are available both in-person (Kent, WA area) and virtually via video call." },
               { q: "How long is a typical consultation?", a: "Initial consultations are 30 minutes and free of charge. Follow-up coaching sessions are typically 60 minutes." },
               { q: "Do you work with organizations?", a: "Absolutely. We offer B2B workshops and partnership programs for employers, schools, libraries, healthcare providers, and community organizations." },
-              { q: "What age range does Launchpad Money serve?", a: "Our primary focus is high school students (14–18) and young adults (18–25), though we adapt our approach for each individual." },
+              { q: "What topics do your workshops cover?", a: "Our workshops cover scam awareness, password and account security, privacy settings, safe browsing, and device safety basics — all in plain, jargon-free language." },
             ].map((faq, i) => (
               <RevealSection key={i} delay={i * 80}>
                 <div className="p-6 rounded-xl" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}>

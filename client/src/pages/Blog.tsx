@@ -1,12 +1,12 @@
 /*
  * Blog Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
- * 3 initial blog posts: scams, passwords, teen money talk
+ * 4 blog posts: scams, website safety, passwords, all Bright Path Cyber
  */
 
 import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { Shield, Rocket, Clock, ArrowRight, ChevronLeft } from "lucide-react";
+import { Shield, Clock, ArrowRight, ChevronLeft } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -235,71 +235,6 @@ You don't have to overhaul everything at once. Start here:
 Small steps, taken consistently, add up to real protection. And if you'd like to walk through any of this with someone who can explain it in plain English — that's exactly what Bright Path Cyber is here for.
     `.trim(),
   },
-  {
-    id: "money-talk-teens",
-    title: "The Money Talk Your Teen Needs Before They Leave Home",
-    excerpt: "Most parents want to have the money conversation with their kids. Most don't know where to start. Here's a practical guide to what to cover — and how.",
-    division: "Launchpad Money",
-    divisionColor: "money",
-    date: "January 30, 2026",
-    readTime: "8 min read",
-    icon: Rocket,
-    content: `
-Your teenager is going to leave home. Maybe in a year. Maybe in three. And when they do, they're going to face a world full of financial decisions — rent, credit cards, student loans, car payments, health insurance — that most of them have never been prepared for.
-
-This isn't a criticism of parents. It's a gap in the system. Schools rarely teach practical money skills. Financial literacy is often treated as something kids will "figure out" on their own. And the result, for millions of young adults, is a painful and expensive education in what not to do.
-
-You can change that. Here's what to cover — and how to have the conversation without it turning into a lecture.
-
-## Start With the Basics of a Paycheck
-
-Most teens have no idea what happens between "you earn $15 an hour" and "you take home $11.40." Walk them through a real or sample pay stub. Show them what FICA is. Explain the difference between gross and net income. Help them understand that the number on the job listing is not the number that hits their bank account.
-
-This one conversation prevents a lot of first-month budget disasters.
-
-## Teach the Difference Between Needs and Wants — Without Moralizing
-
-The classic "needs vs. wants" framework is useful, but it lands better when it's practical rather than preachy. Instead of lecturing, try this: sit down together and list out what their monthly expenses would actually look like if they were on their own. Rent. Utilities. Groceries. Phone. Transportation. Health insurance.
-
-The numbers are usually eye-opening. Most teens significantly underestimate the cost of independent living — and seeing it in concrete terms is far more effective than any abstract lesson about "being responsible with money."
-
-## Explain Credit Before They Get a Credit Card
-
-Credit card companies actively market to young adults. Your teenager will likely receive offers the moment they turn 18. Without a foundation of understanding, credit cards can quickly become a source of high-interest debt that takes years to pay off.
-
-Cover the basics: what a credit score is and why it matters, how interest works (especially the minimum payment trap), and how to use a credit card as a tool rather than a source of extra money. The goal is to build credit responsibly — not to avoid credit entirely.
-
-A good rule of thumb for beginners: only charge what you can pay off in full at the end of the month.
-
-## Introduce the Concept of Paying Yourself First
-
-One of the most powerful financial habits is also one of the simplest: before you pay any bill or make any purchase, set aside a portion of your income for savings. Even 10% is a meaningful start.
-
-The psychological trick is automation. If savings come out of your paycheck before you ever see the money, you don't miss it. Help your teen set up an automatic transfer to a savings account — even a small one — so the habit is built in from day one.
-
-## Talk About Student Loans Before They Sign Anything
-
-If college is in the picture, this conversation is urgent. Student loans are one of the most consequential financial decisions a young person will make, and they're often signed with very little understanding of what they actually mean.
-
-Walk through the difference between federal and private loans. Explain interest capitalization — how interest accrues while you're in school and gets added to your principal. Help them understand what monthly payments will actually look like after graduation, using real numbers from the loan amount they're considering.
-
-The goal isn't to discourage higher education. It's to make sure the decision is informed.
-
-## Make It a Conversation, Not a Lecture
-
-The most important thing about this money talk is that it's a talk — not a presentation. Ask questions. Share your own experiences, including mistakes. Normalize the fact that personal finance is something everyone figures out over time, and that it's okay to not know everything.
-
-Young people are far more receptive to financial guidance when it feels like a conversation between equals rather than a lesson from an authority figure. Your job isn't to have all the answers — it's to open the door.
-
-## When to Get Outside Help
-
-Sometimes the best thing a parent can do is bring in a third party. A financial educator who works specifically with teens and young adults can cover the same material in a format that resonates differently — without the parent-child dynamic that can sometimes get in the way.
-
-At Launchpad Money, we work with teens, young adults, and families to build the financial foundation that school never provided. Whether it's a one-time workshop, a coaching series, or a parent-teen session together — we meet young people where they are and give them tools they'll actually use.
-
-The money talk doesn't have to be perfect. It just has to happen.
-    `.trim(),
-  },
 ];
 
 function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void }) {
@@ -392,9 +327,7 @@ function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void 
               Want personalized guidance?
             </h3>
             <p className="font-body text-sm mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-              {isCyber
-                ? "Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace."
-                : "Launchpad Money offers coaching programs for teens, young adults, and families ready to build financial confidence."}
+              Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace.
             </p>
             <Link href="/contact">
               <button
@@ -527,54 +460,6 @@ export default function Blog() {
               </RevealSection>
             ))}
           </div>
-
-          {/* Launchpad Money post — archived / coming soon context */}
-          {posts.filter(p => p.divisionColor === "money").length > 0 && (
-            <RevealSection className="mt-12">
-              <div className="mb-5 flex items-center gap-3">
-                <div className="h-px flex-1" style={{ backgroundColor: "oklch(0.88 0.01 255)" }} />
-                <span className="text-xs font-semibold font-body uppercase tracking-widest px-3" style={{ color: "oklch(0.60 0.03 255)" }}>From Our Archive</span>
-                <div className="h-px flex-1" style={{ backgroundColor: "oklch(0.88 0.01 255)" }} />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {posts.filter(p => p.divisionColor === "money").map((post, i) => (
-                  <RevealSection key={post.id} delay={i * 100}>
-                    <button onClick={() => setActivePost(post.id)} className="w-full text-left group">
-                      <div className="rounded-2xl overflow-hidden card-lift h-full flex flex-col" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)", opacity: 0.85 }}>
-                        <div className="h-28 flex items-center justify-center" style={{ backgroundColor: "oklch(0.96 0.05 75)" }}>
-                          <Rocket size={36} style={{ color: "oklch(0.55 0.14 75)" }} />
-                        </div>
-                        <div className="p-6 flex flex-col flex-1">
-                          <div className="flex items-center gap-2 mb-3">
-                            <span className="division-badge division-badge-money">
-                              <Rocket size={11} /> {post.division}
-                            </span>
-                            <span className="text-xs font-body px-2 py-0.5 rounded-full" style={{ backgroundColor: "oklch(0.88 0.10 75)", color: "oklch(0.40 0.12 75)" }}>Coming Soon Division</span>
-                          </div>
-                          <h2 className="font-display text-lg font-semibold mb-2 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
-                            {post.title}
-                          </h2>
-                          <p className="font-body text-sm leading-relaxed mb-4 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
-                            {post.excerpt}
-                          </p>
-                          <div className="flex items-center justify-between mt-auto">
-                            <div className="flex items-center gap-2 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
-                              <span>{post.date}</span>
-                              <span>·</span>
-                              <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
-                            </div>
-                            <div className="flex items-center gap-1.5 font-semibold font-body text-xs group-hover:gap-2.5 transition-all" style={{ color: "oklch(0.55 0.14 75)" }}>
-                              Read <ArrowRight size={12} />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </button>
-                  </RevealSection>
-                ))}
-              </div>
-            </RevealSection>
-          )}
 
           {/* Newsletter CTA */}
           <RevealSection className="mt-16">

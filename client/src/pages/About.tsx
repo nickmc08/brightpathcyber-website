@@ -81,9 +81,6 @@ export default function About() {
                 <p>
                   That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — focused on giving individuals and families the cybersecurity and privacy knowledge they need to feel safe and confident online.
                 </p>
-                <p>
-                  We're also building <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, a youth financial literacy division for high schoolers and young adults — coming soon.
-                </p>
               </div>
             </RevealSection>
 
@@ -213,7 +210,7 @@ export default function About() {
               {
                 name: "Mandie McMillon",
                 title: "Co-Founder & Consultant, Bright Path Cyber",
-                bio: "Mandie brings a background in education and community outreach to Bright Path Cyber. She is currently developing Launchpad Money — a financial literacy program for high schoolers and young adults — drawing on her belief that financial confidence is a skill anyone can build with the right support.",
+                bio: "Mandie brings a background in education and community outreach to Bright Path Cyber. She believes that everyone deserves to feel confident and safe in the digital world, and she is dedicated to making cybersecurity guidance accessible, approachable, and genuinely useful for real people.",
                 initials: "MM",
                 accent: "oklch(0.96 0.05 75)",
                 accentText: "oklch(0.50 0.14 75)",

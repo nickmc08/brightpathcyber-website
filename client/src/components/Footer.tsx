@@ -2,10 +2,11 @@
  * Footer — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Deep navy background, warm white text, teal accents
+ * 3-column layout: Brand | Company | Cyber Safety
  */
 
 import { Link } from "wouter";
-import { MapPin, Mail, Shield, Rocket, ArrowRight } from "lucide-react";
+import { MapPin, Mail, Shield, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -13,9 +14,9 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: "oklch(0.22 0.06 255)" }} className="text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.58 0.12 185)" }}>
                 <Shield size={16} style={{ color: "white" }} />
@@ -61,7 +62,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Bright Path Cyber */}
+          {/* Cyber Safety */}
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield size={15} style={{ color: "oklch(0.58 0.12 185)" }} />
@@ -81,32 +82,6 @@ export default function Footer() {
                   <Link href={link.href}>
                     <span className="text-sm font-body transition-colors hover:text-white flex items-center gap-1 group" style={{ color: "oklch(0.72 0.03 255)" }}>
                       <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "oklch(0.58 0.12 185)" }} />
-                      {link.label}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Launchpad Money */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Rocket size={15} style={{ color: "oklch(0.75 0.16 75)" }} />
-              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Launchpad Money</h4>
-            </div>
-            <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Financial education for young adults — coming soon.
-            </p>
-            <ul className="space-y-2.5">
-              {[
-                { href: "/launchpad-money", label: "Coming Soon" },
-                { href: "/contact", label: "Get Notified" },
-              ].map((link) => (
-                <li key={link.label}>
-                  <Link href={link.href}>
-                    <span className="text-sm font-body transition-colors hover:text-white flex items-center gap-1 group" style={{ color: "oklch(0.72 0.03 255)" }}>
-                      <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "oklch(0.75 0.16 75)" }} />
                       {link.label}
                     </span>
                   </Link>

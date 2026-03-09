@@ -2,14 +2,14 @@
  * Home Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Left-anchored editorial layout, Fraunces display, DM Sans body
- * Sections: Hero (Bright Path Cyber focus), feature section, Value Proposition, Testimonials, Coming Soon teaser, CTA
+ * Sections: Hero, Feature section, Value Proposition, Who We Help, CTA
  */
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
 import {
   Shield, CheckCircle, ArrowRight, Users, BookOpen, Award,
-  Lock, Eye, AlertTriangle, Rocket, User, Home as HomeIcon, Building2, HeartHandshake
+  Lock, Eye, AlertTriangle, User, Home as HomeIcon, Building2, HeartHandshake
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -341,41 +341,6 @@ export default function Home() {
                 <ArrowRight size={15} />
               </button>
             </Link>
-          </RevealSection>
-        </div>
-      </section>
-
-      {/* Coming Soon — Launchpad Money Teaser */}
-      <section className="py-16" style={{ backgroundColor: "oklch(0.98 0.005 80)" }}>
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <RevealSection>
-            <div
-              className="rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6"
-              style={{ backgroundColor: "oklch(0.96 0.04 75 / 0.5)", border: "1.5px dashed oklch(0.80 0.10 75)" }}
-            >
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.96 0.05 75)" }}>
-                <Rocket size={22} style={{ color: "oklch(0.55 0.14 75)" }} />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <span className="text-xs font-semibold font-body px-2.5 py-0.5 rounded-full uppercase tracking-wide" style={{ backgroundColor: "oklch(0.88 0.10 75)", color: "oklch(0.40 0.12 75)" }}>
-                    Coming Soon
-                  </span>
-                </div>
-                <h3 className="font-display text-xl font-semibold mb-1.5" style={{ color: "oklch(0.28 0.08 60)" }}>
-                  Launchpad Money — Financial Education for the Next Generation
-                </h3>
-                <p className="font-body text-sm" style={{ color: "oklch(0.45 0.08 60)" }}>
-                  We're developing a youth financial literacy division for high schoolers and young adults. Stay tuned — or{" "}
-                  <Link href="/contact">
-                    <span className="font-semibold underline underline-offset-2 cursor-pointer transition-opacity hover:opacity-70" style={{ color: "oklch(0.50 0.14 75)" }}>
-                      reach out
-                    </span>
-                  </Link>{" "}
-                  if you'd like to be notified when it launches.
-                </p>
-              </div>
-            </div>
           </RevealSection>
         </div>
       </section>

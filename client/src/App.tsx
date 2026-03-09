@@ -1,6 +1,6 @@
 /*
  * App.tsx — Bright Path Cyber
- * Routes: Home, About, Bright Path Cyber, Launchpad Money, Blog, Contact
+ * Routes: Home, About, Bright Path Cyber, Blog, Contact
  */
 
 import { Toaster } from "@/components/ui/sonner";
@@ -12,7 +12,6 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import BrightPathCyber from "./pages/ClearPathCyber";
-import LaunchpadMoney from "./pages/LaunchpadMoney";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
@@ -22,7 +21,6 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/about" component={About} />
       <Route path="/bright-path-cyber" component={BrightPathCyber} />
-      <Route path="/launchpad-money" component={LaunchpadMoney} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
       <Route path="/404" component={NotFound} />
