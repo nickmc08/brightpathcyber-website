@@ -1,7 +1,7 @@
 /*
- * About Page — McMillon Co.
+ * About Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
- * Story, mission/vision, team section (Nick & Mandie McMillon)
+ * Story, mission/vision, team section (Nick & Mandie)
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -53,10 +53,10 @@ export default function About() {
           <div className="max-w-2xl">
             <div className="teal-bar mb-5" style={{ backgroundColor: "oklch(0.58 0.12 185)" }} />
             <h1 className="font-display text-5xl sm:text-6xl font-semibold text-white mb-5 leading-tight">
-              About<br />McMillon Co.
+              About<br />Bright Path Cyber
             </h1>
             <p className="font-body text-lg leading-relaxed" style={{ color: "oklch(0.78 0.03 255)" }}>
-              A consulting firm born from a simple belief: that everyone deserves guidance they can understand and trust.
+              Born from a simple belief: that every senior deserves digital safety guidance they can understand and trust.
             </p>
           </div>
         </div>
@@ -73,16 +73,16 @@ export default function About() {
               </h2>
               <div className="space-y-4 font-body text-base leading-relaxed" style={{ color: "oklch(0.40 0.03 255)" }}>
                 <p>
-                  McMillon Co. was founded by Nick and Mandie McMillon in Kent, Washington — a community they've called home for years and one they're deeply committed to serving.
+                  Bright Path Cyber was founded by Nick and Mandie in Kent, Washington — a community they've called home for years and one they're deeply committed to serving.
                 </p>
                 <p>
                   The idea came from a frustration Nick saw up close: his own parents struggling to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
                 </p>
                 <p>
-                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — McMillon Co.'s primary division, focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
+                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
                 </p>
                 <p>
-                  McMillon Co. is built to grow. A youth financial literacy division, <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, is currently in development — reflecting the same commitment to clear, practical guidance across generations.
+                  We're also building <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, a youth financial literacy division for high schoolers and young adults — coming soon.
                 </p>
               </div>
             </RevealSection>
@@ -95,7 +95,7 @@ export default function About() {
                 />
                 <img
                   src={TEAM_IMG}
-                  alt="Nick and Mandie McMillon"
+                  alt="Nick and Mandie — Bright Path Cyber founders"
                   className="relative z-10 w-full rounded-2xl object-cover shadow-xl"
                   style={{ aspectRatio: "4/3" }}
                 />
@@ -144,7 +144,7 @@ export default function About() {
                   Our Vision
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "oklch(0.78 0.03 255)" }}>
-                  A Pacific Northwest where every senior feels safe online and every young adult enters adulthood financially prepared. We envision McMillon Co. as the trusted consulting partner for families across generations — growing our divisions, deepening our impact, and never losing sight of the people behind every conversation.
+                  A Pacific Northwest where every senior feels safe online and every young adult enters adulthood financially prepared. We envision Bright Path Cyber as the trusted digital safety partner for families across generations — growing our reach, deepening our impact, and never losing sight of the people behind every conversation.
                 </p>
               </div>
             </RevealSection>
@@ -196,7 +196,7 @@ export default function About() {
               Meet the Team
             </h2>
             <p className="font-body mt-3" style={{ color: "oklch(0.45 0.03 255)" }}>
-              McMillon Co. is a family-led firm built on personal accountability and genuine relationships.
+              Bright Path Cyber is a family-led business built on personal accountability and genuine relationships.
             </p>
           </RevealSection>
 
@@ -212,8 +212,8 @@ export default function About() {
               },
               {
                 name: "Mandie McMillon",
-                title: "Co-Founder & Consultant, McMillon Co.",
-                bio: "Mandie brings a background in education and community outreach to McMillon Co. She is currently developing Launchpad Money — a financial literacy program for high schoolers and young adults — drawing on her belief that financial confidence is a skill anyone can build with the right support.",
+                title: "Co-Founder & Consultant, Bright Path Cyber",
+                bio: "Mandie brings a background in education and community outreach to Bright Path Cyber. She is currently developing Launchpad Money — a financial literacy program for high schoolers and young adults — drawing on her belief that financial confidence is a skill anyone can build with the right support.",
                 initials: "MM",
                 accent: "oklch(0.96 0.05 75)",
                 accentText: "oklch(0.50 0.14 75)",

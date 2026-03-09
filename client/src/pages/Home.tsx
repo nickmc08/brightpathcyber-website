@@ -1,5 +1,5 @@
 /*
- * Home Page — McMillon Co.
+ * Home Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Left-anchored editorial layout, Fraunces display, DM Sans body
  * Sections: Hero (Bright Path Cyber focus), feature section, Value Proposition, Testimonials, Coming Soon teaser, CTA
@@ -64,7 +64,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={HERO_IMG}
-            alt="McMillon Co. consulting"
+            alt="Bright Path Cyber — senior cybersecurity coaching"
             className="w-full h-full object-cover object-center"
           />
           <div
@@ -90,10 +90,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl font-body leading-relaxed mb-3" style={{ color: "oklch(0.85 0.02 255)" }}>
-              McMillon Co. helps seniors 60+ navigate the digital world safely — with clear, jargon-free guidance from people who genuinely care.
-            </p>
-            <p className="text-base font-body leading-relaxed mb-8" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Through our <strong className="font-semibold text-white">Bright Path Cyber</strong> division, we offer cybersecurity coaching, scam prevention, and privacy education designed specifically for older adults.
+              We help seniors 60+ navigate the digital world safely — with warm, jargon-free guidance from people who genuinely care.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -214,10 +211,10 @@ export default function Home() {
             <RevealSection>
               <div className="teal-bar mb-5" style={{ backgroundColor: "oklch(0.58 0.12 185)" }} />
               <h2 className="font-display text-4xl sm:text-5xl font-semibold text-white mb-6 leading-tight">
-                Why McMillon Co.?
+                Why Bright Path Cyber?
               </h2>
               <p className="font-body text-lg leading-relaxed mb-5" style={{ color: "oklch(0.78 0.03 255)" }}>
-                We started McMillon Co. because we saw seniors being left behind — overwhelmed by digital threats they couldn't name, targeted by scammers who knew exactly how to exploit that uncertainty.
+                We started Bright Path Cyber because we saw seniors being left behind — overwhelmed by digital threats they couldn't name, targeted by scammers who knew exactly how to exploit that uncertainty.
               </p>
               <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "oklch(0.78 0.03 255)" }}>
                 Our approach is simple: meet people where they are, speak plainly, and give them tools they'll actually use. No jargon. No judgment. Just guidance that works.
@@ -329,7 +326,7 @@ export default function Home() {
                   Launchpad Money — Financial Education for the Next Generation
                 </h3>
                 <p className="font-body text-sm" style={{ color: "oklch(0.45 0.08 60)" }}>
-                  McMillon Co. is developing a youth financial literacy division for high schoolers and young adults. Stay tuned — or{" "}
+                  We're developing a youth financial literacy division for high schoolers and young adults. Stay tuned — or{" "}
                   <Link href="/contact">
                     <span className="font-semibold underline underline-offset-2 cursor-pointer transition-opacity hover:opacity-70" style={{ color: "oklch(0.50 0.14 75)" }}>
                       reach out

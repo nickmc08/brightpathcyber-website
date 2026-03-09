@@ -1,5 +1,5 @@
 /*
- * Footer — McMillon Co.
+ * Footer — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Deep navy background, warm white text, teal accents
  */
@@ -18,12 +18,12 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: "oklch(0.58 0.12 185)" }}>
-                <span className="text-white font-display font-bold text-sm">M</span>
+                <Shield size={16} style={{ color: "white" }} />
               </div>
-              <span className="font-display font-semibold text-lg text-white">McMillon Co.</span>
+              <span className="font-display font-semibold text-lg text-white">Bright Path Cyber</span>
             </div>
             <p className="text-sm leading-relaxed font-body mb-5" style={{ color: "oklch(0.72 0.03 255)" }}>
-              A consulting firm rooted in Kent, Washington — building trust, clarity, and financial confidence across generations.
+              Warm, jargon-free cybersecurity and privacy guidance for seniors — based in Kent, Washington.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm font-body" style={{ color: "oklch(0.72 0.03 255)" }}>
@@ -65,7 +65,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Shield size={15} style={{ color: "oklch(0.58 0.12 185)" }} />
-              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Bright Path Cyber</h4>
+              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Cyber Safety</h4>
             </div>
             <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
               Warm, clear cybersecurity guidance for seniors.
@@ -96,14 +96,12 @@ export default function Footer() {
               <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Launchpad Money</h4>
             </div>
             <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Financial education for high schoolers and young adults.
+              Financial education for young adults — coming soon.
             </p>
             <ul className="space-y-2.5">
               {[
-                { href: "/launchpad-money", label: "Overview" },
-                { href: "/launchpad-money#programs", label: "Programs" },
-                { href: "/launchpad-money#schools", label: "School Partnerships" },
-                { href: "/contact", label: "Get Started" },
+                { href: "/launchpad-money", label: "Coming Soon" },
+                { href: "/contact", label: "Get Notified" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
@@ -121,7 +119,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "oklch(0.32 0.05 255)" }}>
           <p className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
-            © {currentYear} McMillon Co. All rights reserved. | Bright Path Cyber is a McMillon Co. company. | Kent, Washington
+            © {currentYear} Bright Path Cyber. All rights reserved. | Kent, Washington
           </p>
           <div className="flex items-center gap-4">
             <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>

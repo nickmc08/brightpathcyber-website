@@ -1,5 +1,5 @@
 /*
- * Blog Page — McMillon Co.
+ * Blog Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * 3 initial blog posts: scams, passwords, teen money talk
  */

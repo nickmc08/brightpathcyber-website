@@ -1,5 +1,5 @@
 /*
- * Contact Page — McMillon Co.
+ * Contact Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Contact form, email, location (Kent, WA), Calendly-style booking placeholder
  */
@@ -267,7 +267,7 @@ export default function Contact() {
                               <option value="">Select a division</option>
                               <option value="brightpath">Bright Path Cyber</option>
                               <option value="launchpad">Launchpad Money</option>
-                              <option value="general">General / McMillon Co.</option>
+                              <option value="general">General Inquiry</option>
                               <option value="partnership">Partnership Inquiry</option>
                             </select>
                           </div>

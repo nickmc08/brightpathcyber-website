@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * McMillon Co. Design System — Pacific Northwest Professional
+ * Bright Path Cyber Design System — Pacific Northwest Professional
  * Primary: Deep Charcoal-Navy (#1A2744)
  * Accent: Teal (#0D9488)
  * Background: Warm White (#F8F7F4)
@@ -52,7 +52,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* McMillon Co. Brand Tokens */
+   /* Bright Path Cyber Brand Tokens */
   --color-navy: oklch(0.22 0.06 255);
   --color-navy-light: oklch(0.30 0.07 255);
   --color-teal: oklch(0.58 0.12 185);
@@ -159,7 +159,7 @@
     }
   }
 
-  /* McMillon Co. Brand Utilities */
+   /* Bright Path Cyber Brand Utilities */
   .font-display {
     font-family: 'Fraunces', serif;
     font-optical-sizing: auto;

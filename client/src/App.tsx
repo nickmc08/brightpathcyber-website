@@ -1,5 +1,5 @@
 /*
- * App.tsx — McMillon Co.
+ * App.tsx — Bright Path Cyber
  * Routes: Home, About, Bright Path Cyber, Launchpad Money, Blog, Contact
  */
 

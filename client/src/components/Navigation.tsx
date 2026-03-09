@@ -1,14 +1,14 @@
 /*
- * Navigation — McMillon Co.
+ * Navigation — Bright Path Cyber
  * Design: Pacific Northwest Professional
  * Deep navy background, teal accent on active/hover, DM Sans labels
  * Sticky top nav with smooth scroll behavior
- * Bright Path Cyber is the primary division — direct nav link
+ * Bright Path Cyber is the primary brand
  */
 
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Shield } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -52,17 +52,17 @@ export default function Navigation() {
                 className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{ backgroundColor: "oklch(0.22 0.06 255)" }}
               >
-                <span className="text-white font-display font-bold text-sm leading-none">M</span>
+                <Shield size={16} style={{ color: "oklch(0.72 0.10 185)" }} />
               </div>
               <div className="flex flex-col leading-none">
                 <span
                   className="font-display font-semibold text-base tracking-tight"
                   style={{ color: "oklch(0.22 0.06 255)" }}
                 >
-                  McMillon Co.
+                  Bright Path Cyber
                 </span>
                 <span className="text-xs font-body" style={{ color: "oklch(0.50 0.03 255)" }}>
-                  Professional Consulting
+                  Cybersecurity for Seniors
                 </span>
               </div>
             </div>

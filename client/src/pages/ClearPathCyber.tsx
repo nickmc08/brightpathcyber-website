@@ -1,5 +1,5 @@
 /*
- * Bright Path Cyber Page — McMillon Co.
+ * Bright Path Cyber Page
  * Design: Pacific Northwest Professional — Warm teal tones
  * Services overview, value ladder, "Click with Confidence" e-book, consultation CTA
  */
@@ -51,7 +51,7 @@ const valueLadder = [
   { step: "01", title: "Free Checklist", desc: "Download our Senior Digital Safety Checklist — 10 steps to a safer online life, completely free.", cta: "Download Free", price: "Free", highlight: false },
   { step: "02", title: "Click with Confidence E-Book", desc: "Our flagship guide covers everything seniors need to know about staying safe online — written in plain English, no tech background required.", cta: "Get the E-Book", price: "$27", highlight: true },
   { step: "03", title: "Online Course", desc: "A self-paced video course that walks through each topic in depth, with real examples and step-by-step walkthroughs.", cta: "Coming Soon", price: "$97", highlight: false },
-  { step: "04", title: "1-on-1 Coaching", desc: "Personalized sessions with Nick McMillon — we look at your specific devices, accounts, and concerns together.", cta: "Book a Session", price: "From $75/hr", highlight: false },
+  { step: "04", title: "1-on-1 Coaching", desc: "Personalized sessions with our lead consultant — we look at your specific devices, accounts, and concerns together.", cta: "Book a Session", price: "From $75/hr", highlight: false },
   { step: "05", title: "B2B Partnerships", desc: "Custom workshops and ongoing education programs for senior centers, healthcare providers, and community organizations.", cta: "Contact Us", price: "Custom", highlight: false },
 ];
 
@@ -70,7 +70,7 @@ export default function BrightPathCyber() {
           <div className="max-w-2xl">
             <div className="flex items-center gap-2 mb-5">
               <span className="division-badge division-badge-cyber" style={{ backgroundColor: "oklch(0.94 0.04 185 / 0.2)", color: "oklch(0.85 0.08 185)", border: "1px solid oklch(0.72 0.10 185 / 0.4)" }}>
-                <Shield size={11} /> A McMillon Co. Division
+                <Shield size={11} /> Bright Path Cyber
               </span>
             </div>
             <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-5">
@@ -348,7 +348,7 @@ export default function BrightPathCyber() {
               Ready to feel confident online?
             </h2>
             <p className="font-body text-lg mb-8" style={{ color: "oklch(0.80 0.04 200)" }}>
-              Book a free 30-minute consultation with Nick McMillon. No pressure, no jargon — just an honest conversation about where you are and how we can help.
+              Book a free 30-minute consultation with our team. No pressure, no jargon — just an honest conversation about where you are and how we can help.
             </p>
             <Link href="/contact">
               <button
