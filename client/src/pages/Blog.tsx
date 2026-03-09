@@ -359,7 +359,7 @@ export default function Blog() {
               Insights &<br />Resources
             </h1>
             <p className="font-body text-lg" style={{ color: "oklch(0.78 0.03 255)" }}>
-              Practical guidance on cybersecurity, financial literacy, and everything in between — written in plain English for real people.
+              Practical guidance on cybersecurity, online safety, and digital privacy — written in plain English for seniors and their families.
             </p>
           </div>
         </div>
@@ -414,58 +414,91 @@ export default function Blog() {
             </button>
           </RevealSection>
 
-          {/* Other Posts */}
+          {/* Other ClearPath Cyber Posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.slice(1).map((post, i) => {
-              const isCyber = post.divisionColor === "cyber";
-              return (
-                <RevealSection key={post.id} delay={i * 100}>
-                  <button
-                    onClick={() => setActivePost(post.id)}
-                    className="w-full text-left group"
-                  >
-                    <div
-                      className="rounded-2xl overflow-hidden card-lift h-full flex flex-col"
-                      style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}
-                    >
-                      <div
-                        className="h-36 flex items-center justify-center"
-                        style={{ backgroundColor: isCyber ? "oklch(0.94 0.04 185)" : "oklch(0.96 0.05 75)" }}
-                      >
-                        <post.icon size={48} style={{ color: isCyber ? "oklch(0.50 0.12 185)" : "oklch(0.55 0.14 75)" }} />
+            {posts.slice(1).filter(p => p.divisionColor === "cyber").map((post, i) => (
+              <RevealSection key={post.id} delay={i * 100}>
+                <button onClick={() => setActivePost(post.id)} className="w-full text-left group">
+                  <div className="rounded-2xl overflow-hidden card-lift h-full flex flex-col" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}>
+                    <div className="h-36 flex items-center justify-center" style={{ backgroundColor: "oklch(0.94 0.04 185)" }}>
+                      <Shield size={48} style={{ color: "oklch(0.50 0.12 185)" }} />
+                    </div>
+                    <div className="p-7 flex flex-col flex-1">
+                      <div className="flex items-center gap-2 mb-3">
+                        <span className="division-badge division-badge-cyber">
+                          <Shield size={11} /> {post.division}
+                        </span>
                       </div>
-                      <div className="p-7 flex flex-col flex-1">
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className={`division-badge ${isCyber ? "division-badge-cyber" : "division-badge-money"}`}>
-                            <post.icon size={11} /> {post.division}
-                          </span>
+                      <h2 className="font-display text-xl font-semibold mb-3 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
+                        {post.title}
+                      </h2>
+                      <p className="font-body text-sm leading-relaxed mb-4 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
+                        {post.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <div className="flex items-center gap-2 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+                          <span>{post.date}</span>
+                          <span>·</span>
+                          <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
                         </div>
-                        <h2 className="font-display text-xl font-semibold mb-3 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
-                          {post.title}
-                        </h2>
-                        <p className="font-body text-sm leading-relaxed mb-4 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
-                          {post.excerpt}
-                        </p>
-                        <div className="flex items-center justify-between mt-auto">
-                          <div className="flex items-center gap-2 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
-                            <span>{post.date}</span>
-                            <span>·</span>
-                            <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
-                          </div>
-                          <div
-                            className="flex items-center gap-1.5 font-semibold font-body text-xs group-hover:gap-2.5 transition-all"
-                            style={{ color: isCyber ? "oklch(0.50 0.12 185)" : "oklch(0.55 0.14 75)" }}
-                          >
-                            Read <ArrowRight size={12} />
-                          </div>
+                        <div className="flex items-center gap-1.5 font-semibold font-body text-xs group-hover:gap-2.5 transition-all" style={{ color: "oklch(0.50 0.12 185)" }}>
+                          Read <ArrowRight size={12} />
                         </div>
                       </div>
                     </div>
-                  </button>
-                </RevealSection>
-              );
-            })}
+                  </div>
+                </button>
+              </RevealSection>
+            ))}
           </div>
+
+          {/* Launchpad Money post — archived / coming soon context */}
+          {posts.filter(p => p.divisionColor === "money").length > 0 && (
+            <RevealSection className="mt-12">
+              <div className="mb-5 flex items-center gap-3">
+                <div className="h-px flex-1" style={{ backgroundColor: "oklch(0.88 0.01 255)" }} />
+                <span className="text-xs font-semibold font-body uppercase tracking-widest px-3" style={{ color: "oklch(0.60 0.03 255)" }}>From Our Archive</span>
+                <div className="h-px flex-1" style={{ backgroundColor: "oklch(0.88 0.01 255)" }} />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {posts.filter(p => p.divisionColor === "money").map((post, i) => (
+                  <RevealSection key={post.id} delay={i * 100}>
+                    <button onClick={() => setActivePost(post.id)} className="w-full text-left group">
+                      <div className="rounded-2xl overflow-hidden card-lift h-full flex flex-col" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)", opacity: 0.85 }}>
+                        <div className="h-28 flex items-center justify-center" style={{ backgroundColor: "oklch(0.96 0.05 75)" }}>
+                          <Rocket size={36} style={{ color: "oklch(0.55 0.14 75)" }} />
+                        </div>
+                        <div className="p-6 flex flex-col flex-1">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="division-badge division-badge-money">
+                              <Rocket size={11} /> {post.division}
+                            </span>
+                            <span className="text-xs font-body px-2 py-0.5 rounded-full" style={{ backgroundColor: "oklch(0.88 0.10 75)", color: "oklch(0.40 0.12 75)" }}>Coming Soon Division</span>
+                          </div>
+                          <h2 className="font-display text-lg font-semibold mb-2 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
+                            {post.title}
+                          </h2>
+                          <p className="font-body text-sm leading-relaxed mb-4 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
+                            {post.excerpt}
+                          </p>
+                          <div className="flex items-center justify-between mt-auto">
+                            <div className="flex items-center gap-2 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+                              <span>{post.date}</span>
+                              <span>·</span>
+                              <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
+                            </div>
+                            <div className="flex items-center gap-1.5 font-semibold font-body text-xs group-hover:gap-2.5 transition-all" style={{ color: "oklch(0.55 0.14 75)" }}>
+                              Read <ArrowRight size={12} />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </button>
+                  </RevealSection>
+                ))}
+              </div>
+            </RevealSection>
+          )}
 
           {/* Newsletter CTA */}
           <RevealSection className="mt-16">

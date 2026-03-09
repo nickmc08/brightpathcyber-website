@@ -76,13 +76,13 @@ export default function About() {
                   McMillon Co. was founded by Nick and Mandie McMillon in Kent, Washington — a community they've called home for years and one they're deeply committed to serving.
                 </p>
                 <p>
-                  The idea came from two separate but parallel frustrations. Nick watched his own parents struggle to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
+                  The idea came from a frustration Nick saw up close: his own parents struggling to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
                 </p>
                 <p>
-                  Mandie saw the other side of the gap. Working with young people, she noticed that financial literacy was treated as an afterthought — something kids were expected to figure out on their own after they left home. The result was predictable: debt, anxiety, and missed opportunities.
+                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>ClearPath Cyber</strong> — McMillon Co.'s primary division, focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
                 </p>
                 <p>
-                  McMillon Co. is their answer to both problems. Two divisions, one mission: give people the knowledge and confidence to navigate the challenges that matter most in their lives.
+                  McMillon Co. is built to grow. A youth financial literacy division, <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, is currently in development — reflecting the same commitment to clear, practical guidance across generations.
                 </p>
               </div>
             </RevealSection>
@@ -212,8 +212,8 @@ export default function About() {
               },
               {
                 name: "Mandie McMillon",
-                title: "Co-Founder & Lead Consultant, Launchpad Money",
-                bio: "Mandie's background in financial education and youth development drives Launchpad Money's curriculum and coaching programs. She believes that financial confidence is a skill, not a personality trait — and that every young person can develop it with the right support.",
+                title: "Co-Founder & Consultant, McMillon Co.",
+                bio: "Mandie brings a background in education and community outreach to McMillon Co. She is currently developing Launchpad Money — a financial literacy program for high schoolers and young adults — drawing on her belief that financial confidence is a skill anyone can build with the right support.",
                 initials: "MM",
                 accent: "oklch(0.96 0.05 75)",
                 accentText: "oklch(0.50 0.14 75)",
@@ -250,15 +250,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* Divisions CTA */}
+      {/* CTA */}
       <section className="py-20" style={{ backgroundColor: "oklch(0.22 0.06 255)" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl text-center">
           <RevealSection>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold text-white mb-4">
-              Explore Our Divisions
+              Ready to get started?
             </h2>
             <p className="font-body text-lg mb-8" style={{ color: "oklch(0.78 0.03 255)" }}>
-              Find the right fit for you or your family.
+              Explore ClearPath Cyber or reach out to book a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/clearpath-cyber">
@@ -266,15 +266,15 @@ export default function About() {
                   className="px-7 py-3.5 rounded-lg font-semibold font-body text-sm flex items-center gap-2 transition-all hover:opacity-90"
                   style={{ backgroundColor: "oklch(0.58 0.12 185)", color: "white" }}
                 >
-                  <Shield size={15} /> ClearPath Cyber
+                  <Shield size={15} /> Explore ClearPath Cyber
                 </button>
               </Link>
-              <Link href="/launchpad-money">
+              <Link href="/contact">
                 <button
-                  className="px-7 py-3.5 rounded-lg font-semibold font-body text-sm flex items-center gap-2 transition-all hover:opacity-90"
-                  style={{ backgroundColor: "oklch(0.75 0.16 75)", color: "white" }}
+                  className="px-7 py-3.5 rounded-lg font-semibold font-body text-sm flex items-center gap-2 transition-all hover:bg-white/20"
+                  style={{ color: "white", border: "1.5px solid oklch(1 0 0 / 0.3)" }}
                 >
-                  <Rocket size={15} /> Launchpad Money
+                  <ArrowRight size={15} /> Book a Consultation
                 </button>
               </Link>
             </div>
