@@ -23,7 +23,7 @@ export default function Footer() {
               <span className="font-display font-semibold text-lg text-white">Bright Path Cyber</span>
             </div>
             <p className="text-sm leading-relaxed font-body mb-5" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Warm, jargon-free cybersecurity and privacy guidance for seniors — based in Kent, Washington.
+              Warm, jargon-free cybersecurity and privacy guidance for individuals and families — based in Kent, Washington.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm font-body" style={{ color: "oklch(0.72 0.03 255)" }}>
@@ -68,7 +68,7 @@ export default function Footer() {
               <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Cyber Safety</h4>
             </div>
             <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Warm, clear cybersecurity guidance for seniors.
+              Warm, clear cybersecurity guidance for everyone.
             </p>
             <ul className="space-y-2.5">
               {[

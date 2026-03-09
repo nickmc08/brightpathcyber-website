@@ -56,7 +56,7 @@ export default function About() {
               About<br />Bright Path Cyber
             </h1>
             <p className="font-body text-lg leading-relaxed" style={{ color: "oklch(0.78 0.03 255)" }}>
-              Born from a simple belief: that every senior deserves digital safety guidance they can understand and trust.
+              Born from a simple belief: that everyone deserves digital safety guidance they can understand and trust.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function About() {
                   The idea came from a frustration Nick saw up close: his own parents struggling to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
                 </p>
                 <p>
-                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — focused on giving seniors 60+ the cybersecurity and privacy knowledge they need to feel safe and confident online.
+                  That experience became the foundation for <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Bright Path Cyber</strong> — focused on giving individuals and families the cybersecurity and privacy knowledge they need to feel safe and confident online.
                 </p>
                 <p>
                   We're also building <strong className="font-semibold" style={{ color: "oklch(0.30 0.06 255)" }}>Launchpad Money</strong>, a youth financial literacy division for high schoolers and young adults — coming soon.
@@ -124,7 +124,7 @@ export default function About() {
                   Our Mission
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "oklch(0.40 0.03 255)" }}>
-                  To provide clear, accessible, and practical consulting services that empower seniors to navigate the digital world with confidence and equip young people with the financial skills they need to build a secure future — all delivered with honesty, warmth, and a deep commitment to our community.
+                  To provide clear, accessible, and practical cybersecurity guidance that empowers individuals and families to navigate the digital world with confidence — delivered with honesty, warmth, and a deep commitment to our community.
                 </p>
               </div>
             </RevealSection>
@@ -144,7 +144,7 @@ export default function About() {
                   Our Vision
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "oklch(0.78 0.03 255)" }}>
-                  A Pacific Northwest where every senior feels safe online and every young adult enters adulthood financially prepared. We envision Bright Path Cyber as the trusted digital safety partner for families across generations — growing our reach, deepening our impact, and never losing sight of the people behind every conversation.
+                  A Pacific Northwest where every person — regardless of age or background — feels safe and confident online. We envision Bright Path Cyber as the trusted digital safety partner for individuals and families across generations — growing our reach, deepening our impact, and never losing sight of the people behind every conversation.
                 </p>
               </div>
             </RevealSection>
@@ -205,7 +205,7 @@ export default function About() {
               {
                 name: "Nick McMillon",
                 title: "Co-Founder & Lead Consultant, Bright Path Cyber",
-                bio: "Nick brings years of experience in technology and community education to Bright Path Cyber. His passion for helping seniors navigate the digital world safely stems from watching his own family struggle with the same challenges — and knowing that the right guidance makes all the difference.",
+                bio: "Nick brings years of experience in technology and community education to Bright Path Cyber. His passion for helping people navigate the digital world safely stems from watching his own family struggle with the same challenges — and knowing that the right guidance makes all the difference.",
                 initials: "NM",
                 accent: "oklch(0.94 0.04 185)",
                 accentText: "oklch(0.40 0.10 185)",

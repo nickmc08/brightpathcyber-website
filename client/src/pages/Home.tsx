@@ -48,7 +48,7 @@ const trustIndicators = [
 ];
 
 const cyberServices = [
-  { icon: AlertTriangle, title: "Scam Awareness", desc: "Learn to recognize the latest scams targeting seniors — before they reach you." },
+  { icon: AlertTriangle, title: "Scam Awareness", desc: "Learn to recognize the latest scams targeting everyday people — before they reach you." },
   { icon: Lock, title: "Password & Account Security", desc: "Simple systems to protect your accounts without memorizing a hundred passwords." },
   { icon: Eye, title: "Privacy Protection", desc: "Understand what you're sharing online and how to take back control." },
   { icon: Shield, title: "1-on-1 Coaching", desc: "Personalized sessions at your pace — no tech background required." },
@@ -64,7 +64,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={HERO_IMG}
-            alt="Bright Path Cyber — senior cybersecurity coaching"
+            alt="Bright Path Cyber — personal cybersecurity coaching"
             className="w-full h-full object-cover object-center"
           />
           <div
@@ -90,7 +90,7 @@ export default function Home() {
             </h1>
 
             <p className="text-lg sm:text-xl font-body leading-relaxed mb-3" style={{ color: "oklch(0.85 0.02 255)" }}>
-              We help seniors 60+ navigate the digital world safely — with warm, jargon-free guidance from people who genuinely care.
+              We help individuals and families navigate the digital world safely — with warm, jargon-free guidance from people who genuinely care.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -135,7 +135,7 @@ export default function Home() {
                 <em className="not-italic" style={{ color: "oklch(0.50 0.12 185)" }}>made clear.</em>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-                Scammers specifically target older adults — and the threats are more sophisticated than ever. Bright Path Cyber gives seniors the knowledge and confidence to protect themselves online, without needing to become a tech expert.
+                Cyber threats are more sophisticated than ever — and they target anyone, regardless of age or background. Bright Path Cyber gives individuals and families the knowledge and confidence to protect themselves online, without needing to become a tech expert.
               </p>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: "oklch(0.50 0.03 255)" }}>
                 We work one-on-one and in small groups, always at your pace, always in plain English.
@@ -168,7 +168,7 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden shadow-xl">
                 <img
                   src={BRIGHTPATH_IMG}
-                  alt="Bright Path Cyber — senior cybersecurity coaching"
+                  alt="Bright Path Cyber — personal cybersecurity coaching"
                   className="w-full h-80 lg:h-96 object-cover object-center"
                 />
                 <div className="absolute inset-0" style={{ background: "linear-gradient(to top, oklch(0.22 0.06 255 / 0.6) 0%, transparent 50%)" }} />
@@ -184,7 +184,7 @@ export default function Home() {
                           "Click with Confidence" E-Book
                         </div>
                         <div className="font-body text-xs" style={{ color: "oklch(0.50 0.03 255)" }}>
-                          The senior's guide to staying safe online — $27
+                          Your guide to staying safe online — $27
                         </div>
                       </div>
                       <Link href="/bright-path-cyber">
@@ -214,7 +214,7 @@ export default function Home() {
                 Why Bright Path Cyber?
               </h2>
               <p className="font-body text-lg leading-relaxed mb-5" style={{ color: "oklch(0.78 0.03 255)" }}>
-                We started Bright Path Cyber because we saw seniors being left behind — overwhelmed by digital threats they couldn't name, targeted by scammers who knew exactly how to exploit that uncertainty.
+                We started Bright Path Cyber because we saw everyday people being left behind — overwhelmed by digital threats they couldn't name, targeted by scammers who knew exactly how to exploit that uncertainty.
               </p>
               <p className="font-body text-lg leading-relaxed mb-8" style={{ color: "oklch(0.78 0.03 255)" }}>
                 Our approach is simple: meet people where they are, speak plainly, and give them tools they'll actually use. No jargon. No judgment. Just guidance that works.
@@ -266,17 +266,17 @@ export default function Home() {
               {
                 quote: "I finally feel like I understand what to look out for online. Bright Path Cyber explained everything in a way that actually made sense to me.",
                 name: "Margaret T.",
-                role: "Bright Path Cyber client, age 74",
+                role: "Bright Path Cyber client",
               },
               {
                 quote: "After being targeted by a phone scam, I was scared to use my computer at all. Nick helped me get my confidence back — and now I know exactly what to watch for.",
                 name: "Robert K.",
-                role: "Bright Path Cyber client, age 71",
+                role: "Bright Path Cyber client",
               },
               {
                 quote: "Nick and Mandie are the real deal. They genuinely care about the people they work with, and it shows in everything they do.",
                 name: "Carol S.",
-                role: "Bright Path Cyber client, age 68",
+                role: "Bright Path Cyber client",
               },
             ].map((testimonial, i) => (
               <RevealSection key={i} delay={i * 120}>

@@ -62,7 +62,7 @@ export default function Navigation() {
                   Bright Path Cyber
                 </span>
                 <span className="text-xs font-body" style={{ color: "oklch(0.50 0.03 255)" }}>
-                  Cybersecurity for Seniors
+                  Personal Cybersecurity Guidance
                 </span>
               </div>
             </div>

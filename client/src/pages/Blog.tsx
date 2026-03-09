@@ -36,17 +36,17 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 const posts = [
   {
     id: "scams-targeting-seniors",
-    title: "5 Scams Targeting Seniors Right Now (And How to Spot Them)",
-    excerpt: "Scammers are sophisticated, organized, and ruthless — and they specifically target older adults. Here's what's circulating right now and exactly how to recognize it.",
+    title: "5 Scams Targeting Everyday People Right Now (And How to Spot Them)",
+    excerpt: "Scammers are sophisticated, organized, and ruthless — and they target anyone, regardless of age. Here's what's circulating right now and exactly how to recognize it.",
     division: "Bright Path Cyber",
     divisionColor: "cyber",
     date: "February 28, 2026",
     readTime: "7 min read",
     icon: Shield,
     content: `
-Every year, older Americans lose billions of dollars to fraud. Not because they're naive — but because today's scammers are sophisticated, organized, and specifically trained to exploit trust. The good news? Once you know what to look for, these scams become much easier to spot.
+Every year, Americans lose billions of dollars to fraud. Not because they're naive — but because today's scammers are sophisticated, organized, and specifically trained to exploit trust. The good news? Once you know what to look for, these scams become much easier to spot.
 
-Here are five of the most common scams targeting seniors right now, along with exactly how to recognize and avoid them.
+Here are five of the most common scams targeting everyday people right now, along with exactly how to recognize and avoid them.
 
 ## 1. The Grandparent Scam
 
@@ -56,13 +56,13 @@ You get a frantic call. Someone who sounds like your grandchild — or claims to
 
 **What scammers count on:** Your love for your family and your instinct to help immediately.
 
-## 2. The Medicare/Social Security Impersonation Scam
+## 2. The Government Impersonation Scam
 
-A caller claims to be from Medicare or the Social Security Administration. They say your benefits are at risk, your account has been compromised, or there's suspicious activity. They ask you to confirm your Social Security number, Medicare ID, or bank account information to "protect" your account.
+A caller claims to be from the IRS, Social Security Administration, or Medicare. They say your account has been compromised, you owe back taxes, or your benefits are at risk. They ask you to confirm your Social Security number, bank account information, or make an immediate payment to "protect" your account.
 
-**How to spot it:** Government agencies never call you out of the blue to ask for personal information. They communicate primarily by mail. If you receive this call, hang up. You can call the real agency directly using the number on their official website or on your Medicare card.
+**How to spot it:** Government agencies never call you out of the blue to demand personal information or payment. They communicate primarily by mail. If you receive this call, hang up. You can call the real agency directly using the number on their official website.
 
-**What scammers count on:** Fear of losing benefits and the authority that comes with a government name.
+**What scammers count on:** Fear of legal trouble and the authority that comes with a government name.
 
 ## 3. The Tech Support Scam
 
@@ -359,7 +359,7 @@ export default function Blog() {
               Insights &<br />Resources
             </h1>
             <p className="font-body text-lg" style={{ color: "oklch(0.78 0.03 255)" }}>
-              Practical guidance on cybersecurity, online safety, and digital privacy — written in plain English for seniors and their families.
+              Practical guidance on cybersecurity, online safety, and digital privacy — written in plain English for individuals, families, and anyone who wants to stay safe online.
             </p>
           </div>
         </div>

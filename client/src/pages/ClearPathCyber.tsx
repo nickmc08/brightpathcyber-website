@@ -39,20 +39,20 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 }
 
 const services = [
-  { icon: AlertTriangle, title: "Scam Awareness & Prevention", desc: "Learn to recognize phishing emails, phone scams, and online fraud before they cost you. We cover the most common tactics targeting seniors today.", color: "oklch(0.94 0.04 185)" },
+  { icon: AlertTriangle, title: "Scam Awareness & Prevention", desc: "Learn to recognize phishing emails, phone scams, and online fraud before they cost you. We cover the most common tactics targeting everyday people today.", color: "oklch(0.94 0.04 185)" },
   { icon: Lock, title: "Password & Account Security", desc: "Set up strong passwords, understand two-factor authentication, and learn how to manage your accounts safely — without the tech headache.", color: "oklch(0.94 0.04 185)" },
   { icon: Eye, title: "Privacy Settings Review", desc: "We walk through your devices and accounts to adjust privacy settings in plain English, so you're sharing only what you want to share.", color: "oklch(0.94 0.04 185)" },
   { icon: Smartphone, title: "Device Safety Basics", desc: "From smartphones to tablets to computers — we help you understand your devices, keep them updated, and use them with confidence.", color: "oklch(0.94 0.04 185)" },
   { icon: Users, title: "Family & Caregiver Sessions", desc: "We offer sessions designed for adult children and caregivers who want to help their loved ones stay safe online.", color: "oklch(0.94 0.04 185)" },
-  { icon: Video, title: "B2B & Community Workshops", desc: "We partner with senior centers, libraries, healthcare providers, and community organizations to deliver group cybersecurity education.", color: "oklch(0.94 0.04 185)" },
+  { icon: Video, title: "B2B & Community Workshops", desc: "We partner with libraries, healthcare providers, employers, and community organizations to deliver group cybersecurity education.", color: "oklch(0.94 0.04 185)" },
 ];
 
 const valueLadder = [
-  { step: "01", title: "Free Checklist", desc: "Download our Senior Digital Safety Checklist — 10 steps to a safer online life, completely free.", cta: "Download Free", price: "Free", highlight: false },
-  { step: "02", title: "Click with Confidence E-Book", desc: "Our flagship guide covers everything seniors need to know about staying safe online — written in plain English, no tech background required.", cta: "Get the E-Book", price: "$27", highlight: true },
+  { step: "01", title: "Free Checklist", desc: "Download our Personal Digital Safety Checklist — 10 steps to a safer online life, completely free.", cta: "Download Free", price: "Free", highlight: false },
+  { step: "02", title: "Click with Confidence E-Book", desc: "Our flagship guide covers everything you need to know about staying safe online — written in plain English, no tech background required.", cta: "Get the E-Book", price: "$27", highlight: true },
   { step: "03", title: "Online Course", desc: "A self-paced video course that walks through each topic in depth, with real examples and step-by-step walkthroughs.", cta: "Coming Soon", price: "$97", highlight: false },
   { step: "04", title: "1-on-1 Coaching", desc: "Personalized sessions with our lead consultant — we look at your specific devices, accounts, and concerns together.", cta: "Book a Session", price: "From $75/hr", highlight: false },
-  { step: "05", title: "B2B Partnerships", desc: "Custom workshops and ongoing education programs for senior centers, healthcare providers, and community organizations.", cta: "Contact Us", price: "Custom", highlight: false },
+  { step: "05", title: "B2B Partnerships", desc: "Custom workshops and ongoing education programs for employers, libraries, healthcare providers, and community organizations.", cta: "Contact Us", price: "Custom", highlight: false },
 ];
 
 export default function BrightPathCyber() {
@@ -78,10 +78,10 @@ export default function BrightPathCyber() {
               <em className="not-italic" style={{ color: "oklch(0.80 0.10 185)" }}>Cyber</em>
             </h1>
             <p className="font-body text-xl leading-relaxed mb-3" style={{ color: "oklch(0.90 0.03 200)" }}>
-              Warm, clear cybersecurity and privacy guidance for seniors.
+              Warm, clear cybersecurity and privacy guidance for everyone.
             </p>
             <p className="font-body text-base leading-relaxed mb-8" style={{ color: "oklch(0.80 0.03 200)" }}>
-              We help older adults navigate the digital world safely — without the tech overwhelm, the confusing acronyms, or the condescending explanations.
+              We help individuals and families navigate the digital world safely — without the tech overwhelm, the confusing acronyms, or the condescending explanations.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/contact">
@@ -108,18 +108,18 @@ export default function BrightPathCyber() {
               Who We Serve
             </h2>
             <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-              Bright Path Cyber was built for adults 60 and older who want to use technology confidently — without living in fear of doing something wrong.
+              Bright Path Cyber was built for anyone who wants to use technology confidently — without living in fear of doing something wrong.
             </p>
             <p className="font-body text-base leading-relaxed" style={{ color: "oklch(0.45 0.03 255)" }}>
-              Our clients are sharp, capable people who simply haven't had anyone take the time to explain digital safety in terms that make sense. That's exactly what we do. We also work with adult children and caregivers who want to help their loved ones, and with organizations that serve senior populations.
+              Our clients are sharp, capable people who simply haven't had anyone take the time to explain digital safety in terms that make sense. That's exactly what we do. We also work with families who want to protect their loved ones, and with organizations that want to keep their people safe.
             </p>
           </RevealSection>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
-              { label: "Seniors 60+", desc: "Direct 1-on-1 and group education" },
-              { label: "Families & Caregivers", desc: "Supporting loved ones' digital safety" },
-              { label: "Senior Organizations", desc: "B2B workshops and partnerships" },
+              { label: "Individuals", desc: "Direct 1-on-1 and group education" },
+              { label: "Families", desc: "Protecting everyone you care about" },
+              { label: "Organizations", desc: "B2B workshops and partnerships" },
             ].map((item, i) => (
               <RevealSection key={item.label} delay={i * 100}>
                 <div className="p-5 rounded-xl flex items-start gap-3" style={{ backgroundColor: "oklch(0.94 0.04 185)", border: "1px solid oklch(0.85 0.06 185)" }}>
@@ -264,7 +264,7 @@ export default function BrightPathCyber() {
                 Click with<br />Confidence
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-                The complete guide to staying safe online — written specifically for seniors, in plain English, with no tech background required.
+                The complete guide to staying safe online — written in plain English, with no tech background required. Practical, clear, and built for real life.
               </p>
               <p className="font-body text-base leading-relaxed mb-6" style={{ color: "oklch(0.45 0.03 255)" }}>
                 This e-book covers everything from recognizing scams to setting up secure passwords to protecting your personal information — all in clear, step-by-step language that actually makes sense.
@@ -319,7 +319,7 @@ export default function BrightPathCyber() {
                   Click with Confidence
                 </h3>
                 <p className="font-body text-sm mb-4" style={{ color: "oklch(0.40 0.08 200)" }}>
-                  The Senior's Complete Guide to Online Safety
+                  Your Complete Guide to Online Safety
                 </p>
                 <div className="text-4xl font-display font-bold mb-1" style={{ color: "oklch(0.30 0.10 200)" }}>$27</div>
                 <p className="text-xs font-body mb-6" style={{ color: "oklch(0.50 0.08 200)" }}>Instant digital download</p>

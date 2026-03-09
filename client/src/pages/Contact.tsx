@@ -158,7 +158,7 @@ export default function Contact() {
                         <span className="font-body font-semibold text-sm" style={{ color: "oklch(0.30 0.10 185)" }}>Bright Path Cyber</span>
                       </div>
                       <p className="font-body text-xs" style={{ color: "oklch(0.45 0.08 185)" }}>
-                        Senior cybersecurity & digital safety
+                        Personal cybersecurity & digital safety
                       </p>
                     </div>
                     <div className="p-4 rounded-lg" style={{ backgroundColor: "oklch(0.96 0.05 75)" }}>
@@ -391,7 +391,7 @@ export default function Contact() {
             {[
               { q: "Do you offer virtual sessions?", a: "Yes — all of our coaching and consulting sessions are available both in-person (Kent, WA area) and virtually via video call." },
               { q: "How long is a typical consultation?", a: "Initial consultations are 30 minutes and free of charge. Follow-up coaching sessions are typically 60 minutes." },
-              { q: "Do you work with organizations?", a: "Absolutely. We offer B2B workshops and partnership programs for senior centers, schools, libraries, and community organizations." },
+              { q: "Do you work with organizations?", a: "Absolutely. We offer B2B workshops and partnership programs for employers, schools, libraries, healthcare providers, and community organizations." },
               { q: "What age range does Launchpad Money serve?", a: "Our primary focus is high school students (14–18) and young adults (18–25), though we adapt our approach for each individual." },
             ].map((faq, i) => (
               <RevealSection key={i} delay={i * 80}>
