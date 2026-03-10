@@ -9,7 +9,7 @@
  * Accent: Teal (#0D9488)
  * Background: Warm White (#F8F7F4)
  * Bright Path Cyber: Warm teal with golden-amber warmth
- * Display: Fraunces (serif)
+ * Display: Playfair Display (serif)
  * Body: DM Sans
  */
 
@@ -113,7 +113,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Fraunces', serif;
+    font-family: 'Playfair Display', serif;
     font-optical-sizing: auto;
   }
   button:not(:disabled),
@@ -160,7 +160,7 @@
 
    /* Bright Path Cyber Brand Utilities */
   .font-display {
-    font-family: 'Fraunces', serif;
+    font-family: 'Playfair Display', serif;
     font-optical-sizing: auto;
   }
 

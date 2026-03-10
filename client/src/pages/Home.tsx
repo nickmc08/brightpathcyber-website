@@ -1,7 +1,7 @@
 /*
  * Home Page — Bright Path Cyber
  * Design: Pacific Northwest Professional
- * Left-anchored editorial layout, Fraunces display, DM Sans body
+ * Left-anchored editorial layout, Playfair Display, DM Sans body
  * Sections: Hero, Feature section, Value Proposition, Who We Help, CTA
  */
 
