@@ -1,0 +1,13 @@
+// Cloudflare Pages configuration for Bright Path Cyber website
+// This file configures the Cloudflare Pages project settings.
+// Deployment is handled automatically by Cloudflare Pages via Git integration.
+// No "deploy" command is needed here — Pages builds and deploys on every push to main.
+//
+// Cloudflare Pages build settings:
+//   Build command:        pnpm run build
+//   Build output directory: dist/public
+{
+  "name": "brightpathcyber",
+  "pages_build_output_dir": "dist/public",
+  "compatibility_date": "2026-03-09"
+}
