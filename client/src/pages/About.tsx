@@ -2,6 +2,8 @@
  * About Page — Bright Path Cyber
  * Design: Concept D Editorial — "West Elm meets Apple"
  * Ivory backgrounds, brass gold accents, near-black text
+ * Mission-driven story: saw family/community fall prey to scams
+ * Business model: Blog → E-book → Self-paced course
  */
 
 import { useEffect, useRef, useState } from "react";
@@ -36,10 +38,10 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 }
 
 const values = [
-  { icon: Heart, title: "Genuine Care", desc: "We treat every client like a neighbor, not a number. Our work is personal because the stakes are personal." },
-  { icon: Target, title: "Practical Focus", desc: "We skip the theory and get to what actually helps. Every session, every resource is built for real-world use." },
-  { icon: Lightbulb, title: "Plain Language", desc: "No jargon. No acronyms without explanation. We speak like humans, because our clients are humans." },
-  { icon: Shield, title: "Integrity Always", desc: "We recommend what's right for you, not what's easiest for us. Trust is the foundation of everything we do." },
+  { icon: Heart, title: "Genuine Care", desc: "This started because people we love were being targeted. That personal stake drives everything we create." },
+  { icon: Target, title: "Practical Focus", desc: "We skip the theory and get to what actually helps. Every article, every resource is built for real-world use." },
+  { icon: Lightbulb, title: "Plain Language", desc: "No jargon. No acronyms without explanation. We write like humans, because our readers are humans." },
+  { icon: Shield, title: "Integrity Always", desc: "We recommend what's right for you, not what sells. Trust is the foundation of everything we do." },
 ];
 
 export default function About() {
@@ -76,13 +78,13 @@ export default function About() {
               </h2>
               <div className="space-y-4 font-body text-base leading-relaxed text-warm-gray">
                 <p>
-                  Bright Path Cyber was founded by Nick and Mandie in Kent, Washington — a community they've called home for years and one they're deeply committed to serving.
+                  Bright Path Cyber started with a phone call. Nick's mom called one afternoon, shaken — she'd almost given her bank information to someone pretending to be from her internet provider. She's smart, careful, and capable. But the scam was convincing, and no one had ever shown her what to look for.
                 </p>
                 <p>
-                  The idea came from a frustration Nick saw up close: his own parents struggling to navigate an increasingly digital world — not because they weren't intelligent, but because no one had taken the time to explain it in terms that made sense. Scam calls, confusing privacy settings, password anxiety — it was all unnecessarily stressful for people who deserved better.
+                  That wasn't an isolated incident. We watched people in our own family and community fall prey to scams, struggle with confusing privacy settings, and feel anxious every time they went online. The cybersecurity industry talks to experts. Nobody was talking to everyone else.
                 </p>
                 <p>
-                  That experience became the foundation for <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> — focused on giving individuals and families the cybersecurity and privacy knowledge they need to feel safe and confident online.
+                  So we built <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> — a place where anyone can learn to protect themselves online, in plain language, at their own pace. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually make a difference.
                 </p>
               </div>
             </RevealSection>
@@ -126,7 +128,7 @@ export default function About() {
                   Our Mission
                 </h3>
                 <p className="font-body leading-relaxed text-warm-gray">
-                  To provide clear, accessible, and practical cybersecurity guidance that empowers individuals and families to navigate the digital world with confidence — delivered with honesty, warmth, and a deep commitment to our community.
+                  To teach cybersecurity in a way that real people can actually use — through free blog content, practical resources, and self-paced education. We want to be the trusted voice that keeps you informed and helps you protect yourself online.
                 </p>
               </div>
             </RevealSection>
@@ -146,7 +148,7 @@ export default function About() {
                   Our Vision
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "rgba(245,240,232,0.8)" }}>
-                  A Pacific Northwest where every person — regardless of age or background — feels safe and confident online. We envision Bright Path Cyber as the trusted digital safety partner for individuals and families across generations — growing our reach, deepening our impact, and never losing sight of the people behind every conversation.
+                  A world where nobody has to feel anxious, confused, or vulnerable online. We believe that with the right education — delivered plainly and honestly — anyone can navigate the digital world with confidence. Based in Seattle, Washington, we're building that resource one article, one guide, and one reader at a time.
                 </p>
               </div>
             </RevealSection>
@@ -202,7 +204,7 @@ export default function About() {
               Meet the Team
             </h2>
             <p className="font-body mt-3 text-warm-gray">
-              Bright Path Cyber is a family-led business built on personal accountability and genuine relationships.
+              Bright Path Cyber is a family-led project built on personal experience and genuine care.
             </p>
           </RevealSection>
 
@@ -210,14 +212,14 @@ export default function About() {
             {[
               {
                 name: "Nick McMillon",
-                title: "Co-Founder & Lead Consultant",
-                bio: "Nick brings years of experience in technology and community education to Bright Path Cyber. His passion for helping people navigate the digital world safely stems from watching his own family struggle with the same challenges — and knowing that the right guidance makes all the difference.",
+                title: "Co-Founder",
+                bio: "Nick started Bright Path Cyber after watching people he loves get targeted by online scams. With a background in technology and a passion for clear communication, he writes the guides and creates the resources that make cybersecurity accessible to everyone — no tech degree required.",
                 initials: "NM",
               },
               {
                 name: "Mandie McMillon",
-                title: "Co-Founder & Consultant",
-                bio: "Mandie brings a background in education and community outreach to Bright Path Cyber. She believes that everyone deserves to feel confident and safe in the digital world, and she is dedicated to making cybersecurity guidance accessible, approachable, and genuinely useful for real people.",
+                title: "Co-Founder",
+                bio: "Mandie brings a background in education and a deep belief that everyone deserves to feel confident online. She helps shape the voice and direction of Bright Path Cyber — making sure everything we create is warm, approachable, and genuinely useful for real people.",
                 initials: "MM",
               },
             ].map((member, i) => (
@@ -260,23 +262,17 @@ export default function About() {
           <RevealSection>
             <div className="brass-bar mx-auto mb-6" />
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#1A1A1A" }}>
-              Ready to get started?
+              Want to learn more?
             </h2>
-            <p className="font-body text-lg mb-10 text-warm-gray">
-              Explore Bright Path Cyber or reach out to book a free consultation.
+            <p className="font-body text-lg mb-8 text-warm-gray">
+              Start with the blog — it's free, practical, and written for real people.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/bright-path-cyber">
-                <button className="btn-editorial btn-editorial-filled">
-                  <Shield size={15} /> Explore Bright Path Cyber
-                </button>
-              </Link>
-              <Link href="/contact">
-                <button className="btn-editorial btn-editorial-outline">
-                  <ArrowRight size={15} /> Book a Consultation
-                </button>
-              </Link>
-            </div>
+            <Link href="/blog">
+              <button className="btn-editorial btn-editorial-filled">
+                Read the Blog
+                <ArrowRight size={15} />
+              </button>
+            </Link>
           </RevealSection>
         </div>
       </section>

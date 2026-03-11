@@ -316,14 +316,14 @@ function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void 
             style={{ border: "1px solid rgba(201,168,76,0.3)", borderRadius: "4px", backgroundColor: "rgba(201,168,76,0.06)" }}
           >
             <h3 className="font-display font-bold text-lg mb-2" style={{ color: "#1A1A1A" }}>
-              Want personalized guidance?
+              Want the full picture?
             </h3>
             <p className="font-body text-sm mb-5 text-warm-gray">
-              Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace — no jargon, no judgment.
+              Our e-book, Click with Confidence, covers everything you need to stay safe online — in plain language, at your own pace.
             </p>
-            <Link href="/contact">
+            <Link href="/bright-path-cyber#ebook">
               <button className="btn-editorial btn-editorial-filled text-sm">
-                Book a Free Consultation
+                Get the E-book — $27
                 <ArrowRight size={13} />
               </button>
             </Link>

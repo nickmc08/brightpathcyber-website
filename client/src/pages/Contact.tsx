@@ -1,12 +1,12 @@
 /*
  * Contact Page — Bright Path Cyber
  * Design: Concept D Editorial — "West Elm meets Apple"
- * Ivory backgrounds, brass gold accents, near-black text
- * Contact form, email, location (Kent, WA), booking placeholder
+ * Simple contact form + email + location (Seattle, WA) + FAQ
+ * No booking, no consultation, no partnership inquiry
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Clock, Shield, Send, CheckCircle, Calendar } from "lucide-react";
+import { Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -36,8 +36,6 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 type FormData = {
   name: string;
   email: string;
-  phone: string;
-  division: string;
   subject: string;
   message: string;
 };
@@ -46,15 +44,13 @@ export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
-    phone: "",
-    division: "",
     subject: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
@@ -90,12 +86,12 @@ export default function Contact() {
           <div className="max-w-2xl">
             <div className="brass-bar mb-6" />
             <h1 className="font-display text-5xl sm:text-6xl font-bold mb-5" style={{ color: "#1A1A1A" }}>
-              Let's
+              Get in
               <br />
-              <span className="text-brass">Talk</span>
+              <span className="text-brass">Touch</span>
             </h1>
             <p className="font-body text-lg text-warm-gray">
-              Whether you have a question, want to book a consultation, or are interested in a partnership — we'd love to hear from you.
+              Have a question about something you read, or want to suggest a topic? We'd love to hear from you.
             </p>
           </div>
         </div>
@@ -107,7 +103,7 @@ export default function Contact() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Info */}
-            <div className="lg:col-span-1 space-y-6">
+            <div className="lg:col-span-1">
               <RevealSection>
                 <div
                   className="p-7"
@@ -140,8 +136,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-body text-xs font-semibold uppercase tracking-wide mb-0.5 text-warm-gray">Location</div>
-                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Kent, Washington</div>
-                        <div className="font-body text-xs text-warm-gray">Serving the greater Pacific Northwest</div>
+                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Seattle, Washington</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
@@ -153,33 +148,8 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-body text-xs font-semibold uppercase tracking-wide mb-0.5 text-warm-gray">Response Time</div>
-                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Within 1 business day</div>
+                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Within 1–2 business days</div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-              </RevealSection>
-
-              <RevealSection delay={100}>
-                <div
-                  className="p-7"
-                  style={{ backgroundColor: "rgba(255,255,255,0.6)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "4px" }}
-                >
-                  <h3 className="font-display font-semibold text-base mb-4" style={{ color: "#1A1A1A" }}>
-                    What we can help with
-                  </h3>
-                  <div className="space-y-3">
-                    <div
-                      className="p-4"
-                      style={{ border: "1px solid rgba(201,168,76,0.2)", borderRadius: "4px", backgroundColor: "rgba(201,168,76,0.06)" }}
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <Shield size={14} className="text-brass" />
-                        <span className="font-body font-semibold text-sm" style={{ color: "#1A1A1A" }}>Bright Path Cyber</span>
-                      </div>
-                      <p className="font-body text-xs text-warm-gray">
-                        Personal cybersecurity & digital safety
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -205,7 +175,7 @@ export default function Contact() {
                         Message Sent
                       </h3>
                       <p className="font-body text-base text-warm-gray">
-                        Thank you for reaching out. Nick or Mandie will be in touch within one business day.
+                        Thank you for reaching out. We'll get back to you within a couple of business days.
                       </p>
                     </div>
                   ) : (
@@ -214,14 +184,14 @@ export default function Contact() {
                         Send Us a Message
                       </h2>
                       <p className="font-body text-sm mb-7 text-warm-gray">
-                        Fill out the form below and we'll get back to you within one business day.
+                        Questions, feedback, topic suggestions — we read every message.
                       </p>
 
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                           <div>
                             <label className="block font-body text-xs font-semibold uppercase tracking-wide mb-1.5 text-warm-gray">
-                              Full Name *
+                              Name *
                             </label>
                             <input
                               type="text"
@@ -229,7 +199,7 @@ export default function Contact() {
                               required
                               value={formData.name}
                               onChange={handleChange}
-                              placeholder="Your full name"
+                              placeholder="Your name"
                               style={inputStyle}
                               onFocus={e => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.1)"; }}
                               onBlur={e => { e.target.style.borderColor = "rgba(201,168,76,0.25)"; e.target.style.boxShadow = "none"; }}
@@ -237,7 +207,7 @@ export default function Contact() {
                           </div>
                           <div>
                             <label className="block font-body text-xs font-semibold uppercase tracking-wide mb-1.5 text-warm-gray">
-                              Email Address *
+                              Email *
                             </label>
                             <input
                               type="email"
@@ -253,42 +223,6 @@ export default function Contact() {
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                          <div>
-                            <label className="block font-body text-xs font-semibold uppercase tracking-wide mb-1.5 text-warm-gray">
-                              Phone (optional)
-                            </label>
-                            <input
-                              type="tel"
-                              name="phone"
-                              value={formData.phone}
-                              onChange={handleChange}
-                              placeholder="(555) 000-0000"
-                              style={inputStyle}
-                              onFocus={e => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.1)"; }}
-                              onBlur={e => { e.target.style.borderColor = "rgba(201,168,76,0.25)"; e.target.style.boxShadow = "none"; }}
-                            />
-                          </div>
-                          <div>
-                            <label className="block font-body text-xs font-semibold uppercase tracking-wide mb-1.5 text-warm-gray">
-                              Inquiry Type
-                            </label>
-                            <select
-                              name="division"
-                              value={formData.division}
-                              onChange={handleChange}
-                              style={{ ...inputStyle, appearance: "none" }}
-                              onFocus={e => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.1)"; }}
-                              onBlur={e => { e.target.style.borderColor = "rgba(201,168,76,0.25)"; e.target.style.boxShadow = "none"; }}
-                            >
-                              <option value="">Select a topic</option>
-                              <option value="brightpath">Bright Path Cyber</option>
-                              <option value="general">General Inquiry</option>
-                              <option value="partnership">Partnership Inquiry</option>
-                            </select>
-                          </div>
-                        </div>
-
                         <div>
                           <label className="block font-body text-xs font-semibold uppercase tracking-wide mb-1.5 text-warm-gray">
                             Subject *
@@ -299,7 +233,7 @@ export default function Contact() {
                             required
                             value={formData.subject}
                             onChange={handleChange}
-                            placeholder="How can we help?"
+                            placeholder="What's on your mind?"
                             style={inputStyle}
                             onFocus={e => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.1)"; }}
                             onBlur={e => { e.target.style.borderColor = "rgba(201,168,76,0.25)"; e.target.style.boxShadow = "none"; }}
@@ -315,7 +249,7 @@ export default function Contact() {
                             required
                             value={formData.message}
                             onChange={handleChange}
-                            placeholder="Tell us a bit about what you're looking for..."
+                            placeholder="Tell us what you're thinking..."
                             rows={5}
                             style={{ ...inputStyle, resize: "vertical" }}
                             onFocus={e => { e.target.style.borderColor = "#C9A84C"; e.target.style.boxShadow = "0 0 0 3px rgba(201,168,76,0.1)"; }}
@@ -352,56 +286,8 @@ export default function Contact() {
 
       <div className="brass-rule" />
 
-      {/* Booking Section */}
-      <section className="py-20 bg-ivory">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-          <RevealSection className="mb-10">
-            <div className="brass-bar mb-6" />
-            <h2 className="font-display text-3xl font-bold" style={{ color: "#1A1A1A" }}>
-              Book a Consultation
-            </h2>
-            <p className="font-body mt-2 text-warm-gray">
-              Prefer to schedule directly? Choose a time that works for you.
-            </p>
-          </RevealSection>
-
-          <RevealSection delay={100}>
-            <div
-              className="p-12 text-center"
-              style={{ backgroundColor: "rgba(255,255,255,0.6)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "4px" }}
-            >
-              <div
-                className="w-16 h-16 flex items-center justify-center mx-auto mb-5"
-                style={{ border: "1px solid rgba(201,168,76,0.4)", borderRadius: "4px" }}
-              >
-                <Calendar size={28} className="text-brass" />
-              </div>
-              <h3 className="font-display text-2xl font-bold mb-3" style={{ color: "#1A1A1A" }}>
-                Online Scheduling
-              </h3>
-              <p className="font-body text-sm max-w-md mx-auto mb-6 text-warm-gray">
-                Our online booking system is being set up. In the meantime, send us a message using the form above or email us directly at{" "}
-                <a href="mailto:info@brightpathcyber.com" className="font-semibold text-brass transition-colors hover:opacity-70">
-                  info@brightpathcyber.com
-                </a>{" "}
-                and we'll find a time that works.
-              </p>
-              <div
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold font-body"
-                style={{ border: "1px solid rgba(201,168,76,0.3)", borderRadius: "2px", color: "#C9A84C" }}
-              >
-                <div className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ backgroundColor: "#C9A84C" }} />
-                Online booking — available soon
-              </div>
-            </div>
-          </RevealSection>
-        </div>
-      </section>
-
-      <div className="brass-rule" />
-
       {/* FAQ */}
-      <section className="py-20 bg-ivory-dark">
+      <section className="py-20 bg-ivory">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <RevealSection className="mb-10">
             <div className="brass-bar mb-6" />
@@ -412,10 +298,10 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
-              { q: "Do you offer virtual sessions?", a: "Yes — all of our coaching and consulting sessions are available both in-person (Kent, WA area) and virtually via video call." },
-              { q: "How long is a typical consultation?", a: "Initial consultations are 30 minutes and free of charge. Follow-up coaching sessions are typically 60 minutes." },
-              { q: "Do you work with organizations?", a: "Absolutely. We offer B2B workshops and partnership programs for employers, schools, libraries, healthcare providers, and community organizations." },
-              { q: "What topics do your workshops cover?", a: "Our workshops cover scam awareness, password and account security, privacy settings, safe browsing, and device safety basics — all in plain, jargon-free language." },
+              { q: "Is the blog really free?", a: "Yes — every article on our blog is completely free. We believe everyone should have access to practical cybersecurity knowledge, regardless of budget." },
+              { q: "Who is the e-book for?", a: "Anyone who wants a comprehensive, plain-language guide to staying safe online. No tech background needed. It's designed to be read at your own pace." },
+              { q: "Will there be a course?", a: "Yes — we're building a self-paced video course that covers everything in the e-book and more. Sign up on our contact form to be notified when it launches." },
+              { q: "Can I suggest a blog topic?", a: "Absolutely. Use the form above or email us at info@brightpathcyber.com. We love hearing what our readers want to learn about." },
             ].map((faq, i) => (
               <RevealSection key={i} delay={i * 80}>
                 <div

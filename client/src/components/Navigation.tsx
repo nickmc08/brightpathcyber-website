@@ -3,6 +3,7 @@
  * Design: Concept D Editorial — "West Elm meets Apple"
  * Ivory background, brass gold accents, near-black text
  * Inline shield emblem SVG, Playfair Display wordmark
+ * Minimal nav: Home, About, Cyber Safety, Blog, Contact
  */
 
 import { useState, useEffect } from "react";
@@ -99,15 +100,6 @@ export default function Navigation() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center">
-            <Link href="/contact">
-              <button className="btn-editorial btn-editorial-filled">
-                Book a Consultation
-              </button>
-            </Link>
-          </div>
-
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
@@ -135,13 +127,6 @@ export default function Navigation() {
                 </span>
               </Link>
             ))}
-            <div className="pt-2 px-3">
-              <Link href="/contact">
-                <button className="w-full btn-editorial btn-editorial-filled">
-                  Book a Consultation
-                </button>
-              </Link>
-            </div>
           </div>
         )}
       </nav>

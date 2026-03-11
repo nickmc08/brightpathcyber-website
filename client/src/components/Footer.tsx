@@ -27,12 +27,12 @@ export default function Footer() {
               <div className="brass-bar mt-2" />
             </div>
             <p className="text-sm leading-relaxed font-body mb-5 text-warm-gray">
-              Warm, jargon-free cybersecurity and privacy guidance for individuals and families — based in Kent, Washington.
+              Practical, jargon-free cybersecurity education for individuals and families — based in Seattle, Washington.
             </p>
             <div className="space-y-2">
               <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
                 <MapPin size={14} className="text-brass" />
-                <span>Kent, Washington</span>
+                <span>Seattle, Washington</span>
               </div>
               <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
                 <Mail size={14} className="text-brass" />
@@ -70,9 +70,9 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { href: "/bright-path-cyber", label: "Overview" },
-                { href: "/bright-path-cyber#services", label: "Services" },
+                { href: "/blog", label: "Blog Articles" },
                 { href: "/bright-path-cyber#ebook", label: "Click with Confidence" },
-                { href: "/contact", label: "Book a Session" },
+                { href: "/contact", label: "Contact" },
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
