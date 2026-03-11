@@ -81,7 +81,7 @@ export default function About() {
                   Nick has worked in cybersecurity since 2019, helping businesses and individuals protect their systems and data. Over time, a clear pattern became impossible to ignore. The industry focused almost entirely on enterprises, while everyday people were increasingly vulnerable. With expertise in social engineering defense, cyber defense and perimeter-less security, Nick saw the need to make cybersecurity practical and accessible. And so Bright Path Cyber was born.
                 </p>
                 <p>
-                  Meanwhile, the personal risks were getting higher. We watched people in our own family and community fall prey to scams, struggle with confusing privacy settings, and feel anxious every time they went online. Smart, capable people — targeted because nobody had ever shown them what to look for.
+                  Meanwhile, the personal risks were getting higher. We saw people in our families and communities fall victim to scams and struggle with confusing privacy settings. These were smart, capable individuals, targeted simply because no one had ever shown them what to watch for.
                 </p>
                 <p>
                   The cybersecurity world has left its most vulnerable population behind. <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to bridge that gap — to take the knowledge that's been locked inside boardrooms and IT departments and make it accessible to everyone. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually make a difference.
