@@ -84,7 +84,7 @@ export default function About() {
                   Meanwhile, the personal risks were getting higher. We saw people in our families and communities fall victim to scams and struggle with confusing privacy settings. These were smart, capable individuals, targeted simply because no one had ever shown them what to watch for.
                 </p>
                 <p>
-                  The cybersecurity world has left its most vulnerable population behind. <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to bridge that gap — to take the knowledge that's been locked inside boardrooms and IT departments and make it accessible to everyone. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually make a difference.
+                  <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to bridge that gap. Taking the knowledge often locked inside IT departments and making it accessible to everyone. Through our blog, e-book, and upcoming self-paced course, we share practical steps that truly make a difference.
                 </p>
               </div>
             </RevealSection>
