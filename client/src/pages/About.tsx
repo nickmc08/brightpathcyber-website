@@ -78,13 +78,13 @@ export default function About() {
               </h2>
               <div className="space-y-4 font-body text-base leading-relaxed text-warm-gray">
                 <p>
-                  Bright Path Cyber started with a phone call. Nick's mom called one afternoon, shaken — she'd almost given her bank information to someone pretending to be from her internet provider. She's smart, careful, and capable. But the scam was convincing, and no one had ever shown her what to look for.
+                  Nick has worked in the cybersecurity space since 2019 — primarily in B2B settings and consulting roles, helping businesses protect their systems and data. But over time, a pattern became impossible to ignore: the entire industry was focused on protecting companies, while everyday people were being left behind.
                 </p>
                 <p>
-                  That wasn't an isolated incident. We watched people in our own family and community fall prey to scams, struggle with confusing privacy settings, and feel anxious every time they went online. The cybersecurity industry talks to experts. Nobody was talking to everyone else.
+                  Meanwhile, the personal risks were getting higher. We watched people in our own family and community fall prey to scams, struggle with confusing privacy settings, and feel anxious every time they went online. Smart, capable people — targeted because nobody had ever shown them what to look for.
                 </p>
                 <p>
-                  So we built <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> — a place where anyone can learn to protect themselves online, in plain language, at their own pace. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually make a difference.
+                  The cybersecurity world has left its most vulnerable population behind. <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to bridge that gap — to take the knowledge that's been locked inside boardrooms and IT departments and make it accessible to everyone. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually make a difference.
                 </p>
               </div>
             </RevealSection>
@@ -213,13 +213,13 @@ export default function About() {
               {
                 name: "Nick McMillon",
                 title: "Co-Founder",
-                bio: "Nick started Bright Path Cyber after watching people he loves get targeted by online scams. With a background in technology and a passion for clear communication, he writes the guides and creates the resources that make cybersecurity accessible to everyone — no tech degree required.",
+                bio: "Nick has worked in cybersecurity since 2019, spending years in B2B consulting helping businesses protect their systems. But he saw a growing disconnect — the industry was focused on enterprises while personal risks were climbing. He started Bright Path Cyber to bridge that gap, translating complex security concepts into plain-language guidance that anyone can use.",
                 initials: "NM",
               },
               {
                 name: "Mandie McMillon",
                 title: "Co-Founder",
-                bio: "Mandie brings a background in education and a deep belief that everyone deserves to feel confident online. She helps shape the voice and direction of Bright Path Cyber — making sure everything we create is warm, approachable, and genuinely useful for real people.",
+                bio: "Mandie brings a sharp creative eye and a talent for visual storytelling to Bright Path Cyber. As a partner in vision and a trusted sounding board, she helps shape the brand's voice and direction — making sure everything we put out into the world feels warm, clear, and genuinely connects with the people who need it most.",
                 initials: "MM",
               },
             ].map((member, i) => (
