@@ -1,7 +1,8 @@
 /*
  * Blog Page — Bright Path Cyber
- * Design: Pacific Northwest Professional
- * 4 blog posts: scams, website safety, passwords, all Bright Path Cyber
+ * Design: Concept D Editorial — "West Elm meets Apple"
+ * Ivory backgrounds, brass gold accents, near-black text
+ * 3 blog posts: scams, website safety, passwords — warm, jargon-free voice
  */
 
 import { useState, useEffect, useRef } from "react";
@@ -27,7 +28,7 @@ function useScrollReveal() {
 function RevealSection({ children, className = "", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
   const { ref, visible } = useScrollReveal();
   return (
-    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(28px)", transition: `opacity 0.6s ease ${delay}ms, transform 0.6s ease ${delay}ms` }}>
+    <div ref={ref} className={className} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(24px)", transition: `opacity 0.7s ease ${delay}ms, transform 0.7s ease ${delay}ms` }}>
       {children}
     </div>
   );
@@ -35,32 +36,29 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 
 const posts = [
   {
-    id: "scams-targeting-seniors",
+    id: "scams-targeting-people",
     title: "5 Scams Targeting Everyday People Right Now (And How to Spot Them)",
-    excerpt: "Scammers are sophisticated, organized, and ruthless — and they target anyone, regardless of age. Here's what's circulating right now and exactly how to recognize it.",
-    division: "Bright Path Cyber",
-    divisionColor: "cyber",
+    excerpt: "Scammers are sophisticated, organized, and relentless — and they don't discriminate. Here are five schemes circulating right now and exactly how to recognize them before they cost you.",
     date: "February 28, 2026",
     readTime: "7 min read",
-    icon: Shield,
     content: `
-Every year, Americans lose billions of dollars to fraud. Not because they're naive — but because today's scammers are sophisticated, organized, and specifically trained to exploit trust. The good news? Once you know what to look for, these scams become much easier to spot.
+Every year, Americans lose billions of dollars to fraud. Not because they're careless — but because today's scammers are sophisticated, organized, and specifically trained to exploit trust. The encouraging news? Once you know what to look for, these scams become remarkably easy to spot.
 
-Here are five of the most common scams targeting everyday people right now, along with exactly how to recognize and avoid them.
+Here are five of the most common scams circulating right now, along with exactly how to recognize and avoid them.
 
-## 1. The Grandparent Scam
+## 1. The "Loved One in Trouble" Scam
 
-You get a frantic call. Someone who sounds like your grandchild — or claims to be them — is in trouble. They've been in a car accident, they're in jail, they need money immediately. They beg you not to tell their parents. A "lawyer" or "police officer" gets on the phone to confirm the story and explain how to wire money or buy gift cards.
+You get a frantic call. Someone who sounds like a family member — or claims to be calling on their behalf — says they're in serious trouble. A car accident. An arrest. A medical emergency. They beg you not to tell anyone else. A "lawyer" or "officer" gets on the line to explain how to wire money or purchase gift cards.
 
-**How to spot it:** The urgency is artificial. Real emergencies don't require gift cards. Before doing anything, hang up and call your grandchild directly on a number you already have. If they're fine, you've confirmed it's a scam. If you can't reach them, call another family member.
+**How to spot it:** The urgency is manufactured. Real emergencies don't require gift cards. Before doing anything, hang up and call your family member directly on a number you already have. If they're fine, you've just confirmed it's a scam.
 
 **What scammers count on:** Your love for your family and your instinct to help immediately.
 
 ## 2. The Government Impersonation Scam
 
-A caller claims to be from the IRS, Social Security Administration, or Medicare. They say your account has been compromised, you owe back taxes, or your benefits are at risk. They ask you to confirm your Social Security number, bank account information, or make an immediate payment to "protect" your account.
+A caller claims to be from the IRS, Social Security Administration, or another agency. They say your account has been compromised, you owe back taxes, or your benefits are at risk. They ask you to confirm personal details or make an immediate payment to "protect" your account.
 
-**How to spot it:** Government agencies never call you out of the blue to demand personal information or payment. They communicate primarily by mail. If you receive this call, hang up. You can call the real agency directly using the number on their official website.
+**How to spot it:** Government agencies never call you out of the blue to demand personal information or payment. They communicate primarily by mail. If you receive this kind of call, hang up. You can always call the real agency directly using the number on their official website.
 
 **What scammers count on:** Fear of legal trouble and the authority that comes with a government name.
 
@@ -68,13 +66,13 @@ A caller claims to be from the IRS, Social Security Administration, or Medicare.
 
 A pop-up appears on your computer warning that your device has been infected with a virus. It displays a phone number to call immediately. When you call, a "technician" asks for remote access to your computer to "fix" the problem — and uses that access to steal your files, passwords, or install actual malware.
 
-**How to spot it:** Legitimate tech companies like Microsoft and Apple do not send unsolicited pop-ups with phone numbers. If you see one, don't call the number. Close the browser window (or restart your computer if needed). If you're concerned about your device, take it to a trusted local repair shop.
+**How to spot it:** Legitimate tech companies like Microsoft and Apple do not send unsolicited pop-ups with phone numbers. If you see one, don't call the number. Close the browser window (or restart your computer if needed). If you're genuinely concerned about your device, take it to a trusted local repair shop.
 
 **What scammers count on:** The fear of losing your computer or your data.
 
 ## 4. The Romance Scam
 
-This one is particularly painful because it involves genuine emotional connection. A stranger contacts you online — through social media, a dating site, or even email. They're warm, attentive, and seem genuinely interested in you. Over weeks or months, a relationship develops. Then, just before you were supposed to meet in person, a crisis strikes. They need money for a plane ticket, a medical emergency, or to get out of a difficult situation.
+This one is particularly painful because it involves genuine emotional connection. A stranger contacts you online — through social media, a dating site, or even email. They're warm, attentive, and seem genuinely interested in you. Over weeks or months, a relationship develops. Then a crisis strikes. They need money for a plane ticket, a medical emergency, or to escape a difficult situation.
 
 **How to spot it:** Anyone who builds an online relationship but can never meet in person — and eventually asks for money — is almost certainly a scammer. Run their profile photo through a reverse image search (Google Images). If the photo appears under a different name, it's stolen.
 
@@ -94,28 +92,25 @@ You receive a letter, email, or call telling you that you've won a lottery, swee
 
 When in doubt, **slow down**. Scammers create artificial urgency because they know that if you have time to think — or talk to someone you trust — you'll see through the scheme. Hang up. Call someone. Look it up. You have every right to take your time.
 
-If you think you've been targeted by a scam, report it to the FTC at reportfraud.ftc.gov and to your local police department. And if you'd like personalized guidance on protecting yourself online, Bright Path Cyber is here to help.
+If you think you've been targeted by a scam, report it to the FTC at reportfraud.ftc.gov and to your local police department. And if you'd like personalized guidance on protecting yourself and your family online, that's exactly what we're here for at Bright Path Cyber.
     `.trim(),
   },
   {
     id: "is-this-website-safe",
     title: "How to Tell If a Website Is Safe Before You Enter Your Information",
-    excerpt: "Before you type your name, email, or credit card number into any website, there are a few quick checks that can tell you a lot about whether it's trustworthy — or not.",
-    division: "Bright Path Cyber",
-    divisionColor: "cyber",
+    excerpt: "Before you type your name, email, or credit card number into any website, a few quick checks can tell you whether it's trustworthy — or a trap.",
     date: "March 7, 2026",
     readTime: "6 min read",
-    icon: Shield,
     content: `
-Every day, people enter personal information into websites without thinking twice. Your name, your address, your credit card number, your Social Security number. And most of the time, that's fine — the site is legitimate, the connection is secure, and nothing bad happens.
+Every day, people enter personal information into websites without thinking twice. Your name, your address, your credit card number. And most of the time, that's perfectly fine — the site is legitimate, the connection is secure, and nothing bad happens.
 
-But sometimes it's not fine. Fake websites, phishing pages, and lookalike sites are designed specifically to trick you into handing over your information. The good news is that a few simple checks can tell you a lot about whether a site is trustworthy — before you type a single character.
+But sometimes it's not fine. Fake websites, phishing pages, and lookalike sites are designed specifically to trick you into handing over your information. The encouraging news is that a few simple checks can tell you a lot about whether a site is trustworthy — before you type a single character.
 
 ## Check for HTTPS — But Don't Stop There
 
 You've probably heard that you should look for the padlock icon in your browser's address bar. That padlock means the connection between your browser and the website is encrypted — which is a good thing. It means your information can't be intercepted in transit.
 
-But here's what a lot of people don't realize: the padlock does not mean the website itself is legitimate. Scammers can — and do — set up fake websites with valid HTTPS certificates. The padlock just means the connection is secure. It says nothing about whether the people running the site are trustworthy.
+But here's what many people don't realize: the padlock does not mean the website itself is legitimate. Scammers can — and do — set up fake websites with valid HTTPS certificates. The padlock just means the connection is secure. It says nothing about whether the people running the site are trustworthy.
 
 So yes, check for HTTPS. But don't stop there.
 
@@ -148,7 +143,7 @@ Urgency is a manipulation tactic. It's designed to short-circuit your judgment a
 
 ## Check the Privacy Policy and Contact Information
 
-This sounds boring, but it's genuinely useful. A real company will have a privacy policy that explains how they handle your data. They'll have a real contact page with an address, a phone number, or at minimum a working email.
+This sounds mundane, but it's genuinely useful. A real company will have a privacy policy that explains how they handle your data. They'll have a real contact page with an address, a phone number, or at minimum a working email.
 
 If a site has no contact information, no privacy policy, or only a generic contact form with no other details — that's a red flag.
 
@@ -156,7 +151,7 @@ If a site has no contact information, no privacy policy, or only a generic conta
 
 This is perhaps the most underrated piece of advice: if something about a website feels wrong, pay attention to that feeling. Maybe the design looks slightly off. Maybe the writing has unusual grammar. Maybe the deal seems too good to be true.
 
-Your instincts are often picking up on real signals, even when you can't articulate exactly what they are. You don't need to be able to explain why something feels suspicious to decide not to enter your information.
+Your instincts are often picking up on real signals, even when you can't articulate exactly what they are. You don't need to explain why something feels suspicious to decide not to enter your information.
 
 The cost of being cautious is low. The cost of ignoring a warning sign can be significant.
 
@@ -167,7 +162,7 @@ The cost of being cautious is low. The cost of ignoring a warning sign can be si
 1. Does the address bar show HTTPS and a padlock?
 2. Does the web address look exactly right — no extra letters, hyphens, or unfamiliar domains?
 3. Have you verified the company through a quick search?
-4. Is there real contact information on the site?
+4. Is the site free of pressure tactics and countdown timers?
 5. Does anything feel off?
 
 If you answered no to any of these, take a step back before proceeding. And if you'd like to walk through how to spot unsafe sites on your own devices — that's exactly the kind of thing Bright Path Cyber is here to help with.
@@ -177,11 +172,8 @@ If you answered no to any of these, take a step back before proceeding. And if y
     id: "password-front-door",
     title: "Why Your Password Is the Front Door to Your Digital Life",
     excerpt: "Most people use the same password for everything. Here's why that's a problem — and a simple system that actually works for real people.",
-    division: "Bright Path Cyber",
-    divisionColor: "cyber",
     date: "February 21, 2026",
     readTime: "6 min read",
-    icon: Shield,
     content: `
 Think about the front door of your home. You probably have a good lock on it. You don't leave it propped open. You don't give your key to strangers. And you definitely don't use the same key for your house, your car, your mailbox, and your safe-deposit box.
 
@@ -191,7 +183,7 @@ But that's exactly what most people do with their passwords online.
 
 It's understandable. Passwords are annoying. There are dozens of them. They have to be long, complicated, and different from your last five. So most people settle on one or two passwords they can remember and use them everywhere.
 
-Here's the risk: when a company gets hacked — and it happens constantly — your username and password get stolen. Criminals then take that combination and automatically try it on hundreds of other websites. Your email. Your bank. Your Amazon account. Your Medicare portal. If you use the same password, they're in.
+Here's the risk: when a company gets hacked — and it happens constantly — your username and password get stolen. Criminals then take that combination and automatically try it on hundreds of other websites. Your email. Your bank. Your Amazon account. If you use the same password, they're in.
 
 This is called "credential stuffing," and it's one of the most common ways accounts get compromised. Not because someone guessed your password — but because they got it from a completely different website you forgot you even had an account on.
 
@@ -232,19 +224,12 @@ You don't have to overhaul everything at once. Start here:
 3. Do the same for your bank account.
 4. Consider downloading a free password manager and adding accounts one at a time as you log in to them.
 
-Small steps, taken consistently, add up to real protection. And if you'd like to walk through any of this with someone who can explain it in plain English — that's exactly what Bright Path Cyber is here for.
+Small steps, taken consistently, add up to real protection. And if you'd like to walk through any of this with someone who can explain it clearly and patiently — that's exactly what Bright Path Cyber is here for.
     `.trim(),
   },
 ];
 
 function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void }) {
-  const isCyber = post.divisionColor === "cyber";
-  const accentColor = isCyber ? "oklch(0.58 0.12 185)" : "oklch(0.75 0.16 75)";
-  const badgeStyle = isCyber
-    ? { backgroundColor: "oklch(0.94 0.04 185)", color: "oklch(0.40 0.10 185)" }
-    : { backgroundColor: "oklch(0.96 0.05 75)", color: "oklch(0.45 0.12 75)" };
-
-  // Parse the markdown-like content
   const renderContent = (content: string) => {
     const lines = content.split("\n");
     const elements: React.ReactElement[] = [];
@@ -254,29 +239,34 @@ function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void 
       const line = lines[i];
       if (line.startsWith("## ")) {
         elements.push(
-          <h2 key={i} className="font-display text-2xl font-semibold mt-8 mb-3" style={{ color: "oklch(0.22 0.06 255)" }}>
+          <h2 key={i} className="font-display text-2xl font-bold mt-10 mb-4" style={{ color: "#1A1A1A" }}>
             {line.replace("## ", "")}
           </h2>
         );
       } else if (line.startsWith("**") && line.endsWith("**")) {
         elements.push(
-          <p key={i} className="font-body font-semibold text-base mb-3" style={{ color: "oklch(0.30 0.06 255)" }}>
+          <p key={i} className="font-body font-semibold text-base mb-3" style={{ color: "#1A1A1A" }}>
             {line.replace(/\*\*/g, "")}
           </p>
         );
       } else if (line.startsWith("---")) {
-        elements.push(<hr key={i} className="my-8 border-0 h-px" style={{ backgroundColor: "oklch(0.88 0.01 255)" }} />);
+        elements.push(
+          <div key={i} className="my-10 flex items-center justify-center gap-3">
+            <div className="h-px flex-1" style={{ backgroundColor: "rgba(201,168,76,0.3)" }} />
+            <div className="w-1.5 h-1.5" style={{ backgroundColor: "#C9A84C", borderRadius: "50%" }} />
+            <div className="h-px flex-1" style={{ backgroundColor: "rgba(201,168,76,0.3)" }} />
+          </div>
+        );
       } else if (line.trim() !== "") {
-        // Handle inline bold
         const parts = line.split(/(\*\*[^*]+\*\*)/g);
         const rendered = parts.map((part, j) => {
           if (part.startsWith("**") && part.endsWith("**")) {
-            return <strong key={j} className="font-semibold" style={{ color: "oklch(0.28 0.06 255)" }}>{part.replace(/\*\*/g, "")}</strong>;
+            return <strong key={j} className="font-semibold" style={{ color: "#1A1A1A" }}>{part.replace(/\*\*/g, "")}</strong>;
           }
           return part;
         });
         elements.push(
-          <p key={i} className="font-body text-base leading-relaxed mb-4" style={{ color: "oklch(0.38 0.03 255)" }}>
+          <p key={i} className="font-body text-base leading-relaxed mb-4 text-warm-gray">
             {rendered}
           </p>
         );
@@ -287,53 +277,52 @@ function BlogPost({ post, onBack }: { post: typeof posts[0]; onBack: () => void 
   };
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.98 0.005 80)" }}>
+    <div className="min-h-screen bg-ivory">
       <Navigation />
-      <div className="pt-24 pb-16">
+      <div className="pt-32 pb-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 text-sm font-body mb-8 transition-colors hover:opacity-70"
-            style={{ color: "oklch(0.50 0.03 255)" }}
+            className="flex items-center gap-2 text-sm font-body mb-8 transition-colors hover:opacity-70 text-warm-gray"
           >
             <ChevronLeft size={15} />
             Back to Blog
           </button>
 
-          <div className="flex items-center gap-2 mb-5">
-            <span className="division-badge" style={badgeStyle}>
-              <post.icon size={11} />
-              {post.division}
+          <div className="flex items-center gap-3 mb-5">
+            <span className="division-badge">
+              <Shield size={11} />
+              Bright Path Cyber
             </span>
-            <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>{post.date}</span>
-            <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>·</span>
-            <span className="text-xs font-body flex items-center gap-1" style={{ color: "oklch(0.55 0.03 255)" }}>
+            <span className="text-xs font-body text-warm-gray">{post.date}</span>
+            <span className="text-xs font-body text-warm-gray">·</span>
+            <span className="text-xs font-body flex items-center gap-1 text-warm-gray">
               <Clock size={11} /> {post.readTime}
             </span>
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl font-semibold leading-tight mb-6" style={{ color: "oklch(0.22 0.06 255)" }}>
+          <h1 className="font-display text-4xl sm:text-5xl font-bold leading-tight mb-6" style={{ color: "#1A1A1A" }}>
             {post.title}
           </h1>
 
-          <div className="w-12 h-0.5 mb-10" style={{ backgroundColor: accentColor }} />
+          <div className="brass-bar mb-10" />
 
           <div className="prose-content">
             {renderContent(post.content)}
           </div>
 
-          <div className="mt-12 p-7 rounded-2xl" style={{ backgroundColor: isCyber ? "oklch(0.94 0.04 185)" : "oklch(0.96 0.05 75)", border: `1px solid ${isCyber ? "oklch(0.85 0.08 185)" : "oklch(0.88 0.10 75)"}` }}>
-            <h3 className="font-display font-semibold text-lg mb-2" style={{ color: "oklch(0.22 0.06 255)" }}>
+          <div
+            className="mt-14 p-8"
+            style={{ border: "1px solid rgba(201,168,76,0.3)", borderRadius: "4px", backgroundColor: "rgba(201,168,76,0.06)" }}
+          >
+            <h3 className="font-display font-bold text-lg mb-2" style={{ color: "#1A1A1A" }}>
               Want personalized guidance?
             </h3>
-            <p className="font-body text-sm mb-4" style={{ color: "oklch(0.40 0.03 255)" }}>
-              Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace.
+            <p className="font-body text-sm mb-5 text-warm-gray">
+              Bright Path Cyber offers 1-on-1 coaching sessions to help you navigate digital safety at your own pace — no jargon, no judgment.
             </p>
             <Link href="/contact">
-              <button
-                className="flex items-center gap-2 px-5 py-2.5 rounded-lg font-semibold font-body text-sm text-white transition-all hover:opacity-90"
-                style={{ backgroundColor: accentColor }}
-              >
+              <button className="btn-editorial btn-editorial-filled text-sm">
                 Book a Free Consultation
                 <ArrowRight size={13} />
               </button>
@@ -356,26 +345,29 @@ export default function Blog() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: "oklch(0.98 0.005 80)" }}>
+    <div className="min-h-screen bg-ivory">
       <Navigation />
 
       {/* Header */}
-      <section className="pt-32 pb-16" style={{ backgroundColor: "oklch(0.22 0.06 255)" }}>
+      <section className="pt-32 pb-20 bg-ivory">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-2xl">
-            <div className="teal-bar mb-5" style={{ backgroundColor: "oklch(0.58 0.12 185)" }} />
-            <h1 className="font-display text-5xl sm:text-6xl font-semibold text-white mb-5">
-              Insights &<br />Resources
+            <div className="brass-bar mb-6" />
+            <h1 className="font-display text-5xl sm:text-6xl font-bold mb-5" style={{ color: "#1A1A1A" }}>
+              Insights &
+              <br />
+              <span className="text-brass">Resources</span>
             </h1>
-            <p className="font-body text-lg" style={{ color: "oklch(0.78 0.03 255)" }}>
+            <p className="font-body text-lg text-warm-gray">
               Practical guidance on cybersecurity, online safety, and digital privacy — written in plain English for individuals, families, and anyone who wants to stay safe online.
             </p>
           </div>
         </div>
+        <div className="brass-rule mt-16" />
       </section>
 
       {/* Blog Posts */}
-      <section className="py-20">
+      <section className="py-20 bg-ivory-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Featured Post */}
           <RevealSection className="mb-10">
@@ -384,36 +376,36 @@ export default function Blog() {
               className="w-full text-left group"
             >
               <div
-                className="rounded-2xl overflow-hidden card-lift"
-                style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}
+                className="overflow-hidden card-lift"
+                style={{ backgroundColor: "rgba(255,255,255,0.6)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "4px" }}
               >
                 <div className="grid grid-cols-1 lg:grid-cols-5">
                   <div
                     className="lg:col-span-2 min-h-48 flex items-center justify-center p-12"
-                    style={{ backgroundColor: "oklch(0.94 0.04 185)" }}
+                    style={{ backgroundColor: "rgba(201,168,76,0.08)" }}
                   >
-                    <Shield size={64} style={{ color: "oklch(0.50 0.12 185)" }} />
+                    <Shield size={64} className="text-brass" style={{ opacity: 0.6 }} />
                   </div>
                   <div className="lg:col-span-3 p-8 sm:p-10">
                     <div className="flex items-center gap-2 mb-4">
-                      <span className="division-badge division-badge-cyber">
+                      <span className="division-badge">
                         <Shield size={11} /> Bright Path Cyber
                       </span>
-                      <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>Featured</span>
+                      <span className="text-xs font-body text-brass font-semibold">Featured</span>
                     </div>
-                    <h2 className="font-display text-2xl sm:text-3xl font-semibold mb-3 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
+                    <h2 className="font-display text-2xl sm:text-3xl font-bold mb-3 group-hover:text-brass transition-colors" style={{ color: "#1A1A1A" }}>
                       {posts[0].title}
                     </h2>
-                    <p className="font-body text-sm leading-relaxed mb-5" style={{ color: "oklch(0.45 0.03 255)" }}>
+                    <p className="font-body text-sm leading-relaxed mb-5 text-warm-gray">
                       {posts[0].excerpt}
                     </p>
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+                      <div className="flex items-center gap-3 text-xs font-body text-warm-gray">
                         <span>{posts[0].date}</span>
                         <span>·</span>
                         <span className="flex items-center gap-1"><Clock size={11} /> {posts[0].readTime}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 font-semibold font-body text-sm group-hover:gap-3 transition-all" style={{ color: "oklch(0.50 0.12 185)" }}>
+                      <div className="flex items-center gap-1.5 font-semibold font-body text-sm text-brass group-hover:gap-3 transition-all">
                         Read Article <ArrowRight size={14} />
                       </div>
                     </div>
@@ -423,34 +415,40 @@ export default function Blog() {
             </button>
           </RevealSection>
 
-          {/* Other Bright Path Cyber Posts */}
+          {/* Other Posts */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.slice(1).filter(p => p.divisionColor === "cyber").map((post, i) => (
+            {posts.slice(1).map((post, i) => (
               <RevealSection key={post.id} delay={i * 100}>
                 <button onClick={() => setActivePost(post.id)} className="w-full text-left group">
-                  <div className="rounded-2xl overflow-hidden card-lift h-full flex flex-col" style={{ backgroundColor: "white", border: "1px solid oklch(0.88 0.01 255)" }}>
-                    <div className="h-36 flex items-center justify-center" style={{ backgroundColor: "oklch(0.94 0.04 185)" }}>
-                      <Shield size={48} style={{ color: "oklch(0.50 0.12 185)" }} />
+                  <div
+                    className="overflow-hidden card-lift h-full flex flex-col"
+                    style={{ backgroundColor: "rgba(255,255,255,0.6)", border: "1px solid rgba(201,168,76,0.2)", borderRadius: "4px" }}
+                  >
+                    <div
+                      className="h-36 flex items-center justify-center"
+                      style={{ backgroundColor: "rgba(201,168,76,0.06)" }}
+                    >
+                      <Shield size={48} className="text-brass" style={{ opacity: 0.5 }} />
                     </div>
                     <div className="p-7 flex flex-col flex-1">
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="division-badge division-badge-cyber">
-                          <Shield size={11} /> {post.division}
+                        <span className="division-badge">
+                          <Shield size={11} /> Bright Path Cyber
                         </span>
                       </div>
-                      <h2 className="font-display text-xl font-semibold mb-3 group-hover:opacity-80 transition-opacity" style={{ color: "oklch(0.22 0.06 255)" }}>
+                      <h2 className="font-display text-xl font-bold mb-3 group-hover:text-brass transition-colors" style={{ color: "#1A1A1A" }}>
                         {post.title}
                       </h2>
-                      <p className="font-body text-sm leading-relaxed mb-4 flex-1" style={{ color: "oklch(0.45 0.03 255)" }}>
+                      <p className="font-body text-sm leading-relaxed mb-4 flex-1 text-warm-gray">
                         {post.excerpt}
                       </p>
                       <div className="flex items-center justify-between mt-auto">
-                        <div className="flex items-center gap-2 text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+                        <div className="flex items-center gap-2 text-xs font-body text-warm-gray">
                           <span>{post.date}</span>
                           <span>·</span>
                           <span className="flex items-center gap-1"><Clock size={11} /> {post.readTime}</span>
                         </div>
-                        <div className="flex items-center gap-1.5 font-semibold font-body text-xs group-hover:gap-2.5 transition-all" style={{ color: "oklch(0.50 0.12 185)" }}>
+                        <div className="flex items-center gap-1.5 font-semibold font-body text-xs text-brass group-hover:gap-2.5 transition-all">
                           Read <ArrowRight size={12} />
                         </div>
                       </div>
@@ -461,23 +459,22 @@ export default function Blog() {
             ))}
           </div>
 
+          <div className="brass-rule mt-16" />
+
           {/* Newsletter CTA */}
           <RevealSection className="mt-16">
             <div
-              className="rounded-2xl p-10 text-center"
-              style={{ backgroundColor: "oklch(0.22 0.06 255)" }}
+              className="p-10 text-center"
+              style={{ backgroundColor: "#1A1A1A", borderRadius: "4px" }}
             >
-              <h3 className="font-display text-2xl font-semibold text-white mb-3">
+              <h3 className="font-display text-2xl font-bold text-brass mb-3">
                 Stay in the loop
               </h3>
-              <p className="font-body text-sm mb-6" style={{ color: "oklch(0.78 0.03 255)" }}>
-                New articles on cybersecurity and financial literacy — delivered to your inbox, no spam ever.
+              <p className="font-body text-sm mb-6" style={{ color: "rgba(245,240,232,0.7)" }}>
+                New articles on cybersecurity and digital safety — delivered to your inbox, no spam ever.
               </p>
               <Link href="/contact">
-                <button
-                  className="px-7 py-3 rounded-lg font-semibold font-body text-sm text-white transition-all hover:opacity-90"
-                  style={{ backgroundColor: "oklch(0.58 0.12 185)" }}
-                >
+                <button className="btn-editorial btn-editorial-filled">
                   Subscribe to Updates
                 </button>
               </Link>

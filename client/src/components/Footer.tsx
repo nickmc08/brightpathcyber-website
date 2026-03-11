@@ -1,46 +1,42 @@
 /*
  * Footer — Bright Path Cyber
- * Design: Pacific Northwest Professional
- * Deep navy background, warm white text, teal accents
- * 3-column layout: Brand | Company | Cyber Safety
+ * Design: Concept D Editorial — "West Elm meets Apple"
+ * Ivory background, brass gold accents, near-black text
+ * Clean editorial layout with thin brass rule dividers
  */
 
 import { Link } from "wouter";
-import { MapPin, Mail, ArrowRight } from "lucide-react";
-
-const LOGO_FULL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-logo-full_9bdb655a.png";
+import { MapPin, Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer style={{ backgroundColor: "oklch(0.22 0.06 255)" }} className="text-white">
+    <footer className="bg-ivory-dark">
+      {/* Top brass rule */}
+      <div className="brass-rule" />
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
           {/* Brand Column */}
           <div className="md:col-span-1">
-            <div className="mb-4">
-              {/* Logo on dark background — use the full logo with a white/light background pill */}
-              <div className="inline-block bg-white rounded-xl px-3 py-2">
-                <img
-                  src={LOGO_FULL}
-                  alt="Bright Path Cyber"
-                  className="h-9 w-auto object-contain"
-                  style={{ maxWidth: "180px" }}
-                />
-              </div>
+            <div className="mb-5">
+              <h3 className="font-display text-xl font-semibold" style={{ color: "#1A1A1A" }}>
+                Bright Path Cyber
+              </h3>
+              <div className="brass-bar mt-2" />
             </div>
-            <p className="text-sm leading-relaxed font-body mb-5" style={{ color: "oklch(0.72 0.03 255)" }}>
+            <p className="text-sm leading-relaxed font-body mb-5 text-warm-gray">
               Warm, jargon-free cybersecurity and privacy guidance for individuals and families — based in Kent, Washington.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm font-body" style={{ color: "oklch(0.72 0.03 255)" }}>
-                <MapPin size={14} style={{ color: "oklch(0.58 0.12 185)" }} />
+              <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
+                <MapPin size={14} className="text-brass" />
                 <span>Kent, Washington</span>
               </div>
-              <div className="flex items-center gap-2 text-sm font-body" style={{ color: "oklch(0.72 0.03 255)" }}>
-                <Mail size={14} style={{ color: "oklch(0.58 0.12 185)" }} />
-                <a href="mailto:info@brightpathcyber.com" className="hover:text-white transition-colors">
+              <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
+                <Mail size={14} className="text-brass" />
+                <a href="mailto:info@brightpathcyber.com" className="hover:text-near-black transition-colors">
                   info@brightpathcyber.com
                 </a>
               </div>
@@ -49,7 +45,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-display font-semibold text-white mb-4 text-sm tracking-wide uppercase">Company</h4>
+            <h4 className="font-body font-semibold text-near-black mb-4 text-xs tracking-[0.12em] uppercase">Company</h4>
             <ul className="space-y-2.5">
               {[
                 { href: "/", label: "Home" },
@@ -59,8 +55,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href}>
-                    <span className="text-sm font-body transition-colors hover:text-white flex items-center gap-1 group" style={{ color: "oklch(0.72 0.03 255)" }}>
-                      <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "oklch(0.58 0.12 185)" }} />
+                    <span className="text-sm font-body text-warm-gray transition-colors hover:text-near-black">
                       {link.label}
                     </span>
                   </Link>
@@ -71,17 +66,7 @@ export default function Footer() {
 
           {/* Cyber Safety */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-favicon_e6d7ef2d.png"
-                alt=""
-                className="w-5 h-5 object-contain"
-              />
-              <h4 className="font-display font-semibold text-white text-sm tracking-wide uppercase">Cyber Safety</h4>
-            </div>
-            <p className="text-xs font-body mb-3" style={{ color: "oklch(0.72 0.03 255)" }}>
-              Warm, clear cybersecurity guidance for everyone.
-            </p>
+            <h4 className="font-body font-semibold text-near-black mb-4 text-xs tracking-[0.12em] uppercase">Cyber Safety</h4>
             <ul className="space-y-2.5">
               {[
                 { href: "/bright-path-cyber", label: "Overview" },
@@ -91,8 +76,7 @@ export default function Footer() {
               ].map((link) => (
                 <li key={link.label}>
                   <Link href={link.href}>
-                    <span className="text-sm font-body transition-colors hover:text-white flex items-center gap-1 group" style={{ color: "oklch(0.72 0.03 255)" }}>
-                      <ArrowRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ color: "oklch(0.58 0.12 185)" }} />
+                    <span className="text-sm font-body text-warm-gray transition-colors hover:text-near-black">
                       {link.label}
                     </span>
                   </Link>
@@ -103,15 +87,15 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderColor: "oklch(0.32 0.05 255)" }}>
-          <p className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
-            © {currentYear} Bright Path Cyber. All rights reserved. | Kent, Washington
+        <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(201,168,76,0.3)" }}>
+          <p className="text-xs font-body text-warm-gray">
+            &copy; {currentYear} Bright Path Cyber. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+            <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
               Privacy Policy
             </span>
-            <span className="text-xs font-body" style={{ color: "oklch(0.55 0.03 255)" }}>
+            <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
               Terms of Service
             </span>
           </div>
