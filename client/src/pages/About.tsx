@@ -78,7 +78,7 @@ export default function About() {
               </h2>
               <div className="space-y-4 font-body text-base leading-relaxed text-warm-gray">
                 <p>
-                  Nick has worked in the cybersecurity space since 2019 — primarily in B2B settings and consulting roles, helping businesses protect their systems and data. But over time, a pattern became impossible to ignore: the entire industry was focused on protecting companies, while everyday people were being left behind.
+                  Nick has worked in cybersecurity since 2019, helping businesses and individuals protect their systems and data. Over time, a clear pattern became impossible to ignore. The industry focused almost entirely on enterprises, while everyday people were increasingly vulnerable. With expertise in social engineering defense, cyber defense and perimeter-less security, Nick saw the need to make cybersecurity practical and accessible. And so Bright Path Cyber was born.
                 </p>
                 <p>
                   Meanwhile, the personal risks were getting higher. We watched people in our own family and community fall prey to scams, struggle with confusing privacy settings, and feel anxious every time they went online. Smart, capable people — targeted because nobody had ever shown them what to look for.
