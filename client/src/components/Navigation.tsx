@@ -98,6 +98,22 @@ export default function Navigation() {
                 </span>
               </Link>
             ))}
+            <a
+              href="https://bright-path-cyber.kit.com/ea25858516"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-3 px-4 py-2 text-sm font-body font-medium transition-all duration-200"
+              style={{
+                border: "1px solid #C9A84C",
+                borderRadius: "4px",
+                color: "#C9A84C",
+                letterSpacing: "0.05em",
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#C9A84C"; (e.currentTarget as HTMLAnchorElement).style.color = "#1A1A1A"; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent"; (e.currentTarget as HTMLAnchorElement).style.color = "#C9A84C"; }}
+            >
+              Free Checklist
+            </a>
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -127,6 +143,22 @@ export default function Navigation() {
                 </span>
               </Link>
             ))}
+            <div className="px-3 pt-2">
+              <a
+                href="https://bright-path-cyber.kit.com/ea25858516"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center py-2.5 text-sm font-body font-medium"
+                style={{
+                  border: "1px solid #C9A84C",
+                  borderRadius: "4px",
+                  color: "#C9A84C",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                Free Checklist
+              </a>
+            </div>
           </div>
         )}
       </nav>

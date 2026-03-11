@@ -14,6 +14,22 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
+function ConvertKitForm() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!containerRef.current) return;
+    // Remove any previously injected script to avoid duplicates
+    const existing = document.querySelector('script[data-uid="2a0899bcca"]');
+    if (existing) existing.remove();
+    const script = document.createElement("script");
+    script.async = true;
+    script.setAttribute("data-uid", "2a0899bcca");
+    script.src = "https://bright-path-cyber.kit.com/2a0899bcca/index.js";
+    containerRef.current.appendChild(script);
+  }, []);
+  return <div ref={containerRef} className="ck-embed-container" />;
+}
+
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -199,6 +215,47 @@ export default function Home() {
                   Get the E-book
                   <ArrowRight size={15} />
                 </button>
+              </div>
+            </RevealSection>
+          </div>
+        </div>
+      </section>
+
+      <div className="brass-rule" />
+
+      {/* Free Checklist Section */}
+      <section id="free-checklist" className="py-24 bg-ivory">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <RevealSection>
+              <div className="brass-bar mb-6" />
+              <div className="division-badge mb-4">
+                Free Resource
+              </div>
+              <h2 className="font-display text-4xl sm:text-5xl font-bold mb-5 leading-tight" style={{ color: "#1A1A1A" }}>
+                Protect Yourself
+                <br />
+                <span className="text-brass">in 5 Minutes</span>
+              </h2>
+              <p className="font-body text-lg leading-relaxed mb-4 text-warm-gray">
+                Download your free Personal Security Audit Checklist — no technical knowledge required.
+              </p>
+              <p className="font-body text-base leading-relaxed text-warm-gray">
+                A simple, actionable list of the most important steps you can take right now to protect yourself online. Takes about five minutes to go through. Could save you from a lot of headaches.
+              </p>
+            </RevealSection>
+
+            <RevealSection delay={150}>
+              <div
+                className="p-8 sm:p-10"
+                style={{
+                  backgroundColor: "rgba(255,255,255,0.7)",
+                  border: "1px solid rgba(201,168,76,0.3)",
+                  borderRadius: "4px",
+                }}
+              >
+                {/* ConvertKit Embed */}
+                <ConvertKitForm />
               </div>
             </RevealSection>
           </div>
