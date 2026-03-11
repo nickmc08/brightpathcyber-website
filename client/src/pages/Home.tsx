@@ -61,7 +61,7 @@ export default function Home() {
             </h1>
 
             <p className="font-body text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl text-warm-gray">
-              Practical, jargon-free cybersecurity education for individuals and families — from people who genuinely care. Based in Seattle, Washington.
+              Practical, jargon-free cybersecurity education for individuals and families — from people who genuinely care.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

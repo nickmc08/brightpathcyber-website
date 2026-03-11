@@ -1,12 +1,12 @@
 /*
  * Contact Page — Bright Path Cyber
  * Design: Concept D Editorial — "West Elm meets Apple"
- * Simple contact form + email + location (Seattle, WA) + FAQ
+ * Simple contact form + email + FAQ
  * No booking, no consultation, no partnership inquiry
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Mail, Clock, Send, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -127,18 +127,7 @@ export default function Contact() {
                         </a>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <div
-                        className="w-9 h-9 flex items-center justify-center flex-shrink-0"
-                        style={{ border: "1px solid rgba(201,168,76,0.4)", borderRadius: "4px" }}
-                      >
-                        <MapPin size={16} className="text-brass" />
-                      </div>
-                      <div>
-                        <div className="font-body text-xs font-semibold uppercase tracking-wide mb-0.5 text-warm-gray">Location</div>
-                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Seattle, Washington</div>
-                      </div>
-                    </div>
+
                     <div className="flex items-start gap-3">
                       <div
                         className="w-9 h-9 flex items-center justify-center flex-shrink-0"

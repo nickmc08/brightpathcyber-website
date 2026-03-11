@@ -148,7 +148,7 @@ export default function About() {
                   Our Vision
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "rgba(245,240,232,0.8)" }}>
-                  A world where nobody has to feel anxious, confused, or vulnerable online. We believe that with the right education — delivered plainly and honestly — anyone can navigate the digital world with confidence. Based in Seattle, Washington, we're building that resource one article, one guide, and one reader at a time.
+                  A world where nobody has to feel anxious, confused, or vulnerable online. We believe that with the right education — delivered plainly and honestly — anyone can navigate the digital world with confidence. We're building that resource one article, one guide, and one reader at a time.
                 </p>
               </div>
             </RevealSection>

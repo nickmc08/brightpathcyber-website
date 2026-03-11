@@ -6,7 +6,7 @@
  */
 
 import { Link } from "wouter";
-import { MapPin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -27,13 +27,9 @@ export default function Footer() {
               <div className="brass-bar mt-2" />
             </div>
             <p className="text-sm leading-relaxed font-body mb-5 text-warm-gray">
-              Practical, jargon-free cybersecurity education for individuals and families — based in Seattle, Washington.
+              Practical, jargon-free cybersecurity education for individuals and families.
             </p>
             <div className="space-y-2">
-              <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
-                <MapPin size={14} className="text-brass" />
-                <span>Seattle, Washington</span>
-              </div>
               <div className="flex items-center gap-2 text-sm font-body text-warm-gray">
                 <Mail size={14} className="text-brass" />
                 <a href="mailto:info@brightpathcyber.com" className="hover:text-near-black transition-colors">
