@@ -3,10 +3,11 @@
  * Design: Concept D Editorial — "West Elm meets Apple"
  * Simple contact form + email + FAQ
  * No booking, no consultation, no partnership inquiry
+ * Form submits to Formspree (no-account endpoint) via fetch POST
  */
 
 import { useState, useEffect, useRef } from "react";
-import { Mail, Clock, Send, CheckCircle } from "lucide-react";
+import { Mail, Clock, Send, CheckCircle, AlertCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -40,6 +41,10 @@ type FormData = {
   message: string;
 };
 
+type SubmitStatus = "idle" | "loading" | "success" | "error";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/info@brightpathcyber.com";
+
 export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -47,20 +52,46 @@ export default function Contact() {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<SubmitStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1200);
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        const data = await response.json().catch(() => ({}));
+        const msg = (data as { error?: string }).error || "Something went wrong. Please try again or email us directly.";
+        setErrorMessage(msg);
+        setStatus("error");
+      }
+    } catch {
+      setErrorMessage("Unable to send your message. Please check your connection or email us at info@brightpathcyber.com.");
+      setStatus("error");
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -152,7 +183,7 @@ export default function Contact() {
                   className="p-8 sm:p-10"
                   style={{ backgroundColor: "rgba(255,255,255,0.6)", border: "1px solid rgba(201,168,76,0.25)", borderRadius: "4px" }}
                 >
-                  {submitted ? (
+                  {status === "success" ? (
                     <div className="text-center py-12">
                       <div
                         className="w-16 h-16 flex items-center justify-center mx-auto mb-5"
@@ -161,11 +192,18 @@ export default function Contact() {
                         <CheckCircle size={32} className="text-brass" />
                       </div>
                       <h3 className="font-display text-2xl font-bold mb-3" style={{ color: "#1A1A1A" }}>
-                        Message Sent
+                        Message Sent!
                       </h3>
-                      <p className="font-body text-base text-warm-gray">
-                        Thank you for reaching out. We'll get back to you within a couple of business days.
+                      <p className="font-body text-base text-warm-gray mb-6">
+                        Thank you for reaching out. We read every message and will get back to you within 1–2 business days.
                       </p>
+                      <button
+                        onClick={() => setStatus("idle")}
+                        className="btn-editorial btn-editorial-outline"
+                        style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem" }}
+                      >
+                        Send Another Message
+                      </button>
                     </div>
                   ) : (
                     <>
@@ -175,6 +213,18 @@ export default function Contact() {
                       <p className="font-body text-sm mb-7 text-warm-gray">
                         Questions, feedback, topic suggestions — we read every message.
                       </p>
+
+                      {status === "error" && (
+                        <div
+                          className="flex items-start gap-3 p-4 mb-6"
+                          style={{ backgroundColor: "rgba(220,53,69,0.06)", border: "1px solid rgba(220,53,69,0.25)", borderRadius: "4px" }}
+                        >
+                          <AlertCircle size={18} style={{ color: "#dc3545", flexShrink: 0, marginTop: "1px" }} />
+                          <p className="font-body text-sm" style={{ color: "#dc3545" }}>
+                            {errorMessage}
+                          </p>
+                        </div>
+                      )}
 
                       <form onSubmit={handleSubmit} className="space-y-5">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -248,10 +298,10 @@ export default function Contact() {
 
                         <button
                           type="submit"
-                          disabled={loading}
+                          disabled={status === "loading"}
                           className="btn-editorial btn-editorial-filled disabled:opacity-60"
                         >
-                          {loading ? (
+                          {status === "loading" ? (
                             <>
                               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
                               Sending...
