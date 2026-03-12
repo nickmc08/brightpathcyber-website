@@ -287,7 +287,6 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
-              { q: "Is the blog really free?", a: "Yes — every article on our blog is completely free. We believe everyone should have access to practical cybersecurity knowledge, regardless of budget." },
               { q: "Who is the e-book for?", a: "Anyone who wants a comprehensive, plain-language guide to staying safe online. No tech background needed. It's designed to be read at your own pace." },
               { q: "Will there be a course?", a: "Yes — we're building a self-paced video course that covers everything in the e-book and more. Sign up on our contact form to be notified when it launches." },
               { q: "Can I suggest a blog topic?", a: "Absolutely. Use the form above or email us at info@brightpathcyber.com. We love hearing what our readers want to learn about." },
