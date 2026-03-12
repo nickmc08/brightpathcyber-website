@@ -213,7 +213,7 @@ export default function About() {
               {
                 name: "Nick McMillon",
                 title: "Co-Founder",
-                bio: "Nick has worked in cybersecurity since 2019, spending years in B2B consulting helping businesses protect their systems. But he saw a growing disconnect — the industry was focused on enterprises while personal risks were climbing. He started Bright Path Cyber to bridge that gap, translating complex security concepts into plain-language guidance that anyone can use.",
+                bio: "Nick is the technical mind behind Bright Path Cyber. With years of experience in cybersecurity, he specializes in areas like social engineering defense, cyber defense, and perimeterless security. Along the way, he noticed a growing disconnect — the industry was focused on protecting companies while everyday people were facing increasing digital risks. Bright Path Cyber was created to bridge that gap by turning complex security concepts into clear, practical guidance anyone can use.",
                 initials: "NM",
               },
               {
