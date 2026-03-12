@@ -78,13 +78,16 @@ export default function About() {
               </h2>
               <div className="space-y-4 font-body text-base leading-relaxed text-warm-gray">
                 <p>
-                  Nick has worked in cybersecurity since 2019, helping businesses and individuals protect their systems and data. Over time, a clear pattern became impossible to ignore. The industry focused almost entirely on enterprises, while everyday people were increasingly vulnerable. With expertise in social engineering defense, cyber defense and perimeter-less security, Nick saw the need to make cybersecurity practical and accessible. And so Bright Path Cyber was born.
+                  Bright Path Cyber began with a simple observation: the people most at risk online often receive the least cybersecurity guidance.
                 </p>
                 <p>
-                  Meanwhile, the personal risks were getting higher. We saw people in our families and communities fall victim to scams and struggle with confusing privacy settings. These were smart, capable individuals, targeted simply because no one had ever shown them what to watch for.
+                  While working in the cybersecurity field, Nick saw organizations invest heavily in protecting their systems and data. At the same time, personal digital risks were rising rapidly — scams, identity theft, and privacy threats becoming part of everyday life.
                 </p>
                 <p>
-                  <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to bridge that gap. Taking the knowledge often locked inside IT departments and making it accessible to everyone. Through our blog, e-book, and upcoming self-paced course, we share practical steps that truly make a difference.
+                  Closer to home, we saw friends, family, and members of our community struggle with confusing privacy settings, online scams, and security decisions they had never been taught how to make. These were smart, capable people — they simply hadn't been given the tools.
+                </p>
+                <p>
+                  <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to change that. Our goal is to take the knowledge often locked inside security teams and make it accessible to everyone. Through our blog, our e-book, and our upcoming self-paced course, we focus on practical steps that help people protect themselves in the real world.
                 </p>
               </div>
             </RevealSection>
@@ -219,7 +222,7 @@ export default function About() {
               {
                 name: "Mandie McMillon",
                 title: "Co-Founder",
-                bio: "Mandie brings a sharp creative eye and a talent for visual storytelling to Bright Path Cyber. As a partner in vision and a trusted sounding board, she helps shape the brand's voice and direction — making sure everything we put out into the world feels warm, clear, and genuinely connects with the people who need it most.",
+                bio: "Mandie brings a sharp creative eye and a talent for visual storytelling to Bright Path Cyber. As a partner in vision and a trusted sounding board, she helps shape the brand's voice and direction — ensuring everything we share feels warm, clear, and truly connects with the people we serve.",
                 initials: "MM",
               },
             ].map((member, i) => (
