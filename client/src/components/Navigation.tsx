@@ -99,9 +99,7 @@ export default function Navigation() {
               </Link>
             ))}
             <a
-              href="https://bright-path-cyber.kit.com/ea25858516"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#free-checklist"
               className="ml-3 px-4 py-2 text-sm font-body font-medium transition-all duration-200"
               style={{
                 border: "1px solid #C9A84C",
@@ -145,9 +143,7 @@ export default function Navigation() {
             ))}
             <div className="px-3 pt-2">
               <a
-                href="https://bright-path-cyber.kit.com/ea25858516"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/#free-checklist"
                 className="block w-full text-center py-2.5 text-sm font-body font-medium"
                 style={{
                   border: "1px solid #C9A84C",

@@ -14,8 +14,8 @@ import About from "./pages/About";
 import BrightPathCyber from "./pages/ClearPathCyber";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
-
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />

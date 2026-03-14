@@ -13,22 +13,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-
-function ConvertKitForm() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!containerRef.current) return;
-    // Remove any previously injected script to avoid duplicates
-    const existing = document.querySelector('script[data-uid="2a0899bcca"]');
-    if (existing) existing.remove();
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-uid", "2a0899bcca");
-    script.src = "https://bright-path-cyber.kit.com/2a0899bcca/index.js";
-    containerRef.current.appendChild(script);
-  }, []);
-  return <div ref={containerRef} className="ck-embed-container" />;
-}
+import ChecklistSignupForm from "@/components/ChecklistSignupForm";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -254,8 +239,7 @@ export default function Home() {
                   borderRadius: "4px",
                 }}
               >
-                {/* ConvertKit Embed */}
-                <ConvertKitForm />
+                <ChecklistSignupForm />
               </div>
             </RevealSection>
           </div>
