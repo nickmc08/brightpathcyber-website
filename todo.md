@@ -48,3 +48,9 @@
 - [x] Update favicon in index.html (already wired, new favicon.ico placed in public/)
 - [x] Update any other logo placements (email template updated to shield logo)
 - [ ] Push to GitHub and redeploy
+
+## Email Logo Fix
+- [ ] Re-upload BPC_Shield_Transparent.png and get verified CDN URL
+- [ ] Update emailTemplate.ts LOGO_URL to the correct shield PNG
+- [ ] Verify email brand colors match Concept D Editorial (ivory #F5F0E8, brass #C9A84C, near-black #1A1A1A)
+- [ ] Push to GitHub and redeploy
