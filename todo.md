@@ -188,3 +188,9 @@
 - [x] Register /privacy-policy and /terms routes in App.tsx
 - [x] Update footer Privacy Policy and Terms of Service links to point to new pages
 - [ ] Push to GitHub and redeploy
+
+## Remove 1-on-1 Coaching References from Blog Posts
+- [x] Fix "5 Scams" post closing line (implies personalized guidance / coaching)
+- [x] Fix "How to Tell If a Website Is Safe" post - two coaching-implying closing lines
+- [x] Fix "Why Your Password Is the Front Door" post closing line (implies coaching)
+- [ ] Push to GitHub and redeploy

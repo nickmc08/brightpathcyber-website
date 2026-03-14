@@ -1,0 +1,9 @@
+{
+  "query": "SELECT id, title, slug, status, LEFT(content, 300) as content_preview FROM blog_posts WHERE content LIKE '%1-on-1%' OR content LIKE '%one-on-one%' OR content LIKE '%coaching%' OR excerpt LIKE '%coaching%' OR title LIKE '%coaching%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 1oqTdeiYDUzi7P2.root --database JXjpt8aqftuhQ9n25h55pn --execute SELECT id, title, slug, status, LEFT(content, 300) as content_preview FROM blog_posts WHERE content LIKE '%1-on-1%' OR content LIKE '%one-on-one%' OR content LIKE '%coaching%' OR excerpt LIKE '%coaching%' OR title LIKE '%coaching%';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1440
+}

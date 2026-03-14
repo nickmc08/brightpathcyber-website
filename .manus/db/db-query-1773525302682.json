@@ -1,0 +1,30 @@
+{
+  "query": "SELECT id, title, slug FROM blog_posts ORDER BY id LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 1oqTdeiYDUzi7P2.root --database JXjpt8aqftuhQ9n25h55pn --execute SELECT id, title, slug FROM blog_posts ORDER BY id LIMIT 10;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "5 Scams Targeting Everyday People Right Now (And How to Spot Them)",
+      "slug": "scams-targeting-people"
+    },
+    {
+      "id": "2",
+      "title": "How to Tell If a Website Is Safe Before You Enter Your Information",
+      "slug": "is-this-website-safe"
+    },
+    {
+      "id": "3",
+      "title": "Why Your Password Is the Front Door to Your Digital Life",
+      "slug": "password-front-door"
+    },
+    {
+      "id": "30001",
+      "title": "Why Two-Step Logins Are Your Best Defense Against Hackers",
+      "slug": "why-two-step-logins-are-your-best-defense-against-hackers"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\n1\t5 Scams Targeting Everyday People Right Now (And How to Spot Them)\tscams-targeting-people\n2\tHow to Tell If a Website Is Safe Before You Enter Your Information\tis-this-website-safe\n3\tWhy Your Password Is the Front Door to Your Digital Life\tpassword-front-door\n30001\tWhy Two-Step Logins Are Your Best Defense Against Hackers\twhy-two-step-logins-are-your-best-defense-against-hackers\n",
+  "stderr": "",
+  "execution_time_ms": 376
+}
