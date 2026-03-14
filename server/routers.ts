@@ -11,7 +11,7 @@ import { sendChecklistEmail } from "./emailService";
 import { PRODUCTS } from "./products";
 
 function getStripe(): Stripe {
-  const key = process.env.STRIPE_SECRET_KEY;
+  const key = ENV.stripeSecretKey;
   if (!key) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Stripe not configured" });
   return new Stripe(key);
 }

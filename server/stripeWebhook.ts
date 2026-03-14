@@ -8,9 +8,9 @@ import express from "express";
 import Stripe from "stripe";
 
 function getStripe(): Stripe | null {
-  const key = process.env.STRIPE_SECRET_KEY;
+  const key = process.env.STRIPE_SK_LIVE ?? process.env.STRIPE_SECRET_KEY;
   if (!key) {
-    console.warn("[Stripe] STRIPE_SECRET_KEY not set");
+    console.warn("[Stripe] No Stripe secret key configured");
     return null;
   }
   return new Stripe(key);
