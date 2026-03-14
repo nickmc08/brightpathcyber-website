@@ -10,7 +10,7 @@ const LOGO_URL =
 const CHECKLIST_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BrightPathCyber_Security_Checklist_v4_10be8126.pdf";
 
-export function buildChecklistEmail(firstName: string): {
+export function buildChecklistEmail(firstName: string, unsubscribeUrl?: string): {
   subject: string;
   html: string;
   text: string;
@@ -236,10 +236,13 @@ export function buildChecklistEmail(firstName: string): {
                   </td>
                 </tr>
               </table>
-              <p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 11px; color: rgba(253,250,245,0.4); line-height: 1.5;">
+              <p style="margin: 0 0 8px; font-family: 'DM Sans', Arial, sans-serif; font-size: 11px; color: rgba(253,250,245,0.4); line-height: 1.5;">
                 You received this email because you signed up for the free checklist at brightpathcyber.com.<br />
                 Questions? Reply to this email or write to <a href="mailto:info@brightpathcyber.com" style="color: rgba(253,250,245,0.5); text-decoration: none;">info@brightpathcyber.com</a>
               </p>
+              ${unsubscribeUrl ? `<p style="margin: 0; font-family: 'DM Sans', Arial, sans-serif; font-size: 11px; color: rgba(253,250,245,0.4); line-height: 1.5;">
+                <a href="${unsubscribeUrl}" style="color: rgba(253,250,245,0.5); text-decoration: underline;">Unsubscribe</a> from this mailing list.
+              </p>` : ''}
             </td>
           </tr>
 
@@ -276,6 +279,7 @@ https://brightpathcyber.com/bright-path-cyber
 
 Or visit our free blog anytime:
 https://brightpathcyber.com/blog
+${unsubscribeUrl ? `\n\nTo unsubscribe from this mailing list: ${unsubscribeUrl}` : ''}
 
 -
 Bright Path Cyber

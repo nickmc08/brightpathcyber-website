@@ -158,4 +158,19 @@
 - [x] Fix broken logo image URL in broadcast email template (use absolute public CDN URL)
 - [x] Fix "undefined" excerpt in blog update broadcast email (check auto-broadcast variable name)
 - [x] Also fix course_launch bodyJson field names in Admin.tsx broadcast compose form
+- [x] Push to GitHub and redeploy
+
+## CAN-SPAM Unsubscribe Feature
+- [x] Add unsubscribeToken and unsubscribed fields to subscribers table
+- [x] Generate unique token on subscriber insert (crypto.randomUUID)
+- [x] Backfill tokens for existing subscribers
+- [x] Add db helpers: getSubscriberByToken, markUnsubscribed, getActiveSubscribers, getSubscriberByEmail
+- [x] Add tRPC public endpoint: subscribe.unsubscribe (accepts token, marks unsubscribed)
+- [x] Add tRPC public endpoint: subscribe.getByToken (for page status check)
+- [x] Update broadcast sending to use getActiveSubscribers (excludes unsubscribed)
+- [x] Add per-subscriber unsubscribe URL to broadcast emails (blog update, course launch, custom)
+- [x] Add unsubscribe link to checklist delivery email
+- [x] Build /unsubscribe confirmation page (accepts ?token=xxx, calls API, shows confirmation)
+- [x] Register /unsubscribe route in App.tsx
+- [x] Write 13 vitest tests for unsubscribe feature (token format, API endpoints, email templates)
 - [ ] Push to GitHub and redeploy

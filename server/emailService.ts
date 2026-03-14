@@ -21,10 +21,11 @@ function getSendGridClient(): typeof sgMail | null {
 
 export async function sendChecklistEmail(
   toEmail: string,
-  toName: string
+  toName: string,
+  unsubscribeUrl?: string
 ): Promise<{ success: boolean; error?: string }> {
   const client = getSendGridClient();
-  const { subject, html, text } = buildChecklistEmail(toName);
+  const { subject, html, text } = buildChecklistEmail(toName, unsubscribeUrl);
 
   if (!client) {
     // Dev mode — log what would be sent

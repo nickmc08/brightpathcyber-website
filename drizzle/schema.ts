@@ -33,6 +33,9 @@ export const subscribers = mysqlTable("subscribers", {
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   emailSent: int("emailSent").default(0).notNull(), // 1 = sent, 0 = pending/failed
   emailSentAt: timestamp("emailSentAt"),
+  unsubscribeToken: varchar("unsubscribeToken", { length: 64 }).unique(), // UUID token for one-click unsubscribe
+  unsubscribed: int("unsubscribed").default(0).notNull(), // 1 = unsubscribed, 0 = active
+  unsubscribedAt: timestamp("unsubscribedAt"),
 });
 
 export type Subscriber = typeof subscribers.$inferSelect;

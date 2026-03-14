@@ -6,7 +6,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
-import { getAllSubscribers, insertSubscriber, markEmailSent, getAllPurchases, insertBroadcast, getAllBroadcasts, getBroadcastById, markBroadcastSending, updateBroadcastAfterSend, markBroadcastFailed, insertBlogPost, updateBlogPost, deleteBlogPost, getAllBlogPosts, getPublishedBlogPosts, getBlogPostBySlug, getBlogPostById } from "./db";
+import { getAllSubscribers, getActiveSubscribers, getSubscriberByToken, getSubscriberByEmail, markUnsubscribed, insertSubscriber, markEmailSent, getAllPurchases, insertBroadcast, getAllBroadcasts, getBroadcastById, markBroadcastSending, updateBroadcastAfterSend, markBroadcastFailed, insertBlogPost, updateBlogPost, deleteBlogPost, getAllBlogPosts, getPublishedBlogPosts, getBlogPostBySlug, getBlogPostById } from "./db";
 import { sendChecklistEmail } from "./emailService";
 import { notifyNewSubscriber } from "./notificationService";
 import { PRODUCTS } from "./products";
@@ -42,12 +42,23 @@ export const appRouter = router({
       )
       .mutation(async ({ input }) => {
         const { name, email } = input;
-        const { alreadyExists } = await insertSubscriber({ name, email });
+        const unsubToken = crypto.randomUUID();
+        const { alreadyExists } = await insertSubscriber({ name, email, unsubscribeToken: unsubToken });
+        // Build unsubscribe URL using the token
+        const buildUnsubUrl = (token: string) =>
+          `https://brightpathcyber.com/unsubscribe?token=${token}`;
+
         if (alreadyExists) {
-          await sendChecklistEmail(email, name.split(" ")[0] || name);
+          // Fetch existing subscriber by email to get their real token
+          const existing = await getSubscriberByEmail(email).catch(() => null);
+          const unsubUrl = existing?.unsubscribeToken
+            ? buildUnsubUrl(existing.unsubscribeToken)
+            : buildUnsubUrl(unsubToken);
+          await sendChecklistEmail(email, name.split(" ")[0] || name, unsubUrl);
           return { success: true, alreadySubscribed: true };
         }
-        const emailResult = await sendChecklistEmail(email, name.split(" ")[0] || name);
+        const unsubUrl = buildUnsubUrl(unsubToken);
+        const emailResult = await sendChecklistEmail(email, name.split(" ")[0] || name, unsubUrl);
         if (emailResult.success) {
           await markEmailSent(email);
         }
@@ -56,6 +67,26 @@ export const appRouter = router({
           console.error("[Notification] Background subscriber alert failed:", err)
         );
         return { success: true, alreadySubscribed: false };
+      }),
+
+    unsubscribe: publicProcedure
+      .input(z.object({ token: z.string().min(1) }))
+      .mutation(async ({ input }) => {
+        const result = await markUnsubscribed(input.token);
+        if (result.notFound) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Unsubscribe link not found or already used" });
+        }
+        return { success: true };
+      }),
+
+    getByToken: publicProcedure
+      .input(z.object({ token: z.string().min(1) }))
+      .query(async ({ input }) => {
+        const sub = await getSubscriberByToken(input.token);
+        if (!sub) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Unsubscribe link not found" });
+        }
+        return { email: sub.email, unsubscribed: sub.unsubscribed === 1 };
       }),
   }),
 
@@ -246,12 +277,12 @@ export const appRouter = router({
           throw new TRPCError({ code: "BAD_REQUEST", message: `Broadcast is already ${broadcast.status}` });
         }
 
-        const allSubscribers = await getAllSubscribers();
-        if (allSubscribers.length === 0) {
-          throw new TRPCError({ code: "BAD_REQUEST", message: "No subscribers to send to" });
+        const activeSubscribers = await getActiveSubscribers();
+        if (activeSubscribers.length === 0) {
+          throw new TRPCError({ code: "BAD_REQUEST", message: "No active subscribers to send to" });
         }
 
-        await markBroadcastSending(input.broadcastId, allSubscribers.length);
+        await markBroadcastSending(input.broadcastId, activeSubscribers.length);
 
         const apiKey = ENV.sendgridApiKey;
         if (!apiKey) {
@@ -260,18 +291,20 @@ export const appRouter = router({
         }
         sgMail.setApiKey(apiKey);
 
-        // Rebuild email from stored data
-        const { subject, html, text } = buildBroadcastEmail(
-          broadcast.templateType as "blog_update" | "course_launch" | "custom",
-          broadcast.subject,
-          broadcast.bodyJson
-        );
-
         let sentCount = 0;
         let failedCount = 0;
 
-        // Send individually to each subscriber for reliable delivery
-        for (const sub of allSubscribers) {
+        // Send individually to each subscriber with a unique unsubscribe URL
+        for (const sub of activeSubscribers) {
+          const unsubscribeUrl = sub.unsubscribeToken
+            ? `https://brightpathcyber.com/unsubscribe?token=${sub.unsubscribeToken}`
+            : undefined;
+          const { subject, html, text } = buildBroadcastEmail(
+            broadcast.templateType as "blog_update" | "course_launch" | "custom",
+            broadcast.subject,
+            broadcast.bodyJson,
+            unsubscribeUrl
+          );
           try {
             await sgMail.send({
               to: sub.email,
@@ -295,7 +328,7 @@ export const appRouter = router({
         }
 
         await updateBroadcastAfterSend(input.broadcastId, sentCount, failedCount);
-        return { sentCount, failedCount, total: allSubscribers.length };
+        return { sentCount, failedCount, total: activeSubscribers.length };
       }),
 
     listBroadcasts: publicProcedure
@@ -542,26 +575,35 @@ async function autoBroadcastOnPublish(title: string, excerpt: string, slug: stri
       status: "sending",
     });
 
-    const allSubscribers = await getAllSubscribers();
-    if (allSubscribers.length === 0) {
-      console.log("[Blog] No subscribers to broadcast to");
+    const activeSubscribers = await getActiveSubscribers();
+    if (activeSubscribers.length === 0) {
+      console.log("[Blog] No active subscribers to broadcast to");
       return;
     }
 
-    await markBroadcastSending(broadcastId, allSubscribers.length);
+    await markBroadcastSending(broadcastId, activeSubscribers.length);
     sgMail.setApiKey(apiKey);
 
     let sentCount = 0;
     let failedCount = 0;
 
-    for (const sub of allSubscribers) {
+    for (const sub of activeSubscribers) {
+      const unsubscribeUrl = sub.unsubscribeToken
+        ? `https://brightpathcyber.com/unsubscribe?token=${sub.unsubscribeToken}`
+        : undefined;
+      const { subject: subSubject, html: subHtml, text: subText } = buildBroadcastEmail(
+        "blog_update",
+        `New Post: ${title}`,
+        bodyJson,
+        unsubscribeUrl
+      );
       try {
         await sgMail.send({
           to: sub.email,
           from: { email: "info@brightpathcyber.com", name: "Bright Path Cyber" },
-          subject,
-          html,
-          text,
+          subject: subSubject,
+          html: subHtml,
+          text: subText,
         });
         sentCount++;
       } catch (err) {

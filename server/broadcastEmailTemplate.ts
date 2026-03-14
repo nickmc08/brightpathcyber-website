@@ -8,7 +8,7 @@
 const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_8f7be6a6.png";
 const SITE_URL = "https://brightpathcyber.com";
 
-const emailWrapper = (content: string, subject: string) => `<!DOCTYPE html>
+const emailWrapper = (content: string, subject: string, unsubscribeUrl?: string) => `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -42,9 +42,12 @@ const emailWrapper = (content: string, subject: string) => `<!DOCTYPE html>
               <p style="margin:0 0 8px; font-size:12px; color:#888; font-family:'DM Sans',Arial,sans-serif;">
                 You are receiving this email because you subscribed to Bright Path Cyber updates.
               </p>
-              <p style="margin:0; font-size:12px; color:#888; font-family:'DM Sans',Arial,sans-serif;">
+              <p style="margin:0 0 8px; font-size:12px; color:#888; font-family:'DM Sans',Arial,sans-serif;">
                 <a href="${SITE_URL}" style="color:#C9A84C; text-decoration:none;">brightpathcyber.com</a>
               </p>
+              ${unsubscribeUrl ? `<p style="margin:0; font-size:11px; color:#aaa; font-family:'DM Sans',Arial,sans-serif;">
+                <a href="${unsubscribeUrl}" style="color:#aaa; text-decoration:underline;">Unsubscribe</a> from this mailing list.
+              </p>` : ''}
             </td>
           </tr>
 
@@ -63,7 +66,7 @@ export interface BlogUpdateFields {
   postUrl: string;
 }
 
-export function buildBlogUpdateEmail(fields: BlogUpdateFields): { subject: string; html: string; text: string } {
+export function buildBlogUpdateEmail(fields: BlogUpdateFields, unsubscribeUrl?: string): { subject: string; html: string; text: string } {
   const subject = `New Post: ${fields.blogTitle}`;
 
   const content = `
@@ -94,9 +97,9 @@ Read the full article: ${fields.postUrl}
 
 ---
 Bright Path Cyber
-${SITE_URL}`;
+${SITE_URL}${unsubscribeUrl ? `\n\nTo unsubscribe: ${unsubscribeUrl}` : ''}`;
 
-  return { subject, html: emailWrapper(content, subject), text };
+  return { subject, html: emailWrapper(content, subject, unsubscribeUrl), text };
 }
 
 // ---- Course Launch ----
@@ -108,7 +111,7 @@ export interface CourseLaunchFields {
   enrollUrl: string;
 }
 
-export function buildCourseLaunchEmail(fields: CourseLaunchFields): { subject: string; html: string; text: string } {
+export function buildCourseLaunchEmail(fields: CourseLaunchFields, unsubscribeUrl?: string): { subject: string; html: string; text: string } {
   const subject = `Now Available: ${fields.courseName}`;
 
   const content = `
@@ -147,9 +150,9 @@ Enroll here: ${fields.enrollUrl}
 
 ---
 Bright Path Cyber
-${SITE_URL}`;
+${SITE_URL}${unsubscribeUrl ? `\n\nTo unsubscribe: ${unsubscribeUrl}` : ''}`;
 
-  return { subject, html: emailWrapper(content, subject), text };
+  return { subject, html: emailWrapper(content, subject, unsubscribeUrl), text };
 }
 
 // ---- Custom ----
@@ -159,11 +162,11 @@ export interface CustomFields {
   textBody: string;
 }
 
-export function buildCustomEmail(subject: string, fields: CustomFields): { subject: string; html: string; text: string } {
+export function buildCustomEmail(subject: string, fields: CustomFields, unsubscribeUrl?: string): { subject: string; html: string; text: string } {
   return {
     subject,
-    html: emailWrapper(fields.htmlBody, subject),
-    text: `${fields.textBody}\n\n---\nBright Path Cyber\n${SITE_URL}`,
+    html: emailWrapper(fields.htmlBody, subject, unsubscribeUrl),
+    text: `${fields.textBody}\n\n---\nBright Path Cyber\n${SITE_URL}${unsubscribeUrl ? `\n\nTo unsubscribe: ${unsubscribeUrl}` : ''}`,
   };
 }
 
@@ -174,17 +177,18 @@ export type BroadcastTemplateType = "blog_update" | "course_launch" | "custom";
 export function buildBroadcastEmail(
   templateType: BroadcastTemplateType,
   subject: string,
-  bodyJson: string
+  bodyJson: string,
+  unsubscribeUrl?: string
 ): { subject: string; html: string; text: string } {
   const fields = JSON.parse(bodyJson);
 
   switch (templateType) {
     case "blog_update":
-      return buildBlogUpdateEmail(fields as BlogUpdateFields);
+      return buildBlogUpdateEmail(fields as BlogUpdateFields, unsubscribeUrl);
     case "course_launch":
-      return buildCourseLaunchEmail(fields as CourseLaunchFields);
+      return buildCourseLaunchEmail(fields as CourseLaunchFields, unsubscribeUrl);
     case "custom":
-      return buildCustomEmail(subject, fields as CustomFields);
+      return buildCustomEmail(subject, fields as CustomFields, unsubscribeUrl);
     default:
       throw new Error(`Unknown template type: ${templateType}`);
   }

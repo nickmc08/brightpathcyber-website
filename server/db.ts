@@ -1,4 +1,4 @@
-import { desc, eq } from "drizzle-orm";
+import { and, desc, eq, isNull, ne, or } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
 import { InsertUser, InsertSubscriber, InsertPurchase, InsertBroadcast, InsertBlogPost, subscribers, users, purchases, broadcasts, blogPosts } from "../drizzle/schema";
 import { ENV } from './_core/env';
@@ -91,15 +91,21 @@ export async function getUserByOpenId(openId: string) {
 
 // ── Subscriber helpers ──────────────────────────────────────────────────────
 
-/** Insert a new subscriber. Returns false if the email already exists. */
+/** Insert a new subscriber. Auto-generates a unique unsubscribe token. Returns false if the email already exists. */
 export async function insertSubscriber(
   data: InsertSubscriber
 ): Promise<{ success: boolean; alreadyExists: boolean }> {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
 
+  // Auto-generate unsubscribe token if not provided
+  const dataWithToken: InsertSubscriber = {
+    ...data,
+    unsubscribeToken: data.unsubscribeToken ?? crypto.randomUUID(),
+  };
+
   try {
-    await db.insert(subscribers).values(data);
+    await db.insert(subscribers).values(dataWithToken);
     return { success: true, alreadyExists: false };
   } catch (err: unknown) {
     // Drizzle wraps MySQL errors in DrizzleQueryError with the original error in .cause
@@ -128,7 +134,7 @@ export async function markEmailSent(email: string): Promise<void> {
     .where(eq(subscribers.email, email));
 }
 
-/** Return all subscribers ordered by most recent first. */
+/** Return all subscribers ordered by most recent first (admin view - includes unsubscribed). */
 export async function getAllSubscribers() {
   const db = await getDb();
   if (!db) throw new Error("Database not available");
@@ -136,6 +142,54 @@ export async function getAllSubscribers() {
     .select()
     .from(subscribers)
     .orderBy(subscribers.createdAt);
+}
+
+/** Return only active (not unsubscribed) subscribers for broadcast sending. */
+export async function getActiveSubscribers() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  return db
+    .select()
+    .from(subscribers)
+    .where(or(eq(subscribers.unsubscribed, 0), isNull(subscribers.unsubscribed)))
+    .orderBy(subscribers.createdAt);
+}
+
+/** Get a subscriber by their email address. */
+export async function getSubscriberByEmail(email: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db
+    .select()
+    .from(subscribers)
+    .where(eq(subscribers.email, email))
+    .limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+/** Get a subscriber by their unsubscribe token. */
+export async function getSubscriberByToken(token: string) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db
+    .select()
+    .from(subscribers)
+    .where(eq(subscribers.unsubscribeToken, token))
+    .limit(1);
+  return result.length > 0 ? result[0] : null;
+}
+
+/** Mark a subscriber as unsubscribed by token. */
+export async function markUnsubscribed(token: string): Promise<{ success: boolean; notFound: boolean }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const sub = await getSubscriberByToken(token);
+  if (!sub) return { success: false, notFound: true };
+  await db
+    .update(subscribers)
+    .set({ unsubscribed: 1, unsubscribedAt: new Date() })
+    .where(eq(subscribers.unsubscribeToken, token));
+  return { success: true, notFound: false };
 }
 
 // ── Purchase helpers ────────────────────────────────────────────────────────
