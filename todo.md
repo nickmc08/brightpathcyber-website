@@ -36,7 +36,15 @@
 - [x] Save checkpoint and deliver to user
 
 ## Bug Fixes
-- [ ] Fix email validation: Zod v4 .email(string) passes string as regex pattern not error message, rejecting valid addresses like mcmillon.nick@gmail.com
-- [ ] Deploy full-stack app to Manus hosting (frontend + backend)
-- [ ] Verify signup form works end-to-end on deployed site
-- [ ] Provide DNS instructions for pointing brightpathcyber.com to Manus hosting
+- [x] Fix email validation: root cause was Cloudflare Pages static deploy with no backend - fixed by deploying full-stack to Manus hosting
+- [x] Deploy full-stack app to Manus hosting (frontend + backend)
+- [x] Verify signup form works end-to-end on deployed site
+- [x] Provide DNS instructions for pointing brightpathcyber.com to Manus hosting
+
+## Logo Update
+- [x] Upload BPC_Shield_Transparent.png to CDN
+- [x] Generate favicon from shield logo
+- [x] Update Navigation header to use new logo
+- [x] Update favicon in index.html (already wired, new favicon.ico placed in public/)
+- [x] Update any other logo placements (email template updated to shield logo)
+- [ ] Push to GitHub and redeploy
