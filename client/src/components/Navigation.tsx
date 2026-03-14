@@ -18,7 +18,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const BPC_LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_469be348.png";
+const BPC_LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Logo_v2_2958d9ed.png";
 
 function ShieldLogo({ className = "" }: { className?: string }) {
   return (
@@ -61,7 +61,7 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-2.5 group">
-              <ShieldLogo className="h-8 w-auto" />
+              <ShieldLogo className="h-11 w-auto flex-shrink-0" />
               <div className="flex flex-col leading-none">
                 <span className="font-display text-lg font-semibold tracking-wide" style={{ color: "#1A1A1A" }}>
                   Bright Path Cyber
