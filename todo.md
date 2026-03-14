@@ -54,3 +54,8 @@
 - [ ] Update emailTemplate.ts LOGO_URL to the correct shield PNG
 - [ ] Verify email brand colors match Concept D Editorial (ivory #F5F0E8, brass #C9A84C, near-black #1A1A1A)
 - [ ] Push to GitHub and redeploy
+
+## Nav Logo Size Fix
+- [ ] Increase shield logo size in Navigation header so it is clearly visible
+- [ ] Ensure proper vertical alignment with the wordmark text
+- [ ] Push to GitHub and redeploy
