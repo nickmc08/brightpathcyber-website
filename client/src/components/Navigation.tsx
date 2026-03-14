@@ -57,17 +57,34 @@ export default function Navigation() {
       style={{ backgroundColor: "rgba(245,240,232,0.97)", backdropFilter: "blur(8px)" }}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-16 lg:h-18">
+        <div className="flex items-center justify-between h-20 lg:h-22">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center gap-2.5 group">
-              <ShieldLogo className="h-11 w-auto flex-shrink-0" />
-              <div className="flex flex-col leading-none">
-                <span className="font-display text-lg font-semibold tracking-wide" style={{ color: "#1A1A1A" }}>
+            <div className="flex items-center gap-4 group">
+              {/* Shield — prominent, no clipping */}
+              <ShieldLogo className="h-16 w-auto flex-shrink-0" />
+              {/* Vertical brass divider */}
+              <div
+                className="self-stretch"
+                style={{
+                  width: "1px",
+                  backgroundColor: "rgba(201,168,76,0.5)",
+                  margin: "6px 0",
+                }}
+              />
+              {/* Wordmark block */}
+              <div className="flex flex-col justify-center gap-0.5">
+                <span
+                  className="font-body font-semibold tracking-[0.18em] uppercase"
+                  style={{ color: "#1A1A1A", fontSize: "15px", letterSpacing: "0.18em" }}
+                >
                   Bright Path Cyber
                 </span>
-                <span className="text-[10px] font-body font-medium tracking-[0.15em] uppercase" style={{ color: "#C9A84C" }}>
-                  Personal Cybersecurity
+                <span
+                  className="font-body font-normal"
+                  style={{ color: "#6B6560", fontSize: "11px", letterSpacing: "0.04em" }}
+                >
+                  Cybersecurity Designed for Your Life
                 </span>
               </div>
             </div>

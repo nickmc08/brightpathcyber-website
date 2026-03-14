@@ -59,3 +59,10 @@
 - [ ] Increase shield logo size in Navigation header so it is clearly visible
 - [ ] Ensure proper vertical alignment with the wordmark text
 - [ ] Push to GitHub and redeploy
+
+## Nav Logo Redesign (Reference Match)
+- [ ] Increase shield to ~64px tall with breathing room
+- [ ] Add vertical divider line between shield and text
+- [ ] Change wordmark to spaced uppercase "BRIGHT PATH CYBER"
+- [ ] Update subtitle to "Cybersecurity Designed for Your Life"
+- [ ] Push to GitHub and redeploy
