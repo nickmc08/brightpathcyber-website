@@ -1,12 +1,20 @@
 import { COOKIE_NAME } from "@shared/const";
 import { TRPCError } from "@trpc/server";
 import { z } from "zod";
+import Stripe from "stripe";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { getAllSubscribers, insertSubscriber, markEmailSent } from "./db";
 import { sendChecklistEmail } from "./emailService";
+import { PRODUCTS } from "./products";
+
+function getStripe(): Stripe {
+  const key = process.env.STRIPE_SECRET_KEY;
+  if (!key) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Stripe not configured" });
+  return new Stripe(key);
+}
 
 export const appRouter = router({
   system: systemRouter,
@@ -41,6 +49,47 @@ export const appRouter = router({
           await markEmailSent(email);
         }
         return { success: true, alreadySubscribed: false };
+      }),
+  }),
+
+  // ── Stripe Checkout ────────────────────────────────────────────────────────
+  checkout: router({
+    createEbookSession: publicProcedure
+      .input(z.object({ origin: z.string().url() }))
+      .mutation(async ({ input }) => {
+        const stripe = getStripe();
+        const product = PRODUCTS.EBOOK_CLICK_WITH_CONFIDENCE;
+
+        const session = await stripe.checkout.sessions.create({
+          mode: "payment",
+          payment_method_types: ["card"],
+          allow_promotion_codes: true,
+          line_items: [
+            {
+              price_data: {
+                currency: product.currency,
+                product_data: {
+                  name: product.name,
+                  description: product.description,
+                },
+                unit_amount: product.priceInCents,
+              },
+              quantity: 1,
+            },
+          ],
+          metadata: {
+            productType: product.metadata.productType,
+            slug: product.metadata.slug,
+          },
+          success_url: `${input.origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${input.origin}/bright-path-cyber`,
+        });
+
+        if (!session.url) {
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "Failed to create checkout session" });
+        }
+
+        return { url: session.url };
       }),
   }),
 

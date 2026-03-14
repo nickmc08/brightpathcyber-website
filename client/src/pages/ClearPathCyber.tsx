@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useEbookCheckout } from "@/hooks/useEbookCheckout";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -55,6 +56,8 @@ const ebookFeatures = [
 ];
 
 export default function BrightPathCyber() {
+  const { checkout, loading: checkoutLoading } = useEbookCheckout();
+
   return (
     <div className="min-h-screen bg-ivory">
       <Navigation />
@@ -186,9 +189,13 @@ export default function BrightPathCyber() {
 
                 <div className="font-display text-3xl font-bold mb-1" style={{ color: "#1A1A1A" }}>$27</div>
                 <p className="font-body text-sm text-warm-gray mb-5">Instant digital download</p>
-                <button className="btn-editorial btn-editorial-filled mx-auto">
+                <button
+                  onClick={checkout}
+                  disabled={checkoutLoading}
+                  className="btn-editorial btn-editorial-filled mx-auto"
+                >
                   <Download size={15} />
-                  Get the E-book
+                  {checkoutLoading ? "Loading..." : "Get the E-book"}
                 </button>
               </div>
             </RevealSection>

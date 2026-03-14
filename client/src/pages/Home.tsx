@@ -14,6 +14,7 @@ import {
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ChecklistSignupForm from "@/components/ChecklistSignupForm";
+import { useEbookCheckout } from "@/hooks/useEbookCheckout";
 
 function useScrollReveal() {
   const ref = useRef<HTMLDivElement>(null);
@@ -45,6 +46,8 @@ const topics = [
 ];
 
 export default function Home() {
+  const { checkout, loading: checkoutLoading } = useEbookCheckout();
+
   return (
     <div className="min-h-screen bg-ivory">
       <Navigation />
@@ -196,8 +199,12 @@ export default function Home() {
                 </div>
                 <div className="font-display text-3xl font-bold mb-1" style={{ color: "#1A1A1A" }}>$27</div>
                 <p className="font-body text-sm text-warm-gray mb-5">Instant digital download</p>
-                <button className="btn-editorial btn-editorial-filled mx-auto">
-                  Get the E-book
+                <button
+                  onClick={checkout}
+                  disabled={checkoutLoading}
+                  className="btn-editorial btn-editorial-filled mx-auto"
+                >
+                  {checkoutLoading ? "Loading..." : "Get the E-book"}
                   <ArrowRight size={15} />
                 </button>
               </div>

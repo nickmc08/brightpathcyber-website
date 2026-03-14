@@ -56,23 +56,31 @@
 - [ ] Push to GitHub and redeploy
 
 ## Nav Logo Size Fix
-- [ ] Increase shield logo size in Navigation header so it is clearly visible
-- [ ] Ensure proper vertical alignment with the wordmark text
-- [ ] Push to GitHub and redeploy
+- [x] Increase shield logo size in Navigation header so it is clearly visible
+- [x] Ensure proper vertical alignment with the wordmark text
+- [x] Push to GitHub and redeploy
 
 ## Nav Logo Redesign (Reference Match)
-- [ ] Increase shield to ~64px tall with breathing room
-- [ ] Add vertical divider line between shield and text
-- [ ] Change wordmark to spaced uppercase "BRIGHT PATH CYBER"
-- [ ] Update subtitle to "Cybersecurity Designed for Your Life"
-- [ ] Push to GitHub and redeploy
+- [x] Replace logo lockup with single CDN-hosted header image (user's reference design)
+- [x] Crop whitespace from image and re-upload to CDN
+- [x] Display at 72px height in 88px header
+- [x] Push to GitHub and redeploy
 
 ## Admin Dashboard
-- [ ] Add ADMIN_PASSWORD secret
-- [ ] Build admin tRPC procedures: login, list subscribers, stats, CSV export
-- [ ] Build /admin page with password login gate
-- [ ] Show total subscriber count and subscriber table
-- [ ] Add CSV export button
-- [ ] On-brand design (ivory, brass gold, Playfair/DM Sans)
-- [ ] Write vitest for admin procedures
-- [ ] Push to GitHub and redeploy
+- [x] Add ADMIN_PASSWORD secret
+- [x] Build admin tRPC procedures: login, list subscribers, stats, CSV export
+- [x] Build /admin page with password login gate
+- [x] Show total subscriber count and subscriber table
+- [x] Add CSV export button
+- [x] On-brand design (ivory, brass gold, Playfair/DM Sans)
+- [x] Write vitest for admin procedures
+- [x] Push to GitHub and redeploy
+
+## Stripe E-book Checkout
+- [x] Add Stripe secrets (STRIPE_PUBLISHABLE_KEY, STRIPE_SECRET_KEY)
+- [x] Create Stripe checkout session endpoint for e-book ($27)
+- [x] Wire all "Get the E-book" buttons to trigger Stripe checkout
+- [x] Build on-brand success page after payment
+- [x] Write vitest tests for Stripe checkout endpoint
+- [x] Add Stripe webhook handler for checkout.session.completed
+- [x] Push to GitHub and redeploy
