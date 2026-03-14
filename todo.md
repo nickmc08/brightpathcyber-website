@@ -174,3 +174,10 @@
 - [x] Register /unsubscribe route in App.tsx
 - [x] Write 13 vitest tests for unsubscribe feature (token format, API endpoints, email templates)
 - [ ] Push to GitHub and redeploy
+
+## Liability Disclaimer
+- [x] Add one-liner disclaimer to site-wide footer
+- [x] Add "Disclaimer" link to footer
+- [x] Create /disclaimer page with full legal disclaimer language (Concept D Editorial branding)
+- [x] Register /disclaimer route in App.tsx
+- [ ] Push to GitHub and redeploy

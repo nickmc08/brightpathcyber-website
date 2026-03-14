@@ -17,6 +17,7 @@ import Contact from "./pages/Contact";
 import Admin from "./pages/Admin";
 import CheckoutSuccess from "./pages/CheckoutSuccess";
 import Unsubscribe from "./pages/Unsubscribe";
+import Disclaimer from "./pages/Disclaimer";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -30,6 +31,7 @@ function Router() {
       <Route path="/admin" component={Admin} />
       <Route path="/checkout/success" component={CheckoutSuccess} />
       <Route path="/unsubscribe" component={Unsubscribe} />
+      <Route path="/disclaimer" component={Disclaimer} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -82,12 +82,24 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Disclaimer one-liner */}
+        <div className="mt-10 pt-6" style={{ borderTop: "1px solid rgba(201,168,76,0.15)" }}>
+          <p className="text-xs font-body leading-relaxed text-center" style={{ color: "rgba(107,99,88,0.7)" }}>
+            The information provided by Bright Path Cyber is for educational purposes only and does not guarantee protection from cyber threats.
+          </p>
+        </div>
+
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(201,168,76,0.3)" }}>
+        <div className="mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4" style={{ borderTop: "1px solid rgba(201,168,76,0.3)" }}>
           <p className="text-xs font-body text-warm-gray">
             &copy; {currentYear} Bright Path Cyber. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
+            <Link href="/disclaimer">
+              <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
+                Disclaimer
+              </span>
+            </Link>
             <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
               Privacy Policy
             </span>
