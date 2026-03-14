@@ -57,32 +57,32 @@ export default function Navigation() {
       style={{ backgroundColor: "rgba(245,240,232,0.97)", backdropFilter: "blur(8px)" }}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-20 lg:h-22">
+        <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center gap-4 group">
-              {/* Shield — prominent, no clipping */}
-              <ShieldLogo className="h-16 w-auto flex-shrink-0" />
-              {/* Vertical brass divider */}
+              {/* Shield — 64px, vertically centered with the text block */}
+              <ShieldLogo className="h-[64px] w-auto flex-shrink-0" />
+              {/* Vertical brass divider — spans full logo height */}
               <div
-                className="self-stretch"
                 style={{
                   width: "1px",
-                  backgroundColor: "rgba(201,168,76,0.5)",
-                  margin: "6px 0",
+                  height: "52px",
+                  backgroundColor: "rgba(201,168,76,0.55)",
+                  flexShrink: 0,
                 }}
               />
               {/* Wordmark block */}
-              <div className="flex flex-col justify-center gap-0.5">
+              <div className="flex flex-col justify-center" style={{ gap: "3px" }}>
                 <span
-                  className="font-body font-semibold tracking-[0.18em] uppercase"
-                  style={{ color: "#1A1A1A", fontSize: "15px", letterSpacing: "0.18em" }}
+                  className="font-body font-semibold uppercase"
+                  style={{ color: "#1A1A1A", fontSize: "15px", letterSpacing: "0.20em", lineHeight: 1.2 }}
                 >
                   Bright Path Cyber
                 </span>
                 <span
                   className="font-body font-normal"
-                  style={{ color: "#6B6560", fontSize: "11px", letterSpacing: "0.04em" }}
+                  style={{ color: "#6B6560", fontSize: "11.5px", letterSpacing: "0.04em", lineHeight: 1.3 }}
                 >
                   Cybersecurity Designed for Your Life
                 </span>

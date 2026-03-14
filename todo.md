@@ -66,3 +66,13 @@
 - [ ] Change wordmark to spaced uppercase "BRIGHT PATH CYBER"
 - [ ] Update subtitle to "Cybersecurity Designed for Your Life"
 - [ ] Push to GitHub and redeploy
+
+## Admin Dashboard
+- [ ] Add ADMIN_PASSWORD secret
+- [ ] Build admin tRPC procedures: login, list subscribers, stats, CSV export
+- [ ] Build /admin page with password login gate
+- [ ] Show total subscriber count and subscriber table
+- [ ] Add CSV export button
+- [ ] On-brand design (ivory, brass gold, Playfair/DM Sans)
+- [ ] Write vitest for admin procedures
+- [ ] Push to GitHub and redeploy
