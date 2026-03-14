@@ -1,5 +1,5 @@
 /**
- * Bright Path Cyber — E-book Delivery Email Template
+ * Bright Path Cyber - E-book Delivery Email Template
  * Sent after a successful Stripe checkout for "Click with Confidence"
  * Design: ivory background, brass gold accents, Playfair Display headings
  */
@@ -126,7 +126,7 @@ export function buildEbookDeliveryEmail(customerEmail: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Scam Recognition</strong> — identify phishing, fraud, and social engineering before they reach you
+                          <strong style="color: #1A1A1A;">Scam Recognition</strong> - identify phishing, fraud, and social engineering before they reach you
                         </td>
                       </tr>
                     </table>
@@ -140,7 +140,7 @@ export function buildEbookDeliveryEmail(customerEmail: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Password & Account Security</strong> — simple systems to protect every account you own
+                          <strong style="color: #1A1A1A;">Password & Account Security</strong> - simple systems to protect every account you own
                         </td>
                       </tr>
                     </table>
@@ -154,7 +154,7 @@ export function buildEbookDeliveryEmail(customerEmail: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Privacy Protection</strong> — take back control of your personal data across every device
+                          <strong style="color: #1A1A1A;">Privacy Protection</strong> - take back control of your personal data across every device
                         </td>
                       </tr>
                     </table>
@@ -168,7 +168,7 @@ export function buildEbookDeliveryEmail(customerEmail: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Safe Browsing & Shopping</strong> — how to verify websites and shop online without risk
+                          <strong style="color: #1A1A1A;">Safe Browsing & Shopping</strong> - how to verify websites and shop online without risk
                         </td>
                       </tr>
                     </table>
@@ -222,7 +222,7 @@ export function buildEbookDeliveryEmail(customerEmail: string): {
 </body>
 </html>`;
 
-  const text = `PURCHASE CONFIRMED — Click with Confidence
+  const text = `PURCHASE CONFIRMED - Click with Confidence
 
 Thank you for purchasing Click with Confidence from Bright Path Cyber.
 
@@ -230,10 +230,10 @@ Your e-book is ready to download:
 ${EBOOK_DOWNLOAD_URL}
 
 What you'll learn:
-- Scam Recognition — identify phishing, fraud, and social engineering
-- Password & Account Security — simple systems to protect every account
-- Privacy Protection — take back control of your personal data
-- Safe Browsing & Shopping — verify websites and shop online safely
+- Scam Recognition - identify phishing, fraud, and social engineering
+- Password & Account Security - simple systems to protect every account
+- Privacy Protection - take back control of your personal data
+- Safe Browsing & Shopping - verify websites and shop online safely
 
 Need help? Just reply to this email.
 

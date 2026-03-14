@@ -103,3 +103,25 @@
 - [x] Include: Cloudflare, Stripe, Bluevine, Facebook, Instagram
 - [x] On-brand styling matching admin design
 - [x] Push to GitHub and redeploy
+
+## Email Broadcast Feature
+- [x] Create broadcasts table in DB (subject, template_type, body_json, recipient_count, status, scheduled_at, sent_at, created_at)
+- [x] Build branded HTML broadcast email templates (Blog Update, Course Launch, Custom)
+- [x] Implement SendGrid batch sending logic (batches of 100)
+- [x] Add admin.createBroadcast tRPC endpoint
+- [x] Add admin.sendBroadcast tRPC endpoint
+- [x] Add admin.listBroadcasts tRPC endpoint
+- [x] Add admin.previewBroadcast tRPC endpoint
+- [x] Build Broadcast tab UI with compose form (3 template types)
+- [x] Add email preview modal before sending
+- [x] Show broadcast history with date, subject, recipient count, status
+- [x] Add schedule option (send now or pick future date/time)
+- [x] Write vitest tests for broadcast endpoints (12 tests)
+- [x] Push to GitHub and redeploy
+
+## Brand Style Cleanup (No Em Dashes, No Emojis)
+- [x] Scan all blog post components and remove em dashes and en dashes (97 instances across 10 files)
+- [x] Scan all blog post components and remove emojis
+- [x] Update broadcast email templates to not use em dashes or emojis
+- [x] Update existing email templates (checklist, e-book delivery) to remove em dashes
+- [x] Verify Navigation, Footer, and other shared components are clean

@@ -1,6 +1,6 @@
 /*
- * Home Page — Bright Path Cyber
- * Design: Concept D Editorial — "West Elm meets Apple"
+ * Home Page - Bright Path Cyber
+ * Design: Concept D Editorial - "West Elm meets Apple"
  * Ivory backgrounds, brass gold accents, near-black text
  * Sections: Hero, Mission, E-book Feature, Blog Preview, CTA
  * Business model: Blog (free) → E-book ($27) → Self-paced course (coming soon)
@@ -40,7 +40,7 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 }
 
 const topics = [
-  { icon: AlertTriangle, title: "Scam Awareness", desc: "Learn to recognize the latest scams targeting everyday people — before they reach you." },
+  { icon: AlertTriangle, title: "Scam Awareness", desc: "Learn to recognize the latest scams targeting everyday people - before they reach you." },
   { icon: Lock, title: "Password & Account Security", desc: "Simple systems to protect your accounts without memorizing a hundred passwords." },
   { icon: Eye, title: "Privacy Protection", desc: "Understand what you're sharing online and how to take back control of your data." },
 ];
@@ -65,7 +65,7 @@ export default function Home() {
             </h1>
 
             <p className="font-body text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl text-warm-gray">
-              Practical, jargon-free cybersecurity education for individuals and families — from people who genuinely care.
+              Practical, jargon-free cybersecurity education for individuals and families - from people who genuinely care.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -99,7 +99,7 @@ export default function Home() {
                 <span className="text-brass">made clear.</span>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4 text-warm-gray">
-                We started Bright Path Cyber because we watched people we love fall prey to online scams. The cybersecurity world is full of jargon, fear tactics, and advice written for experts — not for the rest of us.
+                We started Bright Path Cyber because we watched people we love fall prey to online scams. The cybersecurity world is full of jargon, fear tactics, and advice written for experts - not for the rest of us.
               </p>
               <p className="font-body text-base leading-relaxed text-warm-gray">
                 So we created something different: plain-language education that meets you where you are. Through our blog, our e-book, and our upcoming self-paced course, we teach the practical steps that actually keep you safe online.
@@ -154,7 +154,7 @@ export default function Home() {
                 <span className="text-brass">Confidence</span>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4 text-warm-gray">
-                Our comprehensive e-book covers everything you need to stay safe online — from spotting scams and securing your accounts to protecting your privacy on every device. Written in plain language, with step-by-step guidance you can follow at your own pace.
+                Our comprehensive e-book covers everything you need to stay safe online - from spotting scams and securing your accounts to protecting your privacy on every device. Written in plain language, with step-by-step guidance you can follow at your own pace.
               </p>
               <p className="font-body text-base leading-relaxed mb-8 text-warm-gray">
                 No tech background required. Just practical knowledge that works.
@@ -230,7 +230,7 @@ export default function Home() {
                 <span className="text-brass">in 5 Minutes</span>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4 text-warm-gray">
-                Download your free Personal Security Audit Checklist — no technical knowledge required.
+                Download your free Personal Security Audit Checklist - no technical knowledge required.
               </p>
               <p className="font-body text-base leading-relaxed text-warm-gray">
                 A simple, actionable list of the most important steps you can take right now to protect yourself online. Takes about five minutes to go through. Could save you from a lot of headaches.
@@ -272,7 +272,7 @@ export default function Home() {
             {[
               {
                 title: "5 Scams Targeting Everyday People Right Now",
-                excerpt: "From fake delivery texts to AI-generated voice calls — here's what to watch for and how to protect yourself.",
+                excerpt: "From fake delivery texts to AI-generated voice calls - here's what to watch for and how to protect yourself.",
                 tag: "Scam Awareness",
               },
               {
@@ -337,7 +337,7 @@ export default function Home() {
                 Ready to feel safer online?
               </h2>
               <p className="font-body text-lg mb-8 text-warm-gray">
-                Start with the blog — it's free, practical, and written for real people. When you're ready for the full picture, our e-book has you covered.
+                Start with the blog - it's free, practical, and written for real people. When you're ready for the full picture, our e-book has you covered.
               </p>
               <Link href="/bright-path-cyber">
                 <button className="btn-editorial btn-editorial-filled">

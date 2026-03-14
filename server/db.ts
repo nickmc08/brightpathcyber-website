@@ -1,6 +1,6 @@
 import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertSubscriber, InsertPurchase, subscribers, users, purchases } from "../drizzle/schema";
+import { InsertUser, InsertSubscriber, InsertPurchase, InsertBroadcast, subscribers, users, purchases, broadcasts } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -180,4 +180,66 @@ export async function getAllPurchases() {
     .select()
     .from(purchases)
     .orderBy(desc(purchases.createdAt));
+}
+
+// -- Broadcast helpers -------------------------------------------------------
+
+/** Insert a new broadcast record. Returns the inserted ID. */
+export async function insertBroadcast(data: InsertBroadcast): Promise<number> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.insert(broadcasts).values(data);
+  return (result[0] as { insertId: number }).insertId;
+}
+
+/** Update broadcast status and counts after sending. */
+export async function updateBroadcastAfterSend(
+  id: number,
+  sentCount: number,
+  failedCount: number
+): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(broadcasts)
+    .set({ status: "sent", sentCount, failedCount, sentAt: new Date() })
+    .where(eq(broadcasts.id, id));
+}
+
+/** Update broadcast status to 'sending'. */
+export async function markBroadcastSending(id: number, recipientCount: number): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(broadcasts)
+    .set({ status: "sending", recipientCount })
+    .where(eq(broadcasts.id, id));
+}
+
+/** Mark broadcast as failed. */
+export async function markBroadcastFailed(id: number, error?: string): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(broadcasts)
+    .set({ status: "failed" })
+    .where(eq(broadcasts.id, id));
+}
+
+/** Return all broadcasts ordered by most recent first. */
+export async function getAllBroadcasts() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  return db
+    .select()
+    .from(broadcasts)
+    .orderBy(desc(broadcasts.createdAt));
+}
+
+/** Get a single broadcast by ID. */
+export async function getBroadcastById(id: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  const result = await db.select().from(broadcasts).where(eq(broadcasts.id, id)).limit(1);
+  return result.length > 0 ? result[0] : null;
 }

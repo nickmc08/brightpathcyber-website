@@ -1,6 +1,6 @@
 /*
- * Bright Path Cyber — Resources Page
- * Design: Concept D Editorial — "West Elm meets Apple"
+ * Bright Path Cyber - Resources Page
+ * Design: Concept D Editorial - "West Elm meets Apple"
  * Ivory backgrounds, brass gold accents, near-black text
  * Business model: Blog (free) → E-book ($27) → Self-paced course (coming soon)
  * No coaching, consulting, workshops, or B2B
@@ -40,10 +40,10 @@ function RevealSection({ children, className = "", delay = 0 }: { children: Reac
 }
 
 const topics = [
-  { icon: AlertTriangle, title: "Scam Awareness & Prevention", desc: "Learn to recognize phishing emails, phone scams, fake texts, and online fraud — before they cost you time, money, or peace of mind." },
-  { icon: Lock, title: "Password & Account Security", desc: "Understand how to create strong passwords, use two-factor authentication, and manage your accounts safely — no tech headache required." },
+  { icon: AlertTriangle, title: "Scam Awareness & Prevention", desc: "Learn to recognize phishing emails, phone scams, fake texts, and online fraud - before they cost you time, money, or peace of mind." },
+  { icon: Lock, title: "Password & Account Security", desc: "Understand how to create strong passwords, use two-factor authentication, and manage your accounts safely - no tech headache required." },
   { icon: Eye, title: "Privacy Protection", desc: "Know what you're sharing online, who can see it, and how to adjust your settings so you're only sharing what you choose to." },
-  { icon: Smartphone, title: "Device Safety", desc: "From smartphones to laptops — learn how to keep your devices updated, secure, and running smoothly." },
+  { icon: Smartphone, title: "Device Safety", desc: "From smartphones to laptops - learn how to keep your devices updated, secure, and running smoothly." },
 ];
 
 const ebookFeatures = [
@@ -52,7 +52,7 @@ const ebookFeatures = [
   "Privacy settings walkthroughs for your devices and apps",
   "What to do if you think you've been compromised",
   "A personal digital safety checklist you can use right away",
-  "Written in plain English — no tech background needed",
+  "Written in plain English - no tech background needed",
 ];
 
 export default function BrightPathCyber() {
@@ -76,7 +76,7 @@ export default function BrightPathCyber() {
               Practical cybersecurity education you can actually use.
             </p>
             <p className="font-body text-base leading-relaxed text-warm-gray">
-              Everything we create is designed to help you protect yourself online — in plain language, at your own pace. Start with the blog, go deeper with the e-book, and stay tuned for our upcoming self-paced course.
+              Everything we create is designed to help you protect yourself online - in plain language, at your own pace. Start with the blog, go deeper with the e-book, and stay tuned for our upcoming self-paced course.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ export default function BrightPathCyber() {
                 <span className="text-brass">Confidence</span>
               </h2>
               <p className="font-body text-lg leading-relaxed mb-6 text-warm-gray">
-                Our comprehensive e-book covers everything you need to stay safe online — from spotting scams and securing your accounts to protecting your privacy on every device. Written in plain language, with step-by-step guidance you can follow at your own pace.
+                Our comprehensive e-book covers everything you need to stay safe online - from spotting scams and securing your accounts to protecting your privacy on every device. Written in plain language, with step-by-step guidance you can follow at your own pace.
               </p>
 
               <ul className="space-y-3 mb-8">
@@ -205,7 +205,7 @@ export default function BrightPathCyber() {
 
       <div className="brass-rule" />
 
-      {/* Self-Paced Course — Coming Soon */}
+      {/* Self-Paced Course - Coming Soon */}
       <section className="py-24" style={{ backgroundColor: "#1A1A1A" }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           <div className="max-w-2xl mx-auto text-center">
@@ -222,7 +222,7 @@ export default function BrightPathCyber() {
                 Self-Paced Course
               </h2>
               <p className="font-body text-lg leading-relaxed mb-4" style={{ color: "rgba(245,240,232,0.8)" }}>
-                Everything in the e-book — and more — delivered as a guided, self-paced video course. Watch on your own schedule, revisit any lesson, and build your digital confidence step by step.
+                Everything in the e-book - and more - delivered as a guided, self-paced video course. Watch on your own schedule, revisit any lesson, and build your digital confidence step by step.
               </p>
               <p className="font-body text-base leading-relaxed mb-8" style={{ color: "rgba(245,240,232,0.6)" }}>
                 We're building this now. Want to be the first to know when it launches?
@@ -246,7 +246,7 @@ export default function BrightPathCyber() {
           <RevealSection>
             <div className="brass-bar mx-auto mb-6" />
             <h2 className="font-display text-3xl sm:text-4xl font-bold mb-5" style={{ color: "#1A1A1A" }}>
-              Start learning — for free
+              Start learning - for free
             </h2>
             <p className="font-body text-lg mb-8 max-w-xl mx-auto text-warm-gray">
               Our blog is packed with practical, jargon-free articles on scam awareness, account security, privacy, and more. New posts regularly.

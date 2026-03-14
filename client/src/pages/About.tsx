@@ -1,6 +1,6 @@
 /*
- * About Page — Bright Path Cyber
- * Design: Concept D Editorial — "West Elm meets Apple"
+ * About Page - Bright Path Cyber
+ * Design: Concept D Editorial - "West Elm meets Apple"
  * Ivory backgrounds, brass gold accents, near-black text
  * Mission-driven story: saw family/community fall prey to scams
  * Business model: Blog → E-book → Self-paced course
@@ -81,10 +81,10 @@ export default function About() {
                   Bright Path Cyber began with a simple observation: the people most at risk online often receive the least cybersecurity guidance.
                 </p>
                 <p>
-                  While working in the cybersecurity field, Nick saw organizations invest heavily in protecting their systems and data. At the same time, personal digital risks were rising rapidly — scams, identity theft, and privacy threats becoming part of everyday life.
+                  While working in the cybersecurity field, Nick saw organizations invest heavily in protecting their systems and data. At the same time, personal digital risks were rising rapidly - scams, identity theft, and privacy threats becoming part of everyday life.
                 </p>
                 <p>
-                  Closer to home, we saw friends, family, and members of our community struggle with confusing privacy settings, online scams, and security decisions they had never been taught how to make. These were smart, capable people — they simply hadn't been given the tools.
+                  Closer to home, we saw friends, family, and members of our community struggle with confusing privacy settings, online scams, and security decisions they had never been taught how to make. These were smart, capable people - they simply hadn't been given the tools.
                 </p>
                 <p>
                   <strong className="font-semibold" style={{ color: "#1A1A1A" }}>Bright Path Cyber</strong> exists to change that. Our goal is to take the knowledge often locked inside security teams and make it accessible to everyone. Through our blog, our e-book, and our upcoming self-paced course, we focus on practical steps that help people protect themselves in the real world.
@@ -100,7 +100,7 @@ export default function About() {
                 />
                 <img
                   src={TEAM_IMG}
-                  alt="Nick and Mandie — Bright Path Cyber founders"
+                  alt="Nick and Mandie - Bright Path Cyber founders"
                   className="relative z-10 w-full object-cover shadow-lg"
                   style={{ aspectRatio: "4/3", borderRadius: "4px" }}
                 />
@@ -131,7 +131,7 @@ export default function About() {
                   Our Mission
                 </h3>
                 <p className="font-body leading-relaxed text-warm-gray">
-                  To teach cybersecurity in a way that real people can actually use — through free blog content, practical resources, and self-paced education. We want to be the trusted voice that keeps you informed and helps you protect yourself online.
+                  To teach cybersecurity in a way that real people can actually use - through free blog content, practical resources, and self-paced education. We want to be the trusted voice that keeps you informed and helps you protect yourself online.
                 </p>
               </div>
             </RevealSection>
@@ -151,7 +151,7 @@ export default function About() {
                   Our Vision
                 </h3>
                 <p className="font-body leading-relaxed" style={{ color: "rgba(245,240,232,0.8)" }}>
-                  A world where nobody has to feel anxious, confused, or vulnerable online. We believe that with the right education — delivered plainly and honestly — anyone can navigate the digital world with confidence. We're building that resource one article, one guide, and one reader at a time.
+                  A world where nobody has to feel anxious, confused, or vulnerable online. We believe that with the right education - delivered plainly and honestly - anyone can navigate the digital world with confidence. We're building that resource one article, one guide, and one reader at a time.
                 </p>
               </div>
             </RevealSection>
@@ -216,13 +216,13 @@ export default function About() {
               {
                 name: "Nick McMillon",
                 title: "Co-Founder",
-                bio: "Nick is the technical mind behind Bright Path Cyber. With years of experience in cybersecurity, he specializes in areas like social engineering defense, cyber defense, and perimeterless security. Along the way, he noticed a growing disconnect — the industry was focused on protecting companies while everyday people were facing increasing digital risks. Bright Path Cyber was created to bridge that gap by turning complex security concepts into clear, practical guidance anyone can use.",
+                bio: "Nick is the technical mind behind Bright Path Cyber. With years of experience in cybersecurity, he specializes in areas like social engineering defense, cyber defense, and perimeterless security. Along the way, he noticed a growing disconnect - the industry was focused on protecting companies while everyday people were facing increasing digital risks. Bright Path Cyber was created to bridge that gap by turning complex security concepts into clear, practical guidance anyone can use.",
                 initials: "NM",
               },
               {
                 name: "Mandie McMillon",
                 title: "Co-Founder",
-                bio: "Mandie brings a sharp creative eye and a talent for visual storytelling to Bright Path Cyber. As a partner in vision and a trusted sounding board, she helps shape the brand's voice and direction — ensuring everything we share feels warm, clear, and truly connects with the people we serve.",
+                bio: "Mandie brings a sharp creative eye and a talent for visual storytelling to Bright Path Cyber. As a partner in vision and a trusted sounding board, she helps shape the brand's voice and direction - ensuring everything we share feels warm, clear, and truly connects with the people we serve.",
                 initials: "MM",
               },
             ].map((member, i) => (
@@ -268,7 +268,7 @@ export default function About() {
               Want to learn more?
             </h2>
             <p className="font-body text-lg mb-8 text-warm-gray">
-              Start with the blog — it's free, practical, and written for real people.
+              Start with the blog - it's free, practical, and written for real people.
             </p>
             <Link href="/blog">
               <button className="btn-editorial btn-editorial-filled">

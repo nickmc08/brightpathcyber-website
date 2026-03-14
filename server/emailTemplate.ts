@@ -1,5 +1,5 @@
 /**
- * Bright Path Cyber — Branded Email Template
+ * Bright Path Cyber - Branded Email Template
  * Delivers the free Personal Security Audit Checklist
  * Design: ivory background, brass gold accents, Playfair Display headings
  */
@@ -83,11 +83,11 @@ export function buildChecklistEmail(firstName: string): {
               </h1>
 
               <p style="margin: 0 0 20px; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #4A4A4A;">
-                Thank you for signing up — we're glad you're here. Your <strong>Personal Security Audit Checklist</strong> is ready to download below.
+                Thank you for signing up - we're glad you're here. Your <strong>Personal Security Audit Checklist</strong> is ready to download below.
               </p>
 
               <p style="margin: 0 0 32px; font-family: 'DM Sans', Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #4A4A4A;">
-                This checklist covers the most important steps you can take right now to protect yourself online. No tech background required — just work through it at your own pace.
+                This checklist covers the most important steps you can take right now to protect yourself online. No tech background required - just work through it at your own pace.
               </p>
 
               <!-- Download button -->
@@ -127,7 +127,7 @@ export function buildChecklistEmail(firstName: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Account &amp; Password Security</strong> — how to lock down your most important accounts
+                          <strong style="color: #1A1A1A;">Account &amp; Password Security</strong> - how to lock down your most important accounts
                         </td>
                       </tr>
                     </table>
@@ -141,7 +141,7 @@ export function buildChecklistEmail(firstName: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Scam Recognition</strong> — the red flags that reveal phishing and fraud attempts
+                          <strong style="color: #1A1A1A;">Scam Recognition</strong> - the red flags that reveal phishing and fraud attempts
                         </td>
                       </tr>
                     </table>
@@ -155,7 +155,7 @@ export function buildChecklistEmail(firstName: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Device &amp; Network Safety</strong> — quick wins to protect your phone, computer, and Wi-Fi
+                          <strong style="color: #1A1A1A;">Device &amp; Network Safety</strong> - quick wins to protect your phone, computer, and Wi-Fi
                         </td>
                       </tr>
                     </table>
@@ -169,7 +169,7 @@ export function buildChecklistEmail(firstName: string): {
                           <span style="display: inline-block; width: 18px; height: 18px; background-color: rgba(201,168,76,0.15); border: 1px solid #C9A84C; border-radius: 2px; text-align: center; line-height: 16px; font-size: 11px; color: #C9A84C; font-weight: 700;">&#10003;</span>
                         </td>
                         <td style="padding-left: 10px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; color: #4A4A4A; line-height: 1.5;">
-                          <strong style="color: #1A1A1A;">Privacy Basics</strong> — what you're sharing online and how to take back control
+                          <strong style="color: #1A1A1A;">Privacy Basics</strong> - what you're sharing online and how to take back control
                         </td>
                       </tr>
                     </table>
@@ -189,7 +189,7 @@ export function buildChecklistEmail(firstName: string): {
                 Want to go deeper?
               </p>
               <p style="margin: 0 0 20px; font-family: 'DM Sans', Arial, sans-serif; font-size: 15px; line-height: 1.7; color: #4A4A4A;">
-                Our e-book <em>Click with Confidence</em> covers everything in the checklist and much more — step-by-step, in plain language, at your own pace. Available for just $27.
+                Our e-book <em>Click with Confidence</em> covers everything in the checklist and much more - step-by-step, in plain language, at your own pace. Available for just $27.
               </p>
 
               <!-- Secondary CTA -->
@@ -263,7 +263,7 @@ Your free Personal Security Audit Checklist from Bright Path Cyber is ready to d
 
 ${CHECKLIST_URL}
 
-This checklist covers the most important steps you can take right now to protect yourself online — no tech background required.
+This checklist covers the most important steps you can take right now to protect yourself online - no tech background required.
 
 What's inside:
 - Account & Password Security
@@ -277,7 +277,7 @@ https://brightpathcyber.com/bright-path-cyber
 Or visit our free blog anytime:
 https://brightpathcyber.com/blog
 
-—
+-
 Bright Path Cyber
 Personal Cybersecurity Guidance for Individuals & Families
 info@brightpathcyber.com

@@ -1,6 +1,6 @@
 /*
- * Launchpad Money — Coming Soon Page
- * Bright Path Cyber — Launchpad Money coming soon page
+ * Launchpad Money - Coming Soon Page
+ * Bright Path Cyber - Launchpad Money coming soon page
  */
 
 import { useState } from "react";
@@ -48,7 +48,7 @@ export default function LaunchpadMoney() {
           </p>
 
           <p className="font-body text-base leading-relaxed mb-8" style={{ color: "oklch(0.45 0.03 255)" }}>
-            We're developing a youth financial literacy division designed to give high schoolers and young adults the money skills that school never taught. Real budgeting, credit, investing, and income knowledge — taught in a way that actually sticks.
+            We're developing a youth financial literacy division designed to give high schoolers and young adults the money skills that school never taught. Real budgeting, credit, investing, and income knowledge - taught in a way that actually sticks.
           </p>
 
           {/* What's coming */}

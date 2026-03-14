@@ -1,6 +1,6 @@
 /*
- * Contact Page — Bright Path Cyber
- * Design: Concept D Editorial — "West Elm meets Apple"
+ * Contact Page - Bright Path Cyber
+ * Design: Concept D Editorial - "West Elm meets Apple"
  * Simple contact form + email + FAQ
  * No booking, no consultation, no partnership inquiry
  * Form submits to Formspree (no-account endpoint) via fetch POST
@@ -168,7 +168,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-body text-xs font-semibold uppercase tracking-wide mb-0.5 text-warm-gray">Response Time</div>
-                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Within 1–2 business days</div>
+                        <div className="font-body text-sm" style={{ color: "#1A1A1A" }}>Within 1-2 business days</div>
                       </div>
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export default function Contact() {
                         Message Sent!
                       </h3>
                       <p className="font-body text-base text-warm-gray mb-6">
-                        Thank you for reaching out. We read every message and will get back to you within 1–2 business days.
+                        Thank you for reaching out. We read every message and will get back to you within 1-2 business days.
                       </p>
                       <button
                         onClick={() => setStatus("idle")}
@@ -211,7 +211,7 @@ export default function Contact() {
                         Send Us a Message
                       </h2>
                       <p className="font-body text-sm mb-7 text-warm-gray">
-                        Questions, feedback, topic suggestions — we read every message.
+                        Questions, feedback, topic suggestions - we read every message.
                       </p>
 
                       {status === "error" && (
@@ -338,7 +338,7 @@ export default function Contact() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
             {[
               { q: "Who is the e-book for?", a: "Anyone who wants a comprehensive, plain-language guide to staying safe online. No tech background needed. It's designed to be read at your own pace." },
-              { q: "Will there be a course?", a: "Yes — we're building a self-paced video course that covers everything in the e-book and more. Sign up on our contact form to be notified when it launches." },
+              { q: "Will there be a course?", a: "Yes - we're building a self-paced video course that covers everything in the e-book and more. Sign up on our contact form to be notified when it launches." },
               { q: "Can I suggest a blog topic?", a: "Absolutely. Use the form above or email us at info@brightpathcyber.com. We love hearing what our readers want to learn about." },
             ].map((faq, i) => (
               <RevealSection key={i} delay={i * 80}>
