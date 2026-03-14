@@ -18,7 +18,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-const BPC_HEADER_IMAGE_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Header_Logo_19c74295.png";
+const BPC_HEADER_IMAGE_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Header_Logo_cropped_3d4d31ef.png";
 
 export default function Navigation() {
   const [location] = useLocation();
@@ -47,13 +47,13 @@ export default function Navigation() {
       style={{ backgroundColor: "rgba(245,240,232,0.97)", backdropFilter: "blur(8px)" }}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-[88px]">
           {/* Logo */}
           <Link href="/">
             <img
               src={BPC_HEADER_IMAGE_URL}
               alt="Bright Path Cyber — Cybersecurity Designed for Your Life"
-              className="h-[64px] w-auto"
+              className="h-[72px] w-auto"
               style={{ objectFit: "contain" }}
             />
           </Link>
