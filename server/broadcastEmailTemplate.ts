@@ -5,7 +5,7 @@
  * No em dashes, no emojis.
  */
 
-const LOGO_URL = "https://cdn-webdev.manus.space/webdev/mcmillon-co/BPC_Shield_Transparent_cropped-1741906481.png";
+const LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_8f7be6a6.png";
 const SITE_URL = "https://brightpathcyber.com";
 
 const emailWrapper = (content: string, subject: string) => `<!DOCTYPE html>

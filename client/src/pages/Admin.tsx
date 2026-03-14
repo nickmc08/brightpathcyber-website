@@ -838,8 +838,8 @@ function BroadcastTab({ password }: { password: string }) {
   const sendMutation = trpc.admin.sendBroadcast.useMutation();
 
   const buildBodyJson = () => {
-    if (templateType === "blog_update") return JSON.stringify({ blogTitle, previewSnippet: blogSnippet, postLink: blogLink });
-    if (templateType === "course_launch") return JSON.stringify({ courseName, courseDescription: courseDesc, price: coursePrice, enrollmentLink: courseLink });
+    if (templateType === "blog_update") return JSON.stringify({ blogTitle, snippet: blogSnippet, postUrl: blogLink });
+    if (templateType === "course_launch") return JSON.stringify({ courseName, description: courseDesc, price: coursePrice, enrollUrl: courseLink });
     return JSON.stringify({ htmlBody: customBody });
   };
 

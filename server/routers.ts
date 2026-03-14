@@ -527,8 +527,8 @@ async function autoBroadcastOnPublish(title: string, excerpt: string, slug: stri
 
     const bodyJson = JSON.stringify({
       blogTitle: title,
-      previewSnippet: excerpt,
-      postLink: `https://brightpathcyber.com/blog/${slug}`,
+      snippet: excerpt,
+      postUrl: `https://brightpathcyber.com/blog/${slug}`,
     });
 
     const { subject, html, text } = buildBroadcastEmail("blog_update", `New Post: ${title}`, bodyJson);

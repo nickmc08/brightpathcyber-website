@@ -153,3 +153,9 @@
 - [x] Enforce brand rules: no emojis, no em/en dashes in content
 - [x] Write vitest tests for blog endpoints (15 tests)
 - [ ] Push to GitHub and redeploy
+
+## Bug Fix: Blog Update Broadcast Email
+- [x] Fix broken logo image URL in broadcast email template (use absolute public CDN URL)
+- [x] Fix "undefined" excerpt in blog update broadcast email (check auto-broadcast variable name)
+- [x] Also fix course_launch bodyJson field names in Admin.tsx broadcast compose form
+- [ ] Push to GitHub and redeploy
