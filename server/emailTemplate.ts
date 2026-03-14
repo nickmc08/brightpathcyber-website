@@ -5,7 +5,7 @@
  */
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/bpc-logo-full_47b7e26a.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_469be348.png";
 
 const CHECKLIST_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BrightPathCyber_Security_Checklist_v4_10be8126.pdf";
@@ -58,8 +58,8 @@ export function buildChecklistEmail(firstName: string): {
               <img
                 src="${LOGO_URL}"
                 alt="Bright Path Cyber"
-                width="200"
-                style="width: 200px; max-width: 200px; height: auto; display: block; margin: 0 auto;"
+                width="64"
+                style="width: 64px; max-width: 64px; height: auto; display: block; margin: 0 auto;"
               />
             </td>
           </tr>

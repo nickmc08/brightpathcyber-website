@@ -18,21 +18,15 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
+const BPC_LOGO_URL = "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_469be348.png";
+
 function ShieldLogo({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 40 46" fill="none" className={className} xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M20 2L4 10v12c0 11 7 18 16 22 9-4 16-11 16-22V10L20 2z"
-        stroke="#C9A84C"
-        strokeWidth="1.5"
-        fill="none"
-      />
-      <path
-        d="M20 14l-5 14h3.5l1.5-4.5 1.5 4.5H25l-5-14z"
-        fill="#C9A84C"
-      />
-      <circle cx="20" cy="10" r="1.5" fill="#C9A84C" />
-    </svg>
+    <img
+      src={BPC_LOGO_URL}
+      alt="Bright Path Cyber shield logo"
+      className={className}
+    />
   );
 }
 
