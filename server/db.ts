@@ -102,8 +102,16 @@ export async function insertSubscriber(
     await db.insert(subscribers).values(data);
     return { success: true, alreadyExists: false };
   } catch (err: unknown) {
-    // MySQL duplicate entry error code
-    if (err && typeof err === 'object' && 'code' in err && err.code === 'ER_DUP_ENTRY') {
+    // Drizzle wraps MySQL errors in DrizzleQueryError with the original error in .cause
+    // Check both the top-level error and the cause for ER_DUP_ENTRY
+    const isDuplicate = (e: unknown): boolean => {
+      if (!e || typeof e !== 'object') return false;
+      if ('code' in e && e.code === 'ER_DUP_ENTRY') return true;
+      if ('cause' in e && isDuplicate((e as { cause: unknown }).cause)) return true;
+      if ('errno' in e && (e as { errno: unknown }).errno === 1062) return true;
+      return false;
+    };
+    if (isDuplicate(err)) {
       return { success: false, alreadyExists: true };
     }
     throw err;

@@ -86,6 +86,27 @@ export const appRouter = router({
       }),
 
     /**
+     * Protected endpoint: trigger SendGrid domain validation and return status.
+     */
+    validateDomain: protectedProcedure
+      .mutation(async ({ ctx }) => {
+        if (ctx.user.role !== "admin") {
+          throw new TRPCError({ code: "FORBIDDEN", message: "Admin only" });
+        }
+        const apiKey = process.env.SENDGRID_API_KEY;
+        if (!apiKey) throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: "SENDGRID_API_KEY not set" });
+        const DOMAIN_ID = 30049505;
+        const headers = { "Authorization": `Bearer ${apiKey}`, "Content-Type": "application/json" };
+        // Trigger validation
+        const valRes = await fetch(`https://api.sendgrid.com/v3/whitelabel/domains/${DOMAIN_ID}/validate`, { method: "POST", headers });
+        const valData = await valRes.json() as Record<string, unknown>;
+        // Get current status
+        const statusRes = await fetch(`https://api.sendgrid.com/v3/whitelabel/domains/${DOMAIN_ID}`, { headers });
+        const statusData = await statusRes.json() as Record<string, unknown>;
+        return { validation: valData, status: statusData };
+      }),
+
+    /**
      * Protected endpoint: get subscriber count and recent signups.
      */
     stats: protectedProcedure
