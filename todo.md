@@ -125,3 +125,16 @@
 - [x] Update broadcast email templates to not use em dashes or emojis
 - [x] Update existing email templates (checklist, e-book delivery) to remove em dashes
 - [x] Verify Navigation, Footer, and other shared components are clean
+
+## Bug Fix: Broadcast Sending Not Working
+- [x] Debug broadcast send endpoint - emails not being delivered
+- [x] Fix SendGrid integration - switched from batch sgMail.send(array) to individual sends per subscriber
+- [x] Added detailed error logging for each send attempt
+- [x] Test broadcast sending end-to-end
+
+## Notification Emails to sales@brightpathcyber.com
+- [x] Send notification email when someone subscribes for free checklist
+- [x] Send notification email when someone purchases the e-book
+- [x] Include subscriber/buyer name and email in notification
+- [x] Write vitest tests for notification service (6 tests)
+- [x] Push to GitHub and redeploy

@@ -10,6 +10,7 @@ import Stripe from "stripe";
 import sgMail from "@sendgrid/mail";
 import { insertPurchase, markPurchaseEmailSent } from "./db";
 import { buildEbookDeliveryEmail } from "./ebookEmailTemplate";
+import { notifyNewPurchase } from "./notificationService";
 
 function getStripe(): Stripe | null {
   const key = process.env.STRIPE_SK_LIVE ?? process.env.STRIPE_SECRET_KEY;
@@ -127,6 +128,16 @@ export function registerStripeWebhook(app: Express) {
               }
             }
           }
+
+          // Notify sales team about new purchase (fire and forget)
+          notifyNewPurchase(
+            customerEmail,
+            amountTotal,
+            currency,
+            productName
+          ).catch(err =>
+            console.error("[Notification] Background purchase alert failed:", err)
+          );
 
           break;
         }

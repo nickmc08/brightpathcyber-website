@@ -8,6 +8,7 @@ import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
 import { getAllSubscribers, insertSubscriber, markEmailSent, getAllPurchases, insertBroadcast, getAllBroadcasts, getBroadcastById, markBroadcastSending, updateBroadcastAfterSend, markBroadcastFailed } from "./db";
 import { sendChecklistEmail } from "./emailService";
+import { notifyNewSubscriber } from "./notificationService";
 import { PRODUCTS } from "./products";
 import { buildBroadcastEmail } from "./broadcastEmailTemplate";
 import sgMail from "@sendgrid/mail";
@@ -50,6 +51,10 @@ export const appRouter = router({
         if (emailResult.success) {
           await markEmailSent(email);
         }
+        // Notify sales team about new subscriber (fire and forget)
+        notifyNewSubscriber(name, email).catch(err =>
+          console.error("[Notification] Background subscriber alert failed:", err)
+        );
         return { success: true, alreadySubscribed: false };
       }),
   }),
@@ -265,24 +270,27 @@ export const appRouter = router({
         let sentCount = 0;
         let failedCount = 0;
 
-        // Send in batches of 100 to avoid rate limits
-        const BATCH_SIZE = 100;
-        for (let i = 0; i < allSubscribers.length; i += BATCH_SIZE) {
-          const batch = allSubscribers.slice(i, i + BATCH_SIZE);
-          const messages = batch.map(sub => ({
-            to: sub.email,
-            from: { email: "info@brightpathcyber.com", name: "Bright Path Cyber" },
-            subject,
-            html,
-            text,
-          }));
-
+        // Send individually to each subscriber for reliable delivery
+        for (const sub of allSubscribers) {
           try {
-            await sgMail.send(messages as Parameters<typeof sgMail.send>[0]);
-            sentCount += batch.length;
-          } catch (err) {
-            console.error("[Broadcast] Batch send error:", err);
-            failedCount += batch.length;
+            await sgMail.send({
+              to: sub.email,
+              from: { email: "info@brightpathcyber.com", name: "Bright Path Cyber" },
+              subject,
+              html,
+              text,
+            });
+            sentCount++;
+            console.log(`[Broadcast] Sent to ${sub.email}`);
+          } catch (err: unknown) {
+            failedCount++;
+            const errMsg = err instanceof Error ? err.message : String(err);
+            console.error(`[Broadcast] Failed to send to ${sub.email}:`, errMsg);
+            // Log SendGrid response body if available
+            if (err && typeof err === 'object' && 'response' in err) {
+              const sgErr = err as { response?: { body?: unknown } };
+              console.error(`[Broadcast] SendGrid response:`, JSON.stringify(sgErr.response?.body));
+            }
           }
         }
 
