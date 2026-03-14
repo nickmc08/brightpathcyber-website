@@ -181,3 +181,10 @@
 - [x] Create /disclaimer page with full legal disclaimer language (Concept D Editorial branding)
 - [x] Register /disclaimer route in App.tsx
 - [ ] Push to GitHub and redeploy
+
+## Legal Pages
+- [x] Create /privacy-policy page (Concept D Editorial branding)
+- [x] Create /terms page (Concept D Editorial branding)
+- [x] Register /privacy-policy and /terms routes in App.tsx
+- [x] Update footer Privacy Policy and Terms of Service links to point to new pages
+- [ ] Push to GitHub and redeploy

@@ -100,12 +100,16 @@ export default function Footer() {
                 Disclaimer
               </span>
             </Link>
-            <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
-              Privacy Policy
-            </span>
-            <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
-              Terms of Service
-            </span>
+            <Link href="/privacy-policy">
+              <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
+                Privacy Policy
+              </span>
+            </Link>
+            <Link href="/terms">
+              <span className="text-xs font-body text-warm-gray hover:text-near-black transition-colors cursor-pointer">
+                Terms of Service
+              </span>
+            </Link>
           </div>
         </div>
       </div>
