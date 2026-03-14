@@ -14,6 +14,7 @@ import About from "./pages/About";
 import BrightPathCyber from "./pages/ClearPathCyber";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -23,6 +24,7 @@ function Router() {
       <Route path="/bright-path-cyber" component={BrightPathCyber} />
       <Route path="/blog" component={Blog} />
       <Route path="/contact" component={Contact} />
+      <Route path="/admin" component={Admin} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

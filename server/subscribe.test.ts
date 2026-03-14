@@ -134,36 +134,28 @@ describe("subscribe.signup input validation", () => {
   });
 });
 
-// ── Protected endpoint access control ────────────────────────────────────────
+// ── Admin router access control (password-based) ─────────────────────────────
+// exportCsv and stats have been moved to the admin router which uses
+// password-based auth rather than session-based auth.
+// Those procedures are tested in admin.test.ts.
 
-describe("subscribe.exportCsv access control", () => {
-  it("rejects unauthenticated users", async () => {
+describe("admin.login access control", () => {
+  it("rejects wrong password via router", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
-
-    await expect(caller.subscribe.exportCsv()).rejects.toThrow();
+    await expect(caller.admin.login({ password: "wrong" })).rejects.toThrow();
   });
 
-  it("rejects non-admin users", async () => {
-    const ctx = createNonAdminContext();
-    const caller = appRouter.createCaller(ctx);
-
-    await expect(caller.subscribe.exportCsv()).rejects.toThrow(/admin/i);
-  });
-});
-
-describe("subscribe.stats access control", () => {
-  it("rejects unauthenticated users", async () => {
+  it("accepts correct password via router", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
-
-    await expect(caller.subscribe.stats()).rejects.toThrow();
-  });
-
-  it("rejects non-admin users", async () => {
-    const ctx = createNonAdminContext();
-    const caller = appRouter.createCaller(ctx);
-
-    await expect(caller.subscribe.stats()).rejects.toThrow(/admin/i);
+    // ADMIN_PASSWORD is set in env; if not set in test env the procedure throws INTERNAL_SERVER_ERROR
+    const adminPw = process.env.ADMIN_PASSWORD;
+    if (!adminPw) {
+      console.warn("Skipping: ADMIN_PASSWORD not set in test environment");
+      return;
+    }
+    const result = await caller.admin.login({ password: adminPw });
+    expect(result).toEqual({ success: true });
   });
 });
