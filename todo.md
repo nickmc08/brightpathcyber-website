@@ -34,3 +34,9 @@
 - [ ] User: add 3 CNAME DNS records for domain authentication (pending)
 - [x] Push to GitHub for Cloudflare Pages deploy
 - [x] Save checkpoint and deliver to user
+
+## Bug Fixes
+- [ ] Fix email validation: Zod v4 .email(string) passes string as regex pattern not error message, rejecting valid addresses like mcmillon.nick@gmail.com
+- [ ] Deploy full-stack app to Manus hosting (frontend + backend)
+- [ ] Verify signup form works end-to-end on deployed site
+- [ ] Provide DNS instructions for pointing brightpathcyber.com to Manus hosting
