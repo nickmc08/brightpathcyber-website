@@ -60,29 +60,22 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
           <Link href="/">
-            <div className="flex items-center gap-4 group">
-              {/* Shield — 64px, vertically centered with the text block */}
-              <ShieldLogo className="h-[64px] w-auto flex-shrink-0" />
-              {/* Vertical brass divider — spans full logo height */}
-              <div
-                style={{
-                  width: "1px",
-                  height: "52px",
-                  backgroundColor: "rgba(201,168,76,0.55)",
-                  flexShrink: 0,
-                }}
-              />
-              {/* Wordmark block */}
-              <div className="flex flex-col justify-center" style={{ gap: "3px" }}>
+            <div className="flex items-center gap-5 group">
+              {/* Shield — 52px, vertically centered with the full text block */}
+              <ShieldLogo className="h-[52px] w-auto flex-shrink-0" />
+              {/* Wordmark block: title + horizontal brass rule + subtitle */}
+              <div className="flex flex-col justify-center">
                 <span
-                  className="font-body font-semibold uppercase"
-                  style={{ color: "#1A1A1A", fontSize: "15px", letterSpacing: "0.20em", lineHeight: 1.2 }}
+                  className="font-display font-semibold"
+                  style={{ color: "#1A1A1A", fontSize: "26px", lineHeight: 1.15, letterSpacing: "0" }}
                 >
                   Bright Path Cyber
                 </span>
+                {/* Horizontal brass gold rule */}
+                <div style={{ height: "1.5px", backgroundColor: "#C9A84C", margin: "4px 0 5px" }} />
                 <span
                   className="font-body font-normal"
-                  style={{ color: "#6B6560", fontSize: "11.5px", letterSpacing: "0.04em", lineHeight: 1.3 }}
+                  style={{ color: "#6B6560", fontSize: "12px", letterSpacing: "0.01em", lineHeight: 1.3 }}
                 >
                   Cybersecurity Designed for Your Life
                 </span>
