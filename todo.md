@@ -84,3 +84,22 @@
 - [x] Write vitest tests for Stripe checkout endpoint
 - [x] Add Stripe webhook handler for checkout.session.completed
 - [x] Push to GitHub and redeploy
+
+## Automatic E-book Delivery
+- [x] Create purchases table in DB (session_id, email, amount, product, created_at)
+- [x] Update Stripe webhook to store completed purchases in DB
+- [x] Build branded HTML email template for e-book delivery
+- [x] Send e-book download link via SendGrid on checkout.session.completed
+- [x] Push DB migration
+- [x] Write vitest tests for purchases endpoint and email template
+
+## Admin Purchases Tab
+- [x] Add admin.listPurchases tRPC endpoint (password-protected)
+- [x] Build Purchases tab UI in admin dashboard
+- [x] Show date, customer email, amount for each purchase
+
+## Admin Quick Links
+- [x] Add quick-link buttons section to admin dashboard
+- [x] Include: Cloudflare, Stripe, Bluevine, Facebook, Instagram
+- [x] On-brand styling matching admin design
+- [x] Push to GitHub and redeploy

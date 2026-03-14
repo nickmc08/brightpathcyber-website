@@ -37,3 +37,21 @@ export const subscribers = mysqlTable("subscribers", {
 
 export type Subscriber = typeof subscribers.$inferSelect;
 export type InsertSubscriber = typeof subscribers.$inferInsert;
+
+// E-book purchases — records from Stripe checkout.session.completed webhook
+export const purchases = mysqlTable("purchases", {
+  id: int("id").autoincrement().primaryKey(),
+  stripeSessionId: varchar("stripeSessionId", { length: 255 }).notNull().unique(),
+  customerEmail: varchar("customerEmail", { length: 320 }).notNull(),
+  amountTotal: int("amountTotal").notNull(), // in cents
+  currency: varchar("currency", { length: 10 }).notNull().default("usd"),
+  productName: varchar("productName", { length: 255 }).notNull(),
+  productSlug: varchar("productSlug", { length: 255 }),
+  paymentStatus: varchar("paymentStatus", { length: 64 }).notNull().default("paid"),
+  emailSent: int("emailSent").default(0).notNull(), // 1 = delivery email sent
+  emailSentAt: timestamp("emailSentAt"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type Purchase = typeof purchases.$inferSelect;
+export type InsertPurchase = typeof purchases.$inferInsert;

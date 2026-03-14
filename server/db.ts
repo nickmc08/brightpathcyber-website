@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, InsertSubscriber, subscribers, users } from "../drizzle/schema";
+import { InsertUser, InsertSubscriber, InsertPurchase, subscribers, users, purchases } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -136,4 +136,48 @@ export async function getAllSubscribers() {
     .select()
     .from(subscribers)
     .orderBy(subscribers.createdAt);
+}
+
+// ── Purchase helpers ────────────────────────────────────────────────────────
+
+/** Insert a new purchase record from Stripe webhook. */
+export async function insertPurchase(data: InsertPurchase): Promise<{ success: boolean; alreadyExists: boolean }> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  try {
+    await db.insert(purchases).values(data);
+    return { success: true, alreadyExists: false };
+  } catch (err: unknown) {
+    const isDuplicate = (e: unknown): boolean => {
+      if (!e || typeof e !== 'object') return false;
+      if ('code' in e && e.code === 'ER_DUP_ENTRY') return true;
+      if ('cause' in e && isDuplicate((e as { cause: unknown }).cause)) return true;
+      if ('errno' in e && (e as { errno: unknown }).errno === 1062) return true;
+      return false;
+    };
+    if (isDuplicate(err)) {
+      return { success: false, alreadyExists: true };
+    }
+    throw err;
+  }
+}
+
+/** Mark a purchase's delivery email as sent. */
+export async function markPurchaseEmailSent(stripeSessionId: string): Promise<void> {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  await db
+    .update(purchases)
+    .set({ emailSent: 1, emailSentAt: new Date() })
+    .where(eq(purchases.stripeSessionId, stripeSessionId));
+}
+
+/** Return all purchases ordered by most recent first. */
+export async function getAllPurchases() {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  return db
+    .select()
+    .from(purchases)
+    .orderBy(desc(purchases.createdAt));
 }

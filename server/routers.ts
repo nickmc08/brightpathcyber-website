@@ -6,7 +6,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
-import { getAllSubscribers, insertSubscriber, markEmailSent } from "./db";
+import { getAllSubscribers, insertSubscriber, markEmailSent, getAllPurchases } from "./db";
 import { sendChecklistEmail } from "./emailService";
 import { PRODUCTS } from "./products";
 
@@ -149,6 +149,32 @@ export const appRouter = router({
           )
           .join("\n");
         return { csv: header + body, count: rows.length };
+      }),
+
+    listPurchases: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .query(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const rows = await getAllPurchases();
+        const totalRevenue = rows.reduce((sum, r) => sum + r.amountTotal, 0);
+        return {
+          total: rows.length,
+          totalRevenue,
+          purchases: rows.map(r => ({
+            id: r.id,
+            stripeSessionId: r.stripeSessionId,
+            customerEmail: r.customerEmail,
+            amountTotal: r.amountTotal,
+            currency: r.currency,
+            productName: r.productName,
+            paymentStatus: r.paymentStatus,
+            emailSent: r.emailSent === 1,
+            createdAt: r.createdAt,
+          })),
+        };
       }),
   }),
 });
