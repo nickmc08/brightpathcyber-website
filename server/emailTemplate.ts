@@ -5,7 +5,7 @@
  */
 
 const LOGO_URL =
-  "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Transparent_469be348.png";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Logo_v2_2958d9ed.png";
 
 const CHECKLIST_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BrightPathCyber_Security_Checklist_v4_10be8126.pdf";
