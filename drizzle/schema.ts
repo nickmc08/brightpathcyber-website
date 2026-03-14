@@ -74,3 +74,22 @@ export const broadcasts = mysqlTable("broadcasts", {
 
 export type Broadcast = typeof broadcasts.$inferSelect;
 export type InsertBroadcast = typeof broadcasts.$inferInsert;
+
+// Blog posts - database-backed CMS
+export const blogPosts = mysqlTable("blog_posts", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 500 }).notNull(),
+  slug: varchar("slug", { length: 500 }).notNull().unique(),
+  category: varchar("category", { length: 255 }).notNull(),
+  excerpt: text("excerpt").notNull(),
+  content: text("content").notNull(), // Markdown
+  date: varchar("date", { length: 64 }).notNull(), // display date string e.g. "March 10, 2025"
+  readTime: varchar("readTime", { length: 64 }).notNull(), // e.g. "5 min read"
+  imageUrl: text("imageUrl"), // optional hero image CDN URL
+  status: mysqlEnum("status", ["draft", "published"]).default("draft").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogPost = typeof blogPosts.$inferSelect;
+export type InsertBlogPost = typeof blogPosts.$inferInsert;

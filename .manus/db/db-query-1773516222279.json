@@ -1,0 +1,34 @@
+{
+  "query": "SELECT id, title, slug, category, status, date FROM blog_posts ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 1oqTdeiYDUzi7P2.root --database JXjpt8aqftuhQ9n25h55pn --execute SELECT id, title, slug, category, status, date FROM blog_posts ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "5 Scams Targeting Everyday People Right Now (And How to Spot Them)",
+      "slug": "scams-targeting-people",
+      "category": "Scam Awareness",
+      "status": "published",
+      "date": "February 28, 2026"
+    },
+    {
+      "id": "2",
+      "title": "How to Tell If a Website Is Safe Before You Enter Your Information",
+      "slug": "is-this-website-safe",
+      "category": "Online Safety",
+      "status": "published",
+      "date": "March 7, 2026"
+    },
+    {
+      "id": "3",
+      "title": "Why Your Password Is the Front Door to Your Digital Life",
+      "slug": "password-front-door",
+      "category": "Account Security",
+      "status": "published",
+      "date": "February 21, 2026"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tcategory\tstatus\tdate\n1\t5 Scams Targeting Everyday People Right Now (And How to Spot Them)\tscams-targeting-people\tScam Awareness\tpublished\tFebruary 28, 2026\n2\tHow to Tell If a Website Is Safe Before You Enter Your Information\tis-this-website-safe\tOnline Safety\tpublished\tMarch 7, 2026\n3\tWhy Your Password Is the Front Door to Your Digital Life\tpassword-front-door\tAccount Security\tpublished\tFebruary 21, 2026\n",
+  "stderr": "",
+  "execution_time_ms": 415
+}

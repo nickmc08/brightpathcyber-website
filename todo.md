@@ -138,3 +138,18 @@
 - [x] Include subscriber/buyer name and email in notification
 - [x] Write vitest tests for notification service (6 tests)
 - [x] Push to GitHub and redeploy
+
+## Blog CMS Feature
+- [x] Create blog_posts table (id, title, slug, category, excerpt, content, date, readTime, imageUrl, status, created_at, updated_at)
+- [x] Add blog DB helpers (CRUD operations)
+- [x] Add tRPC endpoints: listPosts, getPost, createPost, updatePost, deletePost, toggleStatus
+- [x] Migrate all hardcoded blog posts from Blog.tsx into database
+- [x] Build admin Blog Posts tab with post list, create/edit/delete forms
+- [x] Add Markdown content editor with preview
+- [x] Add draft/published toggle
+- [x] Update public Blog.tsx to fetch from API (published only)
+- [x] Update public BlogPost.tsx to fetch individual post from API
+- [x] Auto-broadcast on publish (draft -> published triggers Blog Update email)
+- [x] Enforce brand rules: no emojis, no em/en dashes in content
+- [x] Write vitest tests for blog endpoints (15 tests)
+- [ ] Push to GitHub and redeploy

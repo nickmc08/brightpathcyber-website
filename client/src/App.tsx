@@ -24,6 +24,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/bright-path-cyber" component={BrightPathCyber} />
       <Route path="/blog" component={Blog} />
+      <Route path="/blog/:slug" component={Blog} />
       <Route path="/contact" component={Contact} />
       <Route path="/admin" component={Admin} />
       <Route path="/checkout/success" component={CheckoutSuccess} />

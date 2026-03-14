@@ -83,7 +83,7 @@ describe("SendGrid API key validation", () => {
     expect(key.startsWith("SG.")).toBe(true);
   });
 
-  it("can authenticate with SendGrid API", async () => {
+  it("can authenticate with SendGrid API", { timeout: 15000 }, async () => {
     const key = process.env.SENDGRID_API_KEY;
     if (!key) {
       console.warn("Skipping: SENDGRID_API_KEY not set");

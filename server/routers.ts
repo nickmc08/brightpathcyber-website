@@ -6,7 +6,7 @@ import { getSessionCookieOptions } from "./_core/cookies";
 import { ENV } from "./_core/env";
 import { systemRouter } from "./_core/systemRouter";
 import { protectedProcedure, publicProcedure, router } from "./_core/trpc";
-import { getAllSubscribers, insertSubscriber, markEmailSent, getAllPurchases, insertBroadcast, getAllBroadcasts, getBroadcastById, markBroadcastSending, updateBroadcastAfterSend, markBroadcastFailed } from "./db";
+import { getAllSubscribers, insertSubscriber, markEmailSent, getAllPurchases, insertBroadcast, getAllBroadcasts, getBroadcastById, markBroadcastSending, updateBroadcastAfterSend, markBroadcastFailed, insertBlogPost, updateBlogPost, deleteBlogPost, getAllBlogPosts, getPublishedBlogPosts, getBlogPostBySlug, getBlogPostById } from "./db";
 import { sendChecklistEmail } from "./emailService";
 import { notifyNewSubscriber } from "./notificationService";
 import { PRODUCTS } from "./products";
@@ -322,7 +322,259 @@ export const appRouter = router({
           })),
         };
       }),
+
+    // ---- Blog Post CMS endpoints --------------------------------------------
+
+    listBlogPosts: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .query(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const rows = await getAllBlogPosts();
+        return { total: rows.length, posts: rows };
+      }),
+
+    getBlogPost: publicProcedure
+      .input(z.object({ password: z.string(), id: z.number().int().positive() }))
+      .query(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const post = await getBlogPostById(input.id);
+        if (!post) throw new TRPCError({ code: "NOT_FOUND", message: "Post not found" });
+        return post;
+      }),
+
+    createBlogPost: publicProcedure
+      .input(z.object({
+        password: z.string(),
+        title: z.string().min(1).max(500),
+        slug: z.string().min(1).max(500),
+        category: z.string().min(1).max(255),
+        excerpt: z.string().min(1),
+        content: z.string().min(1),
+        date: z.string().min(1),
+        readTime: z.string().min(1),
+        imageUrl: z.string().optional(),
+        status: z.enum(["draft", "published"]).default("draft"),
+      }))
+      .mutation(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        // Enforce brand rules
+        const cleaned = enforceBrandRules(input.content);
+        const cleanExcerpt = enforceBrandRules(input.excerpt);
+        const id = await insertBlogPost({
+          title: input.title,
+          slug: input.slug,
+          category: input.category,
+          excerpt: cleanExcerpt,
+          content: cleaned,
+          date: input.date,
+          readTime: input.readTime,
+          imageUrl: input.imageUrl ?? null,
+          status: input.status,
+        });
+        // Auto-broadcast if publishing immediately
+        if (input.status === "published") {
+          autoBroadcastOnPublish(input.title, cleanExcerpt, input.slug).catch(err =>
+            console.error("[Blog] Auto-broadcast failed:", err)
+          );
+        }
+        return { id };
+      }),
+
+    updateBlogPost: publicProcedure
+      .input(z.object({
+        password: z.string(),
+        id: z.number().int().positive(),
+        title: z.string().min(1).max(500).optional(),
+        slug: z.string().min(1).max(500).optional(),
+        category: z.string().min(1).max(255).optional(),
+        excerpt: z.string().min(1).optional(),
+        content: z.string().min(1).optional(),
+        date: z.string().min(1).optional(),
+        readTime: z.string().min(1).optional(),
+        imageUrl: z.string().nullable().optional(),
+        status: z.enum(["draft", "published"]).optional(),
+      }))
+      .mutation(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const existing = await getBlogPostById(input.id);
+        if (!existing) throw new TRPCError({ code: "NOT_FOUND", message: "Post not found" });
+
+        const updates: Record<string, unknown> = {};
+        if (input.title !== undefined) updates.title = input.title;
+        if (input.slug !== undefined) updates.slug = input.slug;
+        if (input.category !== undefined) updates.category = input.category;
+        if (input.excerpt !== undefined) updates.excerpt = enforceBrandRules(input.excerpt);
+        if (input.content !== undefined) updates.content = enforceBrandRules(input.content);
+        if (input.date !== undefined) updates.date = input.date;
+        if (input.readTime !== undefined) updates.readTime = input.readTime;
+        if (input.imageUrl !== undefined) updates.imageUrl = input.imageUrl;
+        if (input.status !== undefined) updates.status = input.status;
+
+        await updateBlogPost(input.id, updates);
+
+        // Auto-broadcast if status changed from draft to published
+        if (input.status === "published" && existing.status === "draft") {
+          const title = input.title ?? existing.title;
+          const excerpt = input.excerpt ? enforceBrandRules(input.excerpt) : existing.excerpt;
+          const slug = input.slug ?? existing.slug;
+          autoBroadcastOnPublish(title, excerpt, slug).catch(err =>
+            console.error("[Blog] Auto-broadcast failed:", err)
+          );
+        }
+
+        return { success: true };
+      }),
+
+    deleteBlogPost: publicProcedure
+      .input(z.object({
+        password: z.string(),
+        id: z.number().int().positive(),
+      }))
+      .mutation(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        await deleteBlogPost(input.id);
+        return { success: true };
+      }),
+
+    toggleBlogPostStatus: publicProcedure
+      .input(z.object({
+        password: z.string(),
+        id: z.number().int().positive(),
+      }))
+      .mutation(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const post = await getBlogPostById(input.id);
+        if (!post) throw new TRPCError({ code: "NOT_FOUND", message: "Post not found" });
+        const newStatus = post.status === "published" ? "draft" : "published";
+        await updateBlogPost(input.id, { status: newStatus });
+
+        // Auto-broadcast if toggling from draft to published
+        if (newStatus === "published" && post.status === "draft") {
+          autoBroadcastOnPublish(post.title, post.excerpt, post.slug).catch(err =>
+            console.error("[Blog] Auto-broadcast failed:", err)
+          );
+        }
+
+        return { newStatus };
+      }),
+  }),
+
+  // ── Public Blog API ───────────────────────────────────────────────────────
+  blog: router({
+    list: publicProcedure.query(async () => {
+      const posts = await getPublishedBlogPosts();
+      return posts.map(p => ({
+        id: p.id,
+        title: p.title,
+        slug: p.slug,
+        category: p.category,
+        excerpt: p.excerpt,
+        date: p.date,
+        readTime: p.readTime,
+        imageUrl: p.imageUrl,
+      }));
+    }),
+
+    getBySlug: publicProcedure
+      .input(z.object({ slug: z.string() }))
+      .query(async ({ input }) => {
+        const post = await getBlogPostBySlug(input.slug);
+        if (!post || post.status !== "published") {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Post not found" });
+        }
+        return post;
+      }),
   }),
 });
+
+// ── Brand rule enforcement ──────────────────────────────────────────────────
+function enforceBrandRules(text: string): string {
+  // Replace em dashes and en dashes with regular hyphens
+  let cleaned = text.replace(/\u2014/g, "-").replace(/\u2013/g, "-");
+  // Remove emojis using surrogate pair ranges (ES5 compatible)
+  cleaned = cleaned.replace(/[\uD800-\uDBFF][\uDC00-\uDFFF]/g, "");
+  // Remove common symbol emojis in BMP
+  cleaned = cleaned.replace(/[\u2600-\u27BF\uFE00-\uFE0F\u2702-\u27B0]/g, "");
+  return cleaned;
+}
+
+// ── Auto-broadcast on publish ───────────────────────────────────────────────
+async function autoBroadcastOnPublish(title: string, excerpt: string, slug: string) {
+  try {
+    const apiKey = ENV.sendgridApiKey;
+    if (!apiKey) {
+      console.warn("[Blog] Cannot auto-broadcast: SendGrid not configured");
+      return;
+    }
+
+    const bodyJson = JSON.stringify({
+      blogTitle: title,
+      previewSnippet: excerpt,
+      postLink: `https://brightpathcyber.com/blog/${slug}`,
+    });
+
+    const { subject, html, text } = buildBroadcastEmail("blog_update", `New Post: ${title}`, bodyJson);
+
+    // Store the broadcast record
+    const broadcastId = await insertBroadcast({
+      subject: `New Post: ${title}`,
+      templateType: "blog_update",
+      bodyJson,
+      htmlBody: html,
+      status: "sending",
+    });
+
+    const allSubscribers = await getAllSubscribers();
+    if (allSubscribers.length === 0) {
+      console.log("[Blog] No subscribers to broadcast to");
+      return;
+    }
+
+    await markBroadcastSending(broadcastId, allSubscribers.length);
+    sgMail.setApiKey(apiKey);
+
+    let sentCount = 0;
+    let failedCount = 0;
+
+    for (const sub of allSubscribers) {
+      try {
+        await sgMail.send({
+          to: sub.email,
+          from: { email: "info@brightpathcyber.com", name: "Bright Path Cyber" },
+          subject,
+          html,
+          text,
+        });
+        sentCount++;
+      } catch (err) {
+        failedCount++;
+        console.error(`[Blog Broadcast] Failed to send to ${sub.email}:`, err);
+      }
+    }
+
+    await updateBroadcastAfterSend(broadcastId, sentCount, failedCount);
+    console.log(`[Blog] Auto-broadcast sent: ${sentCount} delivered, ${failedCount} failed`);
+  } catch (err) {
+    console.error("[Blog] Auto-broadcast error:", err);
+  }
+}
 
 export type AppRouter = typeof appRouter;
