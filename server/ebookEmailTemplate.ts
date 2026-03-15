@@ -7,9 +7,9 @@
 const LOGO_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BPC_Shield_Logo_v2_2958d9ed.png";
 
-// TODO: Replace with actual e-book PDF download URL once uploaded
+// Final e-book PDF - Click with Confidence (uploaded 2026-03-15)
 const EBOOK_DOWNLOAD_URL =
-  "https://brightpathcyber.com/downloads/click-with-confidence";
+  "https://d2xsxph8kpxj0f.cloudfront.net/310519663415118379/JXjpt8aqftuhQ9n25h55pn/BrightPathCyber_ClickWithConfidence_Final_83f1ffea.pdf";
 
 export function buildEbookDeliveryEmail(customerEmail: string): {
   subject: string;

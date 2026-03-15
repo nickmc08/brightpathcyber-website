@@ -206,3 +206,9 @@
 - [x] Add "AI Generate" button to Blog Posts tab in admin dashboard
 - [x] Write 35 vitest tests for blog generator (brand rules, slug, week index, roadmap, prompts)
 - [ ] Push to GitHub and redeploy
+
+## E-book Final PDF Update
+- [x] Upload BrightPathCyber_ClickWithConfidence_Final.pdf to CDN
+- [x] Update EBOOK_DOWNLOAD_URL in ebookEmailTemplate.ts to CDN URL
+- [x] Verify CDN URL returns HTTP 200 and correct file size (73.5 MB)
+- [ ] Push to GitHub and redeploy
