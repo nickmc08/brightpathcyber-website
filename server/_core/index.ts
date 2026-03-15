@@ -10,6 +10,7 @@ import { serveStatic, setupVite } from "./vite";
 import { registerStripeWebhook } from "../stripeWebhook";
 import cron from "node-cron";
 import { generateWeeklyBlogPost } from "../blogGenerator";
+import { ensureStripeWebhookUrl } from "../stripeWebhookSetup";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -79,6 +80,13 @@ async function startServer() {
   });
 
   console.log("[Cron] Weekly blog scheduler registered (Saturday 6:00 AM)");
+
+  // ── Stripe webhook auto-registration ────────────────────────────────────────
+  // Ensures the webhook endpoint always points to the production domain,
+  // even after redeployments that change the underlying server URL.
+  ensureStripeWebhookUrl().catch(err =>
+    console.error("[Stripe] Webhook setup error:", err)
+  );
 }
 
 startServer().catch(console.error);

@@ -217,3 +217,11 @@
 - [x] Update "Subscribe to Updates" button on Blog page to link to /#free-checklist
 - [x] Rename button label to "Get the Free Checklist" for clarity
 - [ ] Push to GitHub and redeploy
+
+## Stripe Webhook Fix (E-book Delivery)
+- [x] Diagnosed root cause: webhook URL pointed to dev sandbox instead of brightpathcyber.com
+- [x] Created server/stripeWebhookSetup.ts - auto-registers correct webhook URL on production startup
+- [x] Wired ensureStripeWebhookUrl() into server/_core/index.ts startup sequence
+- [x] Verified e-book CDN URL is accessible (73.5 MB PDF, HTTP 200)
+- [x] Wrote 11 vitest tests for webhook auto-registration logic
+- [ ] Push to GitHub and redeploy
