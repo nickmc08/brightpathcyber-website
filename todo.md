@@ -194,3 +194,15 @@
 - [x] Fix "How to Tell If a Website Is Safe" post - two coaching-implying closing lines
 - [x] Fix "Why Your Password Is the Front Door" post closing line (implies coaching)
 - [ ] Push to GitHub and redeploy
+
+## Weekly Automated Blog Generation (Brand Voice Playbook)
+- [x] Install node-cron for Saturday 6 AM scheduling
+- [x] Create server/blogGenerator.ts with full Brand Voice Playbook embedded in LLM prompt
+- [x] Embed 3-month content roadmap into prompt (Month 1: Trust/Awareness, Month 2: Educate/Engage, Month 3: Community/Conversion)
+- [x] Add topic rotation logic to avoid duplicates across weeks (12-week cycle, dedup check against existing posts)
+- [x] Wire cron scheduler into server/_core/index.ts (Saturday 6:00 AM)
+- [x] Add admin tRPC endpoint to manually trigger blog generation (triggerBlogGeneration)
+- [x] Add admin tRPC endpoint to view roadmap status (getBlogGeneratorStatus)
+- [x] Add "AI Generate" button to Blog Posts tab in admin dashboard
+- [x] Write 35 vitest tests for blog generator (brand rules, slug, week index, roadmap, prompts)
+- [ ] Push to GitHub and redeploy

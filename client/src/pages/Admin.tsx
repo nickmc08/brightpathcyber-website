@@ -9,7 +9,7 @@ import {
   Download, Users, Mail, CheckCircle, XCircle, LogOut, Lock,
   DollarSign, ShoppingBag, ExternalLink, Send, Clock, Eye, FileText,
   ChevronDown, AlertCircle, Plus, Edit2, Trash2, ToggleLeft, ToggleRight,
-  BookOpen, ArrowLeft,
+  BookOpen, ArrowLeft, Sparkles,
 } from "lucide-react";
 
 const BPC_HEADER_IMAGE_URL =
@@ -363,6 +363,15 @@ function BlogPostsTab({ password }: { password: string }) {
     onError: (err) => setFeedback({ type: "error", msg: err.message }),
   });
 
+  const generateMutation = trpc.admin.triggerBlogGeneration.useMutation({
+    onSuccess: (result) => {
+      setFeedback({ type: "success", msg: `AI draft generated: "${result.title}". Review it in the list below.` });
+      utils.admin.listBlogPosts.invalidate();
+      setTimeout(() => setFeedback(null), 5000);
+    },
+    onError: (err) => setFeedback({ type: "error", msg: `AI generation failed: ${err.message}` }),
+  });
+
   const toggleMutation = trpc.admin.toggleBlogPostStatus.useMutation({
     onSuccess: (result) => {
       const msg = result.newStatus === "published"
@@ -662,13 +671,23 @@ function BlogPostsTab({ password }: { password: string }) {
             {isLoading ? "Loading..." : `${data?.total ?? 0} posts total`}
           </p>
         </div>
-        <button
-          onClick={handleNewPost}
-          className="flex items-center gap-2 px-4 py-2.5 font-body text-sm font-semibold"
-          style={{ backgroundColor: BRASS, color: NEAR_BLACK, borderRadius: "4px", cursor: "pointer" }}
-        >
-          <Plus size={14} /> New Post
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => generateMutation.mutate({ password })}
+            disabled={generateMutation.isPending}
+            className="flex items-center gap-2 px-4 py-2.5 font-body text-sm font-semibold"
+            style={{ backgroundColor: "transparent", color: BRASS, border: `1px solid ${BRASS}`, borderRadius: "4px", cursor: generateMutation.isPending ? "not-allowed" : "pointer", opacity: generateMutation.isPending ? 0.6 : 1 }}
+          >
+            <Sparkles size={14} /> {generateMutation.isPending ? "Generating..." : "AI Generate"}
+          </button>
+          <button
+            onClick={handleNewPost}
+            className="flex items-center gap-2 px-4 py-2.5 font-body text-sm font-semibold"
+            style={{ backgroundColor: BRASS, color: NEAR_BLACK, borderRadius: "4px", cursor: "pointer" }}
+          >
+            <Plus size={14} /> New Post
+          </button>
+        </div>
       </div>
 
       {/* Feedback */}

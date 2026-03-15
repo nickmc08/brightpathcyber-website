@@ -12,6 +12,7 @@ import { notifyNewSubscriber } from "./notificationService";
 import { PRODUCTS } from "./products";
 import { buildBroadcastEmail } from "./broadcastEmailTemplate";
 import sgMail from "@sendgrid/mail";
+import { generateWeeklyBlogPost, CONTENT_ROADMAP, getCurrentWeekIndex } from "./blogGenerator";
 
 function getStripe(): Stripe {
   const key = ENV.stripeSecretKey;
@@ -507,6 +508,46 @@ export const appRouter = router({
         }
 
         return { newStatus };
+      }),
+
+    triggerBlogGeneration: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .mutation(async ({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const result = await generateWeeklyBlogPost();
+        if (!result.success) {
+          throw new TRPCError({ code: "INTERNAL_SERVER_ERROR", message: result.error ?? "Blog generation failed" });
+        }
+        return { postId: result.postId, title: result.title };
+      }),
+
+    getBlogGeneratorStatus: publicProcedure
+      .input(z.object({ password: z.string() }))
+      .query(({ input }) => {
+        const expected = ENV.adminPassword;
+        if (!expected || input.password !== expected) {
+          throw new TRPCError({ code: "UNAUTHORIZED", message: "Incorrect password" });
+        }
+        const weekIndex = getCurrentWeekIndex();
+        const currentEntry = CONTENT_ROADMAP[weekIndex];
+        return {
+          currentWeekIndex: weekIndex,
+          nextTopic: currentEntry.topic,
+          nextCategory: currentEntry.category,
+          nextMonth: currentEntry.month,
+          nextMonthTheme: currentEntry.monthTheme,
+          schedule: "Every Saturday at 6:00 AM",
+          roadmap: CONTENT_ROADMAP.map(e => ({
+            week: e.week,
+            month: e.month,
+            monthTheme: e.monthTheme,
+            topic: e.topic,
+            category: e.category,
+          })),
+        };
       }),
   }),
 

@@ -8,6 +8,8 @@ import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { serveStatic, setupVite } from "./vite";
 import { registerStripeWebhook } from "../stripeWebhook";
+import cron from "node-cron";
+import { generateWeeklyBlogPost } from "../blogGenerator";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -63,6 +65,20 @@ async function startServer() {
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
   });
+
+  // ── Weekly blog post generation: every Saturday at 6:00 AM ──────────────
+  // Cron expression: "0 6 * * 6" = minute 0, hour 6, any day, any month, Saturday (6)
+  cron.schedule("0 6 * * 6", async () => {
+    console.log("[Cron] Saturday 6 AM - starting weekly blog post generation");
+    const result = await generateWeeklyBlogPost();
+    if (result.success) {
+      console.log(`[Cron] Weekly blog post generated as draft: "${result.title}" (ID: ${result.postId})`);
+    } else {
+      console.error(`[Cron] Weekly blog post generation failed: ${result.error}`);
+    }
+  });
+
+  console.log("[Cron] Weekly blog scheduler registered (Saturday 6:00 AM)");
 }
 
 startServer().catch(console.error);
