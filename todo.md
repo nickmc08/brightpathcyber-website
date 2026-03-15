@@ -212,3 +212,8 @@
 - [x] Update EBOOK_DOWNLOAD_URL in ebookEmailTemplate.ts to CDN URL
 - [x] Verify CDN URL returns HTTP 200 and correct file size (73.5 MB)
 - [ ] Push to GitHub and redeploy
+
+## Blog Subscribe Button Fix
+- [x] Update "Subscribe to Updates" button on Blog page to link to /#free-checklist
+- [x] Rename button label to "Get the Free Checklist" for clarity
+- [ ] Push to GitHub and redeploy

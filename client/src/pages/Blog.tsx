@@ -347,9 +347,9 @@ function BlogListing() {
               <p className="font-body text-sm mb-6" style={{ color: "rgba(245,240,232,0.7)" }}>
                 New articles on cybersecurity and digital safety - delivered to your inbox, no spam ever.
               </p>
-              <Link href="/contact">
+              <Link href="/#free-checklist">
                 <button className="btn-editorial btn-editorial-filled">
-                  Subscribe to Updates
+                  Get the Free Checklist
                 </button>
               </Link>
             </div>
